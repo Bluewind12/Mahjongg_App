@@ -6,21 +6,28 @@ import android.widget.Button
 import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
-    private val playerButton: Array<ImageButton> = arrayOf(
-            findViewById(R.id.imageButton1),
-            findViewById(R.id.imageButton2),
-            findViewById(R.id.imageButton3),
-            findViewById(R.id.imageButton4))
+    private lateinit var playerButton: Array<ImageButton>
 
     private lateinit var fieldButton: ImageButton
     private var fieldNum = 0
     private lateinit var pointButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        playerButton = arrayOf(
+                findViewById(R.id.imageButton1),
+                findViewById(R.id.imageButton2),
+                findViewById(R.id.imageButton3),
+                findViewById(R.id.imageButton4))
         fieldButton = findViewById(R.id.imageButtonF)
         pointButton = findViewById(R.id.pointButton)
+
+        playerButton[0].rotation = 90f
+        playerButton[1].rotation = 0f
+        playerButton[2].rotation = -90f
+        playerButton[3].rotation = -180f
 
         playerButton[0].setOnClickListener {
             changeImages(0)
@@ -36,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         fieldButton.setOnClickListener {
-            fieldNum++
             when (fieldNum % 4) {
                 0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
                 1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
@@ -44,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                 3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
                 else -> error("error")
             }
+            fieldNum++
         }
     }
 
