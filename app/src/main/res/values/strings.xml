@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mah-jongg_App</string>
+    <string name="point">点数表</string>
 </resources>
