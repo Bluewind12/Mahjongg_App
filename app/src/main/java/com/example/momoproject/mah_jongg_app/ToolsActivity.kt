@@ -57,7 +57,7 @@ class ToolsActivity : AppCompatActivity() {
             "11翻" -> return 8
             "12翻" -> return 8
             "13翻以上" -> return 9
-            else -> return 0
+            else -> error("翻エラー")
         }
     }
 
@@ -75,62 +75,70 @@ class ToolsActivity : AppCompatActivity() {
             "90符" -> return 90
             "100符" -> return 100
             "110符" -> return 110
-            else -> return 0
+            else -> error("符エラー")
         }
     }
 
     private fun countPoint(point: Int) {
-        when (point) {
+        when (point % 10) {
+            5 -> setPoint(80, 40, 20)
+            6 -> setPoint(120, 60, 30)
+            7 -> setPoint(160, 80, 40)
+            8 -> setPoint(240, 120, 60)
+            9 -> setPoint(320, 160, 80)
+            else -> when (point) {
             //1翻
-            31 -> setPoint(1000,500,300)
-            41 -> setPoint(1300,700,400)
-            51 -> setPoint(1600,800,400)
-            61 -> setPoint(2000,1000,500)
-            71 -> setPoint(2300,1200,600)
-            81 -> setPoint(2600,1300,700)
-            91 -> setPoint(2900,1500,800)
-            101 -> setPoint(3200,1600,900)
-            111 -> setPoint(3600,1800,900)
+                31 -> setPoint(10, 5, 3)
+                41 -> setPoint(13, 7, 4)
+                51 -> setPoint(16, 8, 4)
+                61 -> setPoint(20, 10, 5)
+                71 -> setPoint(23, 12, 6)
+                81 -> setPoint(26, 13, 7)
+                91 -> setPoint(29, 15, 8)
+                101 -> setPoint(32, 16, 9)
+                111 -> setPoint(36, 18, 9)
             //2翻
-            12 -> setPoint(1000,1500,500)
-            22 -> setPoint(1000,1500,500)
-            32 -> setPoint(1000,1500,500)
-            42 -> setPoint(1000,1500,500)
-            52 -> setPoint(1000,1500,500)
-            62 -> setPoint(1000,1500,500)
-            72 -> setPoint(1000,1500,500)
-            82 -> setPoint(1000,1500,500)
-            92 -> setPoint(1000,1500,500)
-            102 -> setPoint(1000,1500,50)
-            112 -> setPoint(1000,1500,50)
+                12 -> setPoint(13, 7, 4)
+                22 -> setPoint(16, 8, 4)
+                32 -> setPoint(20, 10, 5)
+                42 -> setPoint(26, 13, 7)
+                52 -> setPoint(32, 16, 8)
+                62 -> setPoint(39, 20, 10)
+                72 -> setPoint(45, 23, 12)
+                82 -> setPoint(52, 26, 13)
+                92 -> setPoint(58, 29, 15)
+                102 -> setPoint(64, 32, 16)
+                112 -> setPoint(71, 36, 18)
             //3翻
-            13 -> setPoint(1000,1500,500)
-            23 -> setPoint(1000,1500,500)
-            33 -> setPoint(1000,1500,500)
-            43 -> setPoint(1000,1500,500)
-            53 -> setPoint(1000,1500,500)
-            63 -> setPoint(1000,1500,500)
-            73 -> setPoint(1000,1500,500)
-            83 -> setPoint(1000,1500,500)
-            93 -> setPoint(1000,1500,500)
-            103 -> setPoint(1000,1500,50)
-            113 -> setPoint(1000,1500,50)
+                13 -> setPoint(26, 13, 7)
+                23 -> setPoint(32, 16, 8)
+                33 -> setPoint(39, 20, 10)
+                43 -> setPoint(52, 26, 13)
+                53 -> setPoint(64, 32, 16)
+                63 -> setPoint(77, 39, 20)
+                73 -> setPoint(80, 40, 20)
+                83 -> setPoint(80, 40, 20)
+                93 -> setPoint(80, 40, 20)
+                103 -> setPoint(80, 40, 20)
+                113 -> setPoint(80, 40, 20)
             //4翻
-            14 -> setPoint(1000,1500,500)
-            24 -> setPoint(1000,1500,500)
-            34 -> setPoint(1000,1500,500)
-            44 -> setPoint(1000,1500,500)
-            54 -> setPoint(1000,1500,500)
-            64 -> setPoint(1000,1500,500)
-            74 -> setPoint(1000,1500,500)
-            84 -> setPoint(1000,1500,500)
-            94 -> setPoint(1000,1500,500)
-            104 -> setPoint(1000,1500,50)
-            114 -> setPoint(1000,1500,50)
-            else -> error(-1)
+                14 -> setPoint(52, 26, 13)
+                24 -> setPoint(64, 32, 16)
+                34 -> setPoint(77, 39, 20)
+                44 -> setPoint(80, 40, 20)
+                54 -> setPoint(80, 40, 20)
+                64 -> setPoint(80, 40, 20)
+                74 -> setPoint(80, 40, 20)
+                84 -> setPoint(80, 40, 20)
+                94 -> setPoint(80, 40, 20)
+                104 -> setPoint(80, 40, 20)
+                114 -> setPoint(80, 40, 20)
+                else -> error(-1)
+            }
         }
     }
-    private  fun setPoint(base:Int,parent:Int,child:Int) {
+
+    private fun setPoint(base: Int, parent: Int, child: Int) {
 
     }
 }
