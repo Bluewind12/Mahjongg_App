@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Mah-jongg_App</string>
     <string name="point">ツール</string>
+    <string name="tools">⚙</string>
     <string name="han">翻数</string>
     <string name="fu">符数</string>
     <string name="oya">親</string>
@@ -8,6 +9,12 @@
     <string name="tenImage">点数表</string>
     <string name="fuImage">符計算表</string>
     <string name="function">計算</string>
+
+    <string name="parentPoint">%d：(%dオール)</string>
+    <string name="childPoint">%d：(%d,%d)</string>
+    <string name="place">%d本場</string>
+
+
     <string-array name="list1">
         <item>1翻</item>
         <item>2翻</item>
@@ -36,4 +43,5 @@
         <item>110符</item>
     </string-array>
     <string name="kihon">基本点</string>
+
 </resources>
