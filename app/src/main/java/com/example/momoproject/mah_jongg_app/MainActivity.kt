@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fieldButton: ImageButton
 
     private lateinit var dataStore: SharedPreferences
-    private lateinit var editer: SharedPreferences.Editor
+    private lateinit var editor: SharedPreferences.Editor
 
     private var fieldNum = 0
     private var parent = 0
@@ -52,12 +52,12 @@ class MainActivity : AppCompatActivity() {
         fieldButton.setOnClickListener {
             fieldNum++
 
-            if(fieldNum == 4){
+            if (fieldNum == 4) {
                 fieldNum = 0
             }
             setFieldWind(fieldNum)
-            editer.putInt("field", fieldNum)
-            editer.apply()
+            editor.putInt("field", fieldNum)
+            editor.apply()
         }
 
         //プレイヤーボタンタッチ時
@@ -98,11 +98,11 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.pointButton3),
                 findViewById(R.id.pointButton4))
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
-        editer = dataStore.edit()
+        editor = dataStore.edit()
+        editor.apply()
         fieldNum = dataStore.getInt("field", 0)
         parent = dataStore.getInt("parent", 0)
         times = dataStore.getInt("times", 0)
-
     }
 
     //回転管理
@@ -127,9 +127,9 @@ class MainActivity : AppCompatActivity() {
             times = 0
             setState(touchButtonNum)
         }
-        editer.putInt("times", times)
-        editer.putInt("parent", parent)
-        editer.apply()
+        editor.putInt("times", times)
+        editor.putInt("parent", parent)
+        editor.apply()
     }
 
     //プレイヤー状態のセット

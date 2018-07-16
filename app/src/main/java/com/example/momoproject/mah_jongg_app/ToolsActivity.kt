@@ -49,19 +49,19 @@ class ToolsActivity : AppCompatActivity() {
             countPoint(role + mark)
         }
         pointButtonP.setOnClickListener {
-val intent = Intent(this,TableOutputActivity::class.java)
-            intent.putExtra("image","oya_point")
+            val intent = Intent(this, TableOutputActivity::class.java)
+            intent.putExtra("image", "oya_point")
             startActivity(intent)
         }
         pointButtonC.setOnClickListener {
-            val intent = Intent(this,TableOutputActivity::class.java)
-            intent.putExtra("image","ko_point")
+            val intent = Intent(this, TableOutputActivity::class.java)
+            intent.putExtra("image", "ko_point")
             startActivity(intent)
         }
 
         markButton.setOnClickListener {
-            val intent = Intent(this,TableOutputActivity::class.java)
-            intent.putExtra("image","fu")
+            val intent = Intent(this, TableOutputActivity::class.java)
+            intent.putExtra("image", "fu")
             startActivity(intent)
         }
     }
@@ -172,11 +172,11 @@ val intent = Intent(this,TableOutputActivity::class.java)
             childTextView.text = "点数なし"
         } else {
             when (base) {
-                80 -> basicPointTextView.text = "満貫\n" + (base * 100).toString()
-                120 -> basicPointTextView.text = "跳満\n" + (base * 100).toString()
-                160 -> basicPointTextView.text = "倍満\n" + (base * 100).toString()
-                240 -> basicPointTextView.text = "三倍満\n" + (base * 100).toString()
-                320 -> basicPointTextView.text = "数え役満\n" + (base * 100).toString()
+                80 -> basicPointTextView.text = getString(R.string.pointAlias, "満貫", base * 100)
+                120 -> basicPointTextView.text = getString(R.string.pointAlias, "跳満", base * 100)
+                160 -> basicPointTextView.text = getString(R.string.pointAlias, "倍満", base * 100)
+                240 -> basicPointTextView.text = getString(R.string.pointAlias, "三倍満", base * 100)
+                320 -> basicPointTextView.text = getString(R.string.pointAlias, "数え役満", base * 100)
                 else -> basicPointTextView.text = (base * 100).toString()
             }
             parentTextView.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
