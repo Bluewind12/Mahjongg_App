@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
         //中央(場風)タッチ時
         fieldButton.setOnClickListener {
             fieldNum++
+            if(fieldNum == 4){
+                fieldNum = 0
+            }
             setFieldWind(fieldNum)
             editer.putInt("field", fieldNum)
             editer.apply()

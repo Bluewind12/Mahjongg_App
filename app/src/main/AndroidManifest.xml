@@ -19,6 +19,9 @@
         <activity
             android:name=".ToolsActivity"
             android:label="@string/point" />
+        <activity
+            android:name=".TableOutputActivity"
+            android:label="親-点数表"></activity>
     </application>
 
 </manifest>
