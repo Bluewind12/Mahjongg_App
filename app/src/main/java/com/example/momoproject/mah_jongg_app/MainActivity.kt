@@ -1,6 +1,8 @@
 package com.example.momoproject.mah_jongg_app
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,137 +10,141 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var playerButton: Array<ImageButton>
-    private lateinit var honbaText: Array<TextView>
-    private lateinit var pointButton: Array<Button>
+    private lateinit var playerButtons: Array<ImageButton>
+    private lateinit var timesTexts: Array<TextView>
+    private lateinit var pointButtons: Array<Button>
 
     private lateinit var fieldButton: ImageButton
+
+    private lateinit var dataStore: SharedPreferences
+    private lateinit var editer: SharedPreferences.Editor
+
     private var fieldNum = 0
     private var parent = 0
-    private var honba = 0
+    private var times = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        playerButton = arrayOf(
+
+        //初期状態セット
+        initialSetting()
+        //回転セット
+        rotateSetting()
+
+        setState(parent)
+        setFieldWind(fieldNum)
+        playerButtons[0].setOnClickListener {
+            changeState(0)
+        }
+        playerButtons[1].setOnClickListener {
+            changeState(1)
+        }
+        playerButtons[2].setOnClickListener {
+            changeState(2)
+        }
+        playerButtons[3].setOnClickListener {
+            changeState(3)
+        }
+
+        //中央(場風)タッチ時
+        fieldButton.setOnClickListener {
+            fieldNum++
+            setFieldWind(fieldNum)
+            editer.putInt("field", fieldNum)
+            editer.apply()
+        }
+
+        //プレイヤーボタンタッチ時
+        pointButtons[0].setOnClickListener {
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
+        }
+        pointButtons[1].setOnClickListener {
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
+        }
+        pointButtons[2].setOnClickListener {
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
+        }
+        pointButtons[3].setOnClickListener {
+            val intent = Intent(this, ToolsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    //初期設定
+    private fun initialSetting() {
+        playerButtons = arrayOf(
                 findViewById(R.id.imageButton1),
                 findViewById(R.id.imageButton2),
                 findViewById(R.id.imageButton3),
                 findViewById(R.id.imageButton4))
-        honbaText = arrayOf(
+        timesTexts = arrayOf(
                 findViewById(R.id.honba1),
                 findViewById(R.id.honba2),
                 findViewById(R.id.honba3),
                 findViewById(R.id.honba4))
         fieldButton = findViewById(R.id.imageButtonF)
-        pointButton = arrayOf(
+        pointButtons = arrayOf(
                 findViewById(R.id.pointButton),
                 findViewById(R.id.pointButton2),
                 findViewById(R.id.pointButton3),
                 findViewById(R.id.pointButton4))
-
-        playerButton[0].rotation = 90f
-        playerButton[1].rotation = 0f
-        playerButton[2].rotation = -90f
-        playerButton[3].rotation = -180f
-        honbaText[0].rotation = 90f
-        honbaText[1].rotation = 0f
-        honbaText[2].rotation = -90f
-        honbaText[3].rotation = -180f
-
-        changeImages(parent)
-        honbaText[0].text = getString(R.string.place, 0)
-        playerButton[0].setOnClickListener {
-            if (parent == 0) {
-                honba++
-                honbaText[0].text = getString(R.string.place, honba)
-            } else {
-                parent = 0
-                honba = 0
-                changeImages(0)
-                honbaText[0].text = getString(R.string.place, honba)
-                honbaText[1].text = " "
-                honbaText[2].text = " "
-                honbaText[3].text = " "
-            }
-        }
-        playerButton[1].setOnClickListener {
-            if (parent == 1) {
-                honba++
-                honbaText[1].text = getString(R.string.place, honba)
-            } else {
-                parent = 1
-                honba = 0
-                changeImages(1)
-                honbaText[0].text = " "
-                honbaText[1].text = getString(R.string.place, honba)
-                honbaText[2].text = " "
-                honbaText[3].text = " "
-            }
-        }
-        playerButton[2].setOnClickListener {
-            if (parent == 2) {
-                honba++
-                honbaText[2].text = getString(R.string.place, honba)
-            } else {
-                parent = 2
-                honba = 0
-                changeImages(2)
-                honbaText[0].text = " "
-                honbaText[1].text = " "
-                honbaText[2].text = getString(R.string.place, honba)
-                honbaText[3].text = " "
-            }
-        }
-        playerButton[3].setOnClickListener {
-            if (parent == 3) {
-                honba++
-                honbaText[3].text = getString(R.string.place, honba)
-            } else {
-                parent = 3
-                honba = 0
-                changeImages(3)
-                honbaText[0].text = " "
-                honbaText[1].text = " "
-                honbaText[2].text = " "
-                honbaText[3].text = getString(R.string.place, honba)
-            }
-        }
-
-        fieldButton.setOnClickListener {
-            when (fieldNum % 4) {
-                0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
-                1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
-                2 -> fieldButton.setImageResource(R.drawable.hougaku2_nishi)
-                3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
-                else -> error("error")
-            }
-            fieldNum++
-        }
-        pointButton[0].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButton[1].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButton[2].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButton[3].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun changeImages(touchButtonNum: Int) {
-        playerButton[touchButtonNum].setImageResource(R.drawable.hougaku1_higashi)
-        playerButton[(touchButtonNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
-        playerButton[(touchButtonNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
-        playerButton[(touchButtonNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
+        dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        editer = dataStore.edit()
+        fieldNum = dataStore.getInt("field", 0)
+        parent = dataStore.getInt("parent", 0)
+        times = dataStore.getInt("times", 0)
 
     }
+
+    //回転管理
+    private fun rotateSetting() {
+        playerButtons[0].rotation = 90f
+        playerButtons[1].rotation = 0f
+        playerButtons[2].rotation = -90f
+        playerButtons[3].rotation = -180f
+        timesTexts[0].rotation = 90f
+        timesTexts[1].rotation = 0f
+        timesTexts[2].rotation = -90f
+        timesTexts[3].rotation = -180f
+    }
+
+    //状態変更
+    private fun changeState(touchButtonNum: Int) {
+        if (parent == touchButtonNum) {
+            times++
+            timesTexts[touchButtonNum].text = getString(R.string.place, times)
+        } else {
+            parent = touchButtonNum
+            times = 0
+            setState(touchButtonNum)
+        }
+        editer.putInt("times", times)
+        editer.putInt("parent", parent)
+        editer.apply()
+    }
+
+    private fun setState(setNum: Int) {
+        playerButtons[setNum].setImageResource(R.drawable.hougaku1_higashi)
+        playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
+        playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
+        playerButtons[(setNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
+        timesTexts[setNum].text = getString(R.string.place, times)
+        timesTexts[(setNum+ 1) % 4].text = " "
+        timesTexts[(setNum+ 2) % 4].text = " "
+        timesTexts[(setNum+ 3) % 4].text = " "
+    }
+private fun setFieldWind(windNum:Int){
+    when (windNum) {
+        0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
+        1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
+        2 -> fieldButton.setImageResource(R.drawable.hougaku2_nishi)
+        3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
+        else -> error("error")
+    }
+}
 }
