@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         //中央(場風)タッチ時
         fieldButton.setOnClickListener {
             fieldNum++
+
             if(fieldNum == 4){
                 fieldNum = 0
             }
