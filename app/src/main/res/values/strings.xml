@@ -6,7 +6,8 @@
     <string name="fu">符数</string>
     <string name="oya">親</string>
     <string name="ko">子</string>
-    <string name="tenImage">点数表</string>
+    <string name="pointTableP">親：点数表</string>
+    <string name="pointTableC">子：点数表</string>
     <string name="fuImage">符計算表</string>
     <string name="function">計算</string>
 

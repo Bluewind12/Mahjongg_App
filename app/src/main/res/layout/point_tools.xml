@@ -97,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="点数"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="表一式"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
@@ -198,9 +198,10 @@
             android:layout_height="5px"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/markTable" />
 
@@ -218,12 +219,12 @@
             app:layout_constraintTop_toTopOf="@+id/textView13" />
 
         <Button
-            android:id="@+id/pointTable"
+            android:id="@+id/pointTableP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tenImage"
+            android:text="@string/pointTableP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -231,11 +232,22 @@
             android:id="@+id/markTable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="28dp"
             android:text="@string/fuImage"
-            app:layout_constraintStart_toEndOf="@+id/pointTable"
-            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            app:layout_constraintBottom_toBottomOf="@+id/pointTableC"
+            app:layout_constraintStart_toEndOf="@+id/pointTableC"
+            app:layout_constraintTop_toTopOf="@+id/pointTableC"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/pointTableC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/pointTableC"
+            app:layout_constraintBottom_toBottomOf="@+id/pointTableP"
+            app:layout_constraintStart_toEndOf="@+id/pointTableP"
+            app:layout_constraintTop_toTopOf="@+id/pointTableP" />
 
     </android.support.constraint.ConstraintLayout>
 

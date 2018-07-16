@@ -128,23 +128,26 @@ class MainActivity : AppCompatActivity() {
         editer.apply()
     }
 
+    //プレイヤー状態のセット
     private fun setState(setNum: Int) {
         playerButtons[setNum].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
         playerButtons[(setNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
         timesTexts[setNum].text = getString(R.string.place, times)
-        timesTexts[(setNum+ 1) % 4].text = " "
-        timesTexts[(setNum+ 2) % 4].text = " "
-        timesTexts[(setNum+ 3) % 4].text = " "
+        timesTexts[(setNum + 1) % 4].text = " "
+        timesTexts[(setNum + 2) % 4].text = " "
+        timesTexts[(setNum + 3) % 4].text = " "
     }
-private fun setFieldWind(windNum:Int){
-    when (windNum) {
-        0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
-        1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
-        2 -> fieldButton.setImageResource(R.drawable.hougaku2_nishi)
-        3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
-        else -> error("error")
+
+    //場のセット
+    private fun setFieldWind(windNum: Int) {
+        when (windNum) {
+            0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
+            1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
+            2 -> fieldButton.setImageResource(R.drawable.hougaku2_nishi)
+            3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
+            else -> error("error")
+        }
     }
-}
 }

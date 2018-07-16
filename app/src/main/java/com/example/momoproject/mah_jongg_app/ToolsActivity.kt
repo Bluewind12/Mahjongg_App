@@ -9,7 +9,8 @@ import android.widget.TextView
 
 class ToolsActivity : AppCompatActivity() {
     private lateinit var okButton: Button
-    private lateinit var pointButton: Button
+    private lateinit var pointButtonP: Button
+    private lateinit var pointButtonC: Button
     private lateinit var markButton: Button
 
     private lateinit var basicPointTextView: TextView
@@ -26,7 +27,8 @@ class ToolsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
         okButton = findViewById(R.id.calculationButton)
-        pointButton = findViewById(R.id.pointTable)
+        pointButtonP = findViewById(R.id.pointTableP)
+        pointButtonC = findViewById(R.id.pointTableC)
         markButton = findViewById(R.id.markTable)
         basicPointTextView = findViewById(R.id.basicText)
         parentTextView = findViewById(R.id.pearentText)
@@ -39,7 +41,12 @@ class ToolsActivity : AppCompatActivity() {
             val mark = getMarks()
             countPoint(role + mark)
         }
+        pointButtonP.setOnClickListener {
 
+        }
+        pointButtonC.setOnClickListener {
+
+        }
     }
 
     private fun getRole(): Int {
