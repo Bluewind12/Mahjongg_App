@@ -2,10 +2,11 @@ package com.example.momoproject.mah_jongg_app
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.ImageButton
 import android.widget.ImageView
 
 class TableOutputActivity : AppCompatActivity() {
-    private lateinit var imageView: ImageView
+    private lateinit var imageView: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.table_view)
@@ -16,6 +17,8 @@ class TableOutputActivity : AppCompatActivity() {
             "fu" -> imageView.setImageResource(R.drawable.mark)
             else -> imageView.setImageResource(R.drawable.hougaku4_kita)
         }
-
+        imageView.setOnClickListener {
+            finish()
+        }
     }
 }
