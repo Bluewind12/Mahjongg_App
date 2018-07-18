@@ -26,9 +26,6 @@ class ToolsActivity : AppCompatActivity() {
 
     private lateinit var translateSpinner: Spinner
     private lateinit var markSpinner: Spinner
-    private var baseInt = 0
-    private var parentInt = 0
-    private var childInt = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
