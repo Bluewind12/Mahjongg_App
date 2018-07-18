@@ -13,8 +13,9 @@ class TableOutputActivity : AppCompatActivity() {
         when (intent.getStringExtra("image")) {
             "oya_point" -> imageView.setImageResource(R.drawable.point_oya)
             "ko_point" -> imageView.setImageResource(R.drawable.point_ko)
-            "fu" -> imageView.setImageResource(R.drawable.hougaku2_nishi)
+            "fu" -> imageView.setImageResource(R.drawable.mark)
             else -> imageView.setImageResource(R.drawable.hougaku4_kita)
         }
+
     }
 }
