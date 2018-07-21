@@ -26,6 +26,10 @@
             android:name=".TableOutputActivity"
             android:label="親-点数表"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".MarkToolActivity"
+            android:label="符計算"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

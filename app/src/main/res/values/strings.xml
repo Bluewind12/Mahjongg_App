@@ -96,6 +96,8 @@
     <string name="tyutyan">中張牌</string>
     <string name="tanyao">么九牌</string>
     <string name="markResult">結果：〇〇符</string>
+    <string name="markResultC">結果：%d符</string>
+    <string name="error">エラー\n正しい値を入力してください</string>
 
 
 </resources>

@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
+import kotlinx.android.synthetic.main.mark_tool.*
+import kotlin.math.floor
 
 class MarkToolActivity : AppCompatActivity() {
 
@@ -15,21 +18,22 @@ class MarkToolActivity : AppCompatActivity() {
     private lateinit var waitSpinner: Spinner
     //順子
     private lateinit var shuntuTyuTyanSpinner: Spinner
-    private lateinit var shuntuTannYaoSpinner: Spinner
+    private lateinit var shuntuYaoThuSpinner: Spinner
     //明刻子
     private lateinit var koutuMeiTyuTyanSpinner: Spinner
-    private lateinit var koutuMeiTannYaoSpinner: Spinner
+    private lateinit var koutuMeiYaoThuSpinner: Spinner
     //暗刻子
     private lateinit var koutuAnTyuTyanSpinner: Spinner
-    private lateinit var koutuAnTannYaoSpinner: Spinner
+    private lateinit var koutuAnYaoThuSpinner: Spinner
     //明槓子
     private lateinit var kantuMeiTyuTyanSpinner: Spinner
-    private lateinit var kantuMeiTannYaoSpinner: Spinner
+    private lateinit var kantuMeiYaoThuSpinner: Spinner
     //暗槓子
     private lateinit var kantuAnTyuTyanSpinner: Spinner
-    private lateinit var kantuAnTannYaoSpinner: Spinner
-    //計算ボタン
+    private lateinit var kantuAnYaoThuSpinner: Spinner
+    //計算
     private lateinit var resuluButton: Button
+    private lateinit var resultText: TextView
 
     var resultInt = 0
 
@@ -77,7 +81,6 @@ class MarkToolActivity : AppCompatActivity() {
                     resultInt += 20 + 5
                 }
             }
-
         }
 
 
@@ -91,27 +94,35 @@ class MarkToolActivity : AppCompatActivity() {
         //待ち
         waitSpinner = findViewById(R.id.spinner3)
         //順子
-        shuntuTyuTyanSpinner = findViewById(R.id.shunTT)
-        shuntuTannYaoSpinner = findViewById(R.id.shunTY)
+        shuntuTyuTyanSpinner = findViewById(R.id.shunTanYao)
+        shuntuYaoThuSpinner = findViewById(R.id.shunYaoThu)
         //明刻子
-        koutuMeiTyuTyanSpinner = findViewById(R.id.kouMTT)
-        koutuMeiTannYaoSpinner = findViewById(R.id.kouMTY)
+        koutuMeiTyuTyanSpinner = findViewById(R.id.kouMTanYao)
+        koutuMeiYaoThuSpinner = findViewById(R.id.kouMYaoThu)
         //暗刻子
-        koutuAnTyuTyanSpinner = findViewById(R.id.kouATT)
-        koutuAnTannYaoSpinner = findViewById(R.id.kouATY)
+        koutuAnTyuTyanSpinner = findViewById(R.id.kouATanYao)
+        koutuAnYaoThuSpinner = findViewById(R.id.kouAYaoThu)
         //明槓子
-        kantuMeiTyuTyanSpinner = findViewById(R.id.kanMTT)
-        kantuMeiTannYaoSpinner = findViewById(R.id.kanMTY)
+        kantuMeiTyuTyanSpinner = findViewById(R.id.kanMTanYao)
+        kantuMeiYaoThuSpinner = findViewById(R.id.kanMYaoThu)
         //暗槓子
-        kantuAnTyuTyanSpinner = findViewById(R.id.kanATT)
-        kantuAnTannYaoSpinner = findViewById(R.id.kanATY)
-        //計算ボタン
-        resuluButton = findViewById(R.id.calculationButton)
+        kantuAnTyuTyanSpinner = findViewById(R.id.kanATanYao)
+        kantuAnYaoThuSpinner = findViewById(R.id.kanAYaoThu)
+        //計算
+        resuluButton = findViewById(R.id.calculateButton)
+        resultText = findViewById(R.id.markResultText)
     }
 
     private fun calculation() {
         headSum()
         waitSum()
+        mentuSum()
+        val resultUp = floor(resultInt / 10.0)
+        if (selectCheck()) {
+            getString(R.string.markResultC, resultUp.toInt())
+        } else {
+            resultText.text = getString(R.string.error)
+        }
     }
 
     private fun headSum() {
@@ -157,6 +168,39 @@ class MarkToolActivity : AppCompatActivity() {
                 resultInt += 0
             }
         }
+    }
+
+    private fun mentuSum() {
+        val KoMTanYao = koutuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoMYaoThu = koutuMeiYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoATanYao = koutuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoAYaoThu = koutuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaMTanYao = kantuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaMYaoThu = kantuMeiYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+
+        resultInt += KoMTanYao * 2 + KoMYaoThu * 4
+        +KoATanYao * 4 + KoAYaoThu * 8
+        +KaMTanYao * 8 + KaMYaoThu * 16
+        +KaATanYao * 16 + KaAYaoThu * 32
+    }
+
+    private fun selectCheck(): Boolean {
+        val STanYao = shuntuTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val SYaoThu = shuntuYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoMTanYao = koutuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoMYaoThu = koutuMeiYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoATanYao = koutuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KoAYaoThu = koutuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaMTanYao = kantuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaMYaoThu = kantuMeiYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
+        val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
+        val sumResult = STanYao + SYaoThu + KoMTanYao + KoMYaoThu + KoATanYao + KoAYaoThu + KaMTanYao + KaMYaoThu + KaATanYao + KaAYaoThu
+        //5つ以上の面子がないかの判定
+        return sumResult <= 4
+
     }
 
 }

@@ -167,7 +167,7 @@
                 app:layout_row="1" />
 
             <Spinner
-                android:id="@+id/shunTT"
+                android:id="@+id/shunTanYao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -175,7 +175,7 @@
                 app:layout_row="1" />
 
             <Spinner
-                android:id="@+id/shunTY"
+                android:id="@+id/shunYaoThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -191,7 +191,7 @@
                 app:layout_row="2" />
 
             <Spinner
-                android:id="@+id/kouMTT"
+                android:id="@+id/kouMTanYao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -199,7 +199,7 @@
                 app:layout_row="2" />
 
             <Spinner
-                android:id="@+id/kouMTY"
+                android:id="@+id/kouMYaoThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -215,7 +215,7 @@
                 app:layout_row="3" />
 
             <Spinner
-                android:id="@+id/kouATT"
+                android:id="@+id/kouATanYao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -223,7 +223,7 @@
                 app:layout_row="3" />
 
             <Spinner
-                android:id="@+id/kouATY"
+                android:id="@+id/kouAYaoThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -239,7 +239,7 @@
                 app:layout_row="4" />
 
             <Spinner
-                android:id="@+id/kanMTT"
+                android:id="@+id/kanMTanYao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -247,7 +247,7 @@
                 app:layout_row="4" />
 
             <Spinner
-                android:id="@+id/kanMTY"
+                android:id="@+id/kanMYaoThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -263,7 +263,7 @@
                 app:layout_row="5" />
 
             <Spinner
-                android:id="@+id/kanATT"
+                android:id="@+id/kanATanYao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -271,7 +271,7 @@
                 app:layout_row="5" />
 
             <Spinner
-                android:id="@+id/kanATY"
+                android:id="@+id/kanAYaoThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
