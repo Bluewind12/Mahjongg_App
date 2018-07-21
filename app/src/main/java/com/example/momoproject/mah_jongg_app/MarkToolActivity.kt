@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import kotlinx.android.synthetic.main.mark_tool.*
+import kotlin.math.ceil
 import kotlin.math.floor
 
 class MarkToolActivity : AppCompatActivity() {
@@ -32,7 +33,7 @@ class MarkToolActivity : AppCompatActivity() {
     private lateinit var kantuAnTyuTyanSpinner: Spinner
     private lateinit var kantuAnYaoThuSpinner: Spinner
     //計算
-    private lateinit var resuluButton: Button
+    private lateinit var resultButton: Button
     private lateinit var resultText: TextView
 
     var resultInt = 0
@@ -42,9 +43,10 @@ class MarkToolActivity : AppCompatActivity() {
         setContentView(R.layout.mark_tool)
         init()
 
-        resuluButton.setOnClickListener {
+        resultButton.setOnClickListener {
             //初期化
             resultInt = 0
+            var sumCheck = true
 
             val compS = completionSpinner.selectedItem.toString()
             when (compS) {
@@ -70,20 +72,32 @@ class MarkToolActivity : AppCompatActivity() {
                 }
                 "ピンフ：ツモ" -> {
                     resultInt += 20 + 0
+                    sumCheck = false
                 }
                 "ピンフ：ロン" -> {
                     resultInt += 20 + 10
+                    sumCheck = false
                 }
                 "七対子：ツモ" -> {
                     resultInt += 20 + 5
+                    sumCheck = false
                 }
                 "七対子：ロン" -> {
                     resultInt += 20 + 5
+                    sumCheck = false
                 }
             }
+            if (sumCheck) {
+                val resultUp = ceil(resultInt / 10.0)
+                if (selectCheck()) {
+                    resultText.text =  getString(R.string.markResultC, resultUp.toInt()*10)
+                } else {
+                    resultText.text = getString(R.string.error)
+                }
+            } else {
+                resultText.text =  getString(R.string.markResultC, resultInt)
+            }
         }
-
-
     }
 
     private fun init() {
@@ -109,7 +123,7 @@ class MarkToolActivity : AppCompatActivity() {
         kantuAnTyuTyanSpinner = findViewById(R.id.kanATanYao)
         kantuAnYaoThuSpinner = findViewById(R.id.kanAYaoThu)
         //計算
-        resuluButton = findViewById(R.id.calculateButton)
+        resultButton = findViewById(R.id.calculateButton)
         resultText = findViewById(R.id.markResultText)
     }
 
@@ -117,12 +131,7 @@ class MarkToolActivity : AppCompatActivity() {
         headSum()
         waitSum()
         mentuSum()
-        val resultUp = floor(resultInt / 10.0)
-        if (selectCheck()) {
-            getString(R.string.markResultC, resultUp.toInt())
-        } else {
-            resultText.text = getString(R.string.error)
-        }
+
     }
 
     private fun headSum() {
@@ -180,10 +189,10 @@ class MarkToolActivity : AppCompatActivity() {
         val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
 
-        resultInt += KoMTanYao * 2 + KoMYaoThu * 4
+        resultInt +=( KoMTanYao * 2 + KoMYaoThu * 4
         +KoATanYao * 4 + KoAYaoThu * 8
         +KaMTanYao * 8 + KaMYaoThu * 16
-        +KaATanYao * 16 + KaAYaoThu * 32
+        +KaATanYao * 16 + KaAYaoThu * 32)
     }
 
     private fun selectCheck(): Boolean {
