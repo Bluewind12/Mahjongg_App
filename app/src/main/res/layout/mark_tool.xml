@@ -167,7 +167,7 @@
                 app:layout_row="1" />
 
             <Spinner
-                android:id="@+id/jyunTT"
+                android:id="@+id/shunTT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
@@ -175,7 +175,7 @@
                 app:layout_row="1" />
 
             <Spinner
-                android:id="@+id/junTY"
+                android:id="@+id/shunTY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/list6"
