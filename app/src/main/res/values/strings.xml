@@ -1,23 +1,6 @@
 <resources>
-    <string name="app_name">Mah-jongg_App</string>
-    <string name="point">ツール</string>
-    <string name="tools">⚙</string>
-    <string name="han">翻数</string>
-    <string name="fu">符数</string>
-    <string name="oya">親</string>
-    <string name="ko">子</string>
-    <string name="pointTableP">親：点数表</string>
-    <string name="pointTableC">子：点数表</string>
-    <string name="fuImage">符計算表</string>
-    <string name="function">計算</string>
-
-    <string name="parentPoint">%d：(%dオール)</string>
-    <string name="childPoint">%d：(%d,%d)</string>
-    <string name="place">%d本場</string>
-
-    <string name="pointAlias">%s\n%d</string>
-    <string name="kihon">基本点</string>
-
+    <!-- String型 文字列:List -->
+    <!-- List:飜数 -->
     <string-array name="list1">
         <item>1翻</item>
         <item>2翻</item>
@@ -32,7 +15,9 @@
         <item>11翻</item>
         <item>12翻</item>
         <item>13翻以上</item>
-    </string-array><string-array name="list2">
+    </string-array>
+    <!-- List:符数 -->
+    <string-array name="list2">
         <item>平和ツモ</item>
         <item>七対子</item>
         <item>30符</item>
@@ -45,4 +30,74 @@
         <item>100符</item>
         <item>110符</item>
     </string-array>
+    <!-- List:アガリ方 -->
+    <string-array name="list3">
+        <item>ロン：鳴きなし</item>
+        <item>ロン：鳴きあり</item>
+        <item>ツモ：鳴きなし</item>
+        <item>ツモ：鳴きあり</item>
+        <item>ツモ：リンシャン</item>
+        <item>ピンフ：ツモ</item>
+        <item>ピンフ：ロン</item>
+        <item>七対子：ツモ</item>
+        <item>七対子：ロン</item>
+    </string-array>
+    <!-- List:雀頭 -->
+    <string-array name="list4">
+        <item>数牌</item>
+        <item>三元牌</item>
+        <item>場風牌</item>
+        <item>自風牌</item>
+        <item>客風牌</item>
+        <item>場風・自風牌</item>
+    </string-array>
+    <!-- List:待ち -->
+    <string-array name="list5">
+        <item>単騎待ち（ﾀﾝｷ）</item>
+        <item>辺張待ち（ﾍﾟﾝﾁｬﾝ）</item>
+        <item>嵌張待ち（ｶﾝﾁｬﾝ）</item>
+        <item>両面待ち（ﾘｬﾝﾒﾝ）</item>
+        <item>双碰待ち（ｼｬﾝﾎﾟﾝ）</item>
+    </string-array>
+    <!-- List:待ち -->
+    <string-array name="list6">
+        <item>0組</item>
+        <item>1組</item>
+        <item>2組</item>
+        <item>3組</item>
+        <item>4組</item>
+    </string-array>
+    <!-- String型 文字列:単体 -->
+    <string name="app_name">Mah-jongg_App</string>
+    <string name="point">ツール</string>
+    <string name="tools">⚙</string>
+    <string name="han">翻数</string>
+    <string name="fu">符数</string>
+    <string name="oya">親</string>
+    <string name="ko">子</string>
+    <string name="pointTableP">親：点数表</string>
+    <string name="pointTableC">子：点数表</string>
+    <string name="fuImage">符計算表</string>
+    <string name="function">計算</string>
+    <string name="parentPoint">%d：(%dオール)</string>
+    <string name="childPoint">%d：(%d,%d)</string>
+    <string name="place">%d本場</string>
+    <string name="pointAlias">%s\n%d</string>
+    <string name="kihon">基本点</string>
+    <string name="agari">アガリ方</string>
+    <string name="head">アタマ：雀頭</string>
+    <string name="machi">待ち</string>
+    <string name="mentu">面子</string>
+    <string name="syuntu">順子</string>
+    <string name="minkoutu">明刻</string>
+    <string name="ankoutu">暗刻</string>
+    <string name="minkantu">明槓</string>
+    <string name="ankantu">暗槓</string>
+    <string name="tyutyan">中張牌</string>
+    <string name="tanyao">么九牌</string>
+    <string name="markResult">結果：〇〇符</string>
+    <string name="markResultC">結果：%d符</string>
+    <string name="error">エラー\n正しい値を入力してください</string>
+
+
 </resources>

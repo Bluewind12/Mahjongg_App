@@ -19,6 +19,7 @@ class ToolsActivity : AppCompatActivity() {
     private lateinit var pointButtonP: Button
     private lateinit var pointButtonC: Button
     private lateinit var markButton: Button
+    private lateinit var markToolButton: Button
 
     private lateinit var basicPointTextView: TextView
     private lateinit var parentTextView: TextView
@@ -34,6 +35,7 @@ class ToolsActivity : AppCompatActivity() {
         pointButtonP = findViewById(R.id.pointTableP)
         pointButtonC = findViewById(R.id.pointTableC)
         markButton = findViewById(R.id.markTable)
+        markToolButton = findViewById(R.id.markToolButton)
         basicPointTextView = findViewById(R.id.basicText)
         parentTextView = findViewById(R.id.pearentText)
         childTextView = findViewById(R.id.childText)
@@ -59,6 +61,10 @@ class ToolsActivity : AppCompatActivity() {
         markButton.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "fu")
+            startActivity(intent)
+        }
+        markToolButton.setOnClickListener {
+            val intent = Intent(this,MarkToolActivity::class.java)
             startActivity(intent)
         }
     }
