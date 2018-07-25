@@ -36,14 +36,16 @@ class ToolsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
-
+//初期化
         init()
 
+//計算の決定ボタンの動作
         okButton.setOnClickListener {
             val role = getRole()
             val mark = getMarks()
             countPoint(role + mark)
         }
+        //画面遷移系
         pointButtonP.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "oya_point")
@@ -54,37 +56,39 @@ class ToolsActivity : AppCompatActivity() {
             intent.putExtra("image", "ko_point")
             startActivity(intent)
         }
-
         markButton.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "fu")
             startActivity(intent)
         }
+        //符計算ツール画面への遷移
         markToolButton.setOnClickListener {
-            val intent = Intent(this,MarkToolActivity::class.java)
+            val intent = Intent(this, MarkToolActivity::class.java)
             startActivity(intent)
         }
 
+        //サイコロ機能
         diceButton.setOnClickListener {
-            when(Random().nextInt(6)+1){
-               1 -> rightImageView.setImageResource(R.drawable.number_1)
-               2 -> rightImageView.setImageResource(R.drawable.number_2)
-               3 -> rightImageView.setImageResource(R.drawable.number_3)
-               4 -> rightImageView.setImageResource(R.drawable.number_4)
-               5 -> rightImageView.setImageResource(R.drawable.number_5)
-               6 -> rightImageView.setImageResource(R.drawable.number_6)
+            when (Random().nextInt(6) + 1) {
+                1 -> rightImageView.setImageResource(R.drawable.number_1)
+                2 -> rightImageView.setImageResource(R.drawable.number_2)
+                3 -> rightImageView.setImageResource(R.drawable.number_3)
+                4 -> rightImageView.setImageResource(R.drawable.number_4)
+                5 -> rightImageView.setImageResource(R.drawable.number_5)
+                6 -> rightImageView.setImageResource(R.drawable.number_6)
             }
-            when(Random().nextInt(6)+1){
-               1 -> leftImageView.setImageResource(R.drawable.number_1)
-               2 -> leftImageView.setImageResource(R.drawable.number_2)
-               3 -> leftImageView.setImageResource(R.drawable.number_3)
-               4 -> leftImageView.setImageResource(R.drawable.number_4)
-               5 -> leftImageView.setImageResource(R.drawable.number_5)
-               6 -> leftImageView.setImageResource(R.drawable.number_6)
+            when (Random().nextInt(6) + 1) {
+                1 -> leftImageView.setImageResource(R.drawable.number_1)
+                2 -> leftImageView.setImageResource(R.drawable.number_2)
+                3 -> leftImageView.setImageResource(R.drawable.number_3)
+                4 -> leftImageView.setImageResource(R.drawable.number_4)
+                5 -> leftImageView.setImageResource(R.drawable.number_5)
+                6 -> leftImageView.setImageResource(R.drawable.number_6)
             }
         }
     }
 
+    //スピナーからの読み取り（翻）
     private fun getRole(): Int {
         val roleString = translateSpinner.selectedItem.toString()
         when (roleString) {
@@ -105,6 +109,7 @@ class ToolsActivity : AppCompatActivity() {
         }
     }
 
+    //スピナーからの読み取り（符）
     private fun getMarks(): Int {
         val markString = markSpinner.selectedItem.toString()
         when (markString) {
@@ -123,6 +128,7 @@ class ToolsActivity : AppCompatActivity() {
         }
     }
 
+    //点数計算
     private fun countPoint(point: Int) {
         when (point % 10) {
             5 -> setPoint(80, 40, 20)
@@ -184,6 +190,7 @@ class ToolsActivity : AppCompatActivity() {
         }
     }
 
+    //出力
     private fun setPoint(base: Int, parent: Int, child: Int) {
         if (base == 0 || parent == 0 || child == 0) {
             basicPointTextView.text = "点数なし"
@@ -203,7 +210,8 @@ class ToolsActivity : AppCompatActivity() {
         }
     }
 
-    private fun init(){
+    //初期化用
+    private fun init() {
         okButton = findViewById(R.id.calculationButton)
         pointButtonP = findViewById(R.id.pointTableP)
         pointButtonC = findViewById(R.id.pointTableC)
@@ -215,7 +223,7 @@ class ToolsActivity : AppCompatActivity() {
         translateSpinner = findViewById(R.id.hanSpinner)
         markSpinner = findViewById(R.id.markSpinner)
         diceButton = findViewById(R.id.diceButton)
-        rightImageView= findViewById(R.id.rightImage)
+        rightImageView = findViewById(R.id.rightImage)
         leftImageView = findViewById(R.id.leftImage)
 
     }
