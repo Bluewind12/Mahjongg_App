@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import java.util.*
 
 class ToolsActivity : AppCompatActivity() {
     private lateinit var okButton: Button
@@ -20,10 +21,14 @@ class ToolsActivity : AppCompatActivity() {
     private lateinit var pointButtonC: Button
     private lateinit var markButton: Button
     private lateinit var markToolButton: Button
+    private lateinit var diceButton: Button
 
     private lateinit var basicPointTextView: TextView
     private lateinit var parentTextView: TextView
     private lateinit var childTextView: TextView
+
+    private lateinit var rightImageView: ImageView
+    private lateinit var leftImageView: ImageView
 
     private lateinit var translateSpinner: Spinner
     private lateinit var markSpinner: Spinner
@@ -31,16 +36,8 @@ class ToolsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
-        okButton = findViewById(R.id.calculationButton)
-        pointButtonP = findViewById(R.id.pointTableP)
-        pointButtonC = findViewById(R.id.pointTableC)
-        markButton = findViewById(R.id.markTable)
-        markToolButton = findViewById(R.id.markToolButton)
-        basicPointTextView = findViewById(R.id.basicText)
-        parentTextView = findViewById(R.id.pearentText)
-        childTextView = findViewById(R.id.childText)
-        translateSpinner = findViewById(R.id.hanSpinner)
-        markSpinner = findViewById(R.id.markSpinner)
+
+        init()
 
         okButton.setOnClickListener {
             val role = getRole()
@@ -66,6 +63,25 @@ class ToolsActivity : AppCompatActivity() {
         markToolButton.setOnClickListener {
             val intent = Intent(this,MarkToolActivity::class.java)
             startActivity(intent)
+        }
+
+        diceButton.setOnClickListener {
+            when(Random().nextInt(6)+1){
+               1 -> rightImageView.setImageResource(R.drawable.number_1)
+               2 -> rightImageView.setImageResource(R.drawable.number_2)
+               3 -> rightImageView.setImageResource(R.drawable.number_3)
+               4 -> rightImageView.setImageResource(R.drawable.number_4)
+               5 -> rightImageView.setImageResource(R.drawable.number_5)
+               6 -> rightImageView.setImageResource(R.drawable.number_6)
+            }
+            when(Random().nextInt(6)+1){
+               1 -> leftImageView.setImageResource(R.drawable.number_1)
+               2 -> leftImageView.setImageResource(R.drawable.number_2)
+               3 -> leftImageView.setImageResource(R.drawable.number_3)
+               4 -> leftImageView.setImageResource(R.drawable.number_4)
+               5 -> leftImageView.setImageResource(R.drawable.number_5)
+               6 -> leftImageView.setImageResource(R.drawable.number_6)
+            }
         }
     }
 
@@ -185,5 +201,22 @@ class ToolsActivity : AppCompatActivity() {
             parentTextView.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
             childTextView.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
         }
+    }
+
+    private fun init(){
+        okButton = findViewById(R.id.calculationButton)
+        pointButtonP = findViewById(R.id.pointTableP)
+        pointButtonC = findViewById(R.id.pointTableC)
+        markButton = findViewById(R.id.markTable)
+        markToolButton = findViewById(R.id.markToolButton)
+        basicPointTextView = findViewById(R.id.basicText)
+        parentTextView = findViewById(R.id.pearentText)
+        childTextView = findViewById(R.id.childText)
+        translateSpinner = findViewById(R.id.hanSpinner)
+        markSpinner = findViewById(R.id.markSpinner)
+        diceButton = findViewById(R.id.diceButton)
+        rightImageView= findViewById(R.id.rightImage)
+        leftImageView = findViewById(R.id.leftImage)
+
     }
 }
