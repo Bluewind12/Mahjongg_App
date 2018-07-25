@@ -10,15 +10,16 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    //配列を用いたもの
     private lateinit var playerButtons: Array<ImageButton>
     private lateinit var timesTexts: Array<TextView>
     private lateinit var pointButtons: Array<Button>
-
+    //イメージボタン
     private lateinit var fieldButton: ImageButton
-
+    //データ記録、呼び出し用
     private lateinit var dataStore: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
-
+    //数値管理
     private var fieldNum = 0
     private var parent = 0
     private var times = 0

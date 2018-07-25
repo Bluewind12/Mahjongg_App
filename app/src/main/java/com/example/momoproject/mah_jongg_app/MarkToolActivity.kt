@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
-import kotlinx.android.synthetic.main.mark_tool.*
 import kotlin.math.ceil
-import kotlin.math.floor
 
 class MarkToolActivity : AppCompatActivity() {
 
@@ -90,12 +88,12 @@ class MarkToolActivity : AppCompatActivity() {
             if (sumCheck) {
                 val resultUp = ceil(resultInt / 10.0)
                 if (selectCheck()) {
-                    resultText.text =  getString(R.string.markResultC, resultUp.toInt()*10)
+                    resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10)
                 } else {
                     resultText.text = getString(R.string.error)
                 }
             } else {
-                resultText.text =  getString(R.string.markResultC, resultInt)
+                resultText.text = getString(R.string.markResultC, resultInt)
             }
         }
     }
@@ -189,10 +187,10 @@ class MarkToolActivity : AppCompatActivity() {
         val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
 
-        resultInt +=( KoMTanYao * 2 + KoMYaoThu * 4
-        +KoATanYao * 4 + KoAYaoThu * 8
-        +KaMTanYao * 8 + KaMYaoThu * 16
-        +KaATanYao * 16 + KaAYaoThu * 32)
+        resultInt += (KoMTanYao * 2 + KoMYaoThu * 4
+                + KoATanYao * 4 + KoAYaoThu * 8
+                + KaMTanYao * 8 + KaMYaoThu * 16
+                + KaATanYao * 16 + KaAYaoThu * 32)
     }
 
     private fun selectCheck(): Boolean {

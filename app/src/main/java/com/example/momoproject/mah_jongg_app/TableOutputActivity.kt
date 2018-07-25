@@ -3,7 +3,6 @@ package com.example.momoproject.mah_jongg_app
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageButton
-import android.widget.ImageView
 
 class TableOutputActivity : AppCompatActivity() {
     private lateinit var imageView: ImageButton

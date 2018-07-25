@@ -1,14 +1,9 @@
 package com.example.momoproject.mah_jongg_app
 
-import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Point
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.Gravity
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
