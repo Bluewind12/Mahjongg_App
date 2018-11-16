@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import net.nend.android.NendAdInterstitial
 import java.util.*
 
 class ToolsActivity : AppCompatActivity() {
@@ -83,6 +84,7 @@ class ToolsActivity : AppCompatActivity() {
         }
     }
 
+
     //スピナーからの読み取り（翻）
     private fun getRole(): Int {
         val roleString = translateSpinner.selectedItem.toString()
@@ -132,7 +134,7 @@ class ToolsActivity : AppCompatActivity() {
             8 -> setPoint(240, 120, 60)
             9 -> setPoint(320, 160, 80)
             else -> when (point) {
-            //1翻
+                //1翻
                 11 -> setPoint(0, 0, 0)
                 21 -> setPoint(0, 0, 0)
                 31 -> setPoint(10, 5, 3)
@@ -144,7 +146,7 @@ class ToolsActivity : AppCompatActivity() {
                 91 -> setPoint(29, 15, 8)
                 101 -> setPoint(32, 16, 9)
                 111 -> setPoint(36, 18, 9)
-            //2翻
+                //2翻
                 12 -> setPoint(13, 7, 4)
                 22 -> setPoint(16, 8, 4)
                 32 -> setPoint(20, 10, 5)
@@ -156,7 +158,7 @@ class ToolsActivity : AppCompatActivity() {
                 92 -> setPoint(58, 29, 15)
                 102 -> setPoint(64, 32, 16)
                 112 -> setPoint(71, 36, 18)
-            //3翻
+                //3翻
                 13 -> setPoint(26, 13, 7)
                 23 -> setPoint(32, 16, 8)
                 33 -> setPoint(39, 20, 10)
@@ -168,7 +170,7 @@ class ToolsActivity : AppCompatActivity() {
                 93 -> setPoint(80, 40, 20)
                 103 -> setPoint(80, 40, 20)
                 113 -> setPoint(80, 40, 20)
-            //4翻
+                //4翻
                 14 -> setPoint(52, 26, 13)
                 24 -> setPoint(64, 32, 16)
                 34 -> setPoint(77, 39, 20)

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import net.nend.android.NendAdInterstitial
 import kotlin.math.ceil
 
 class MarkToolActivity : AppCompatActivity() {

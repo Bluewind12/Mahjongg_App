@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import net.nend.android.NendAdInterstitial
 
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
@@ -25,10 +26,9 @@ class MainActivity : AppCompatActivity() {
     private var times = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
+        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
         setContentView(R.layout.activity_main)
-
         //初期状態セット
         initialSetting()
         //回転セット
@@ -131,6 +131,7 @@ class MainActivity : AppCompatActivity() {
         editor.putInt("times", times)
         editor.putInt("parent", parent)
         editor.apply()
+        NendAdInterstitial.showAd(this)
     }
 
     //プレイヤー状態のセット
@@ -154,5 +155,6 @@ class MainActivity : AppCompatActivity() {
             3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
             else -> error("error")
         }
+        NendAdInterstitial.showAd(this)
     }
 }

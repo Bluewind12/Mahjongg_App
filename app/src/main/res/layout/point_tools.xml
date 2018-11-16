@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <android.support.constraint.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -28,8 +27,8 @@
             android:id="@+id/calculationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/function"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,13 +47,9 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="48dp"
             android:text="@string/fu"
-            app:layout_constraintEnd_toStartOf="@+id/calculationButton"
-            app:layout_constraintHorizontal_bias="0.328"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/markSpinner"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
@@ -71,9 +66,9 @@
             android:id="@+id/markSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="36dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="36dp"
             android:entries="@array/list2"
             app:layout_constraintEnd_toStartOf="@+id/calculationButton"
             app:layout_constraintHorizontal_bias="0.666"
@@ -84,9 +79,9 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="5px"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +105,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toEndOf="@+id/basicText"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -132,8 +130,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toEndOf="@+id/basicText"
             app:layout_constraintTop_toBottomOf="@+id/pearentText" />
 
@@ -172,9 +173,9 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="5px"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -184,8 +185,8 @@
             android:id="@+id/view3"
             android:layout_width="5px"
             android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="@+id/childText"
             app:layout_constraintEnd_toStartOf="@+id/pearentText"
@@ -197,13 +198,13 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
             android:text="表一式"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintTop_toBottomOf="@+id/view_nend" />
 
         <Button
             android:id="@+id/pointTableP"
@@ -240,9 +241,9 @@
             android:id="@+id/view4"
             android:layout_width="match_parent"
             android:layout_height="5px"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -275,9 +276,9 @@
             android:id="@+id/view8"
             android:layout_width="match_parent"
             android:layout_height="5px"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -302,7 +303,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:text="振る"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -326,6 +329,30 @@
             app:layout_constraintTop_toBottomOf="@+id/view8"
             app:srcCompat="@drawable/number_1" />
 
+        <net.nend.android.NendAdView
+            android:id="@+id/nend"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            nendsdk:NendApiKey="@string/nend_ad50"
+            nendsdk:NendSpotId="@integer/nend_ad50" />
+
+        <View
+            android:id="@+id/view_nend"
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nend" />
+
     </android.support.constraint.ConstraintLayout>
+
 
 </ScrollView>
