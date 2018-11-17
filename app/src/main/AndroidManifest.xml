@@ -22,7 +22,8 @@
         <activity
             android:name=".ToolsActivity"
             android:label="@string/point"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".TableOutputActivity"
             android:label="親-点数表"
