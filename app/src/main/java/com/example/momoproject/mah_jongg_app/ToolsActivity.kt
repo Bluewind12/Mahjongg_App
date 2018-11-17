@@ -1,9 +1,12 @@
 package com.example.momoproject.mah_jongg_app
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
@@ -223,5 +226,30 @@ class ToolsActivity : AppCompatActivity() {
         rightImageView = findViewById(R.id.rightImage)
         leftImageView = findViewById(R.id.leftImage)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu1 -> {
+                val uri = Uri.parse(getString(R.string.privacy_URL))
+                val intent = Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                return true
+            }
+            R.id.menu2 -> {
+                val uri = Uri.parse(getString(R.string.material_URL))
+                val intent = Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                return true
+            }
+            else -> Error("Menu Select Error")
+        }
+        return false
     }
 }
