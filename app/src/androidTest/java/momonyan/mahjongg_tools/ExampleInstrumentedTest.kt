@@ -1,4 +1,4 @@
-package com.example.momoproject.mah_jongg_app
+package momonyan.mahjongg_tools
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.example.momoproject.mah_jongg_app", appContext.packageName)
+        assertEquals("momonyan.mahjongg_tools", appContext.packageName)
     }
 }

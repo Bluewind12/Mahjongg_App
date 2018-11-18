@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.momoproject.mah_jongg_app">
+    package="momonyan.mahjongg_tools">
 
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/ma-zyan"
+        android:icon="@drawable/ma_zyan500"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ma-zyan"
+        android:roundIcon="@drawable/ma_zyan500"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 

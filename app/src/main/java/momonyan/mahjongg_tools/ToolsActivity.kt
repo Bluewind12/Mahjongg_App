@@ -1,4 +1,4 @@
-package com.example.momoproject.mah_jongg_app
+package momonyan.mahjongg_tools
 
 import android.content.Intent
 import android.net.Uri
@@ -238,14 +238,14 @@ class ToolsActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.menu1 -> {
                 val uri = Uri.parse(getString(R.string.privacy_URL))
-                val intent = Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
                 return true
             }
             R.id.menu2 -> {
                 val uri = Uri.parse(getString(R.string.material_URL))
-                val intent = Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
                 return true
             }
             else -> Error("Menu Select Error")

@@ -1,4 +1,4 @@
-package com.example.momoproject.mah_jongg_app
+package momonyan.mahjongg_tools
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

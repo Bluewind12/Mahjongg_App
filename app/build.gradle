@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.momoproject.mah_jongg_app"
+        applicationId "momonyan.mahjongg_tools"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
