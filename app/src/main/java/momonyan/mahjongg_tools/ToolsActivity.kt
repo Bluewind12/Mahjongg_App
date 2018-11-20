@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import kotlinx.android.synthetic.main.point_tools.*
 import net.nend.android.NendAdInterstitial
 import java.util.*
 
@@ -68,7 +69,9 @@ class ToolsActivity : AppCompatActivity() {
 
         //サイコロ機能
         diceButton.setOnClickListener {
-            when (Random().nextInt(6) + 1) {
+            val rightDice = Random().nextInt(6) + 1
+            val leftDice = Random().nextInt(6) + 1
+            when (rightDice) {
                 1 -> rightImageView.setImageResource(R.drawable.number_1)
                 2 -> rightImageView.setImageResource(R.drawable.number_2)
                 3 -> rightImageView.setImageResource(R.drawable.number_3)
@@ -76,7 +79,7 @@ class ToolsActivity : AppCompatActivity() {
                 5 -> rightImageView.setImageResource(R.drawable.number_5)
                 6 -> rightImageView.setImageResource(R.drawable.number_6)
             }
-            when (Random().nextInt(6) + 1) {
+            when (leftDice) {
                 1 -> leftImageView.setImageResource(R.drawable.number_1)
                 2 -> leftImageView.setImageResource(R.drawable.number_2)
                 3 -> leftImageView.setImageResource(R.drawable.number_3)
@@ -84,6 +87,14 @@ class ToolsActivity : AppCompatActivity() {
                 5 -> leftImageView.setImageResource(R.drawable.number_5)
                 6 -> leftImageView.setImageResource(R.drawable.number_6)
             }
+            var direction = ""
+            when ((rightDice + leftDice) % 4) {
+                1 -> direction = "自"
+                2 -> direction = "右"
+                3 -> direction = "対"
+                0 -> direction = "左"
+            }
+            oyaDiceTextView.text = getString(R.string.diceDirection, rightDice + leftDice, direction)
         }
     }
 

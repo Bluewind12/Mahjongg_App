@@ -99,7 +99,7 @@
     <string name="markResult">結果：〇〇符</string>
     <string name="markResultC">結果：%d符</string>
     <string name="error">エラー\n正しい値を入力してください</string>
-
+    <string name="diceDirection">%d:%s</string>
 
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
