@@ -69,7 +69,7 @@
     </string-array>
 
     <!-- String型 文字列:単体 -->
-    <string name="app_name">楽々麻雀ツール</string>
+    <string name="app_name">楽々麻雀\nツール</string>
     <string name="point">ツール</string>
     <string name="tools">⚙</string>
     <string name="han">翻数</string>
