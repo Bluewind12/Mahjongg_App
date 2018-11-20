@@ -70,8 +70,8 @@
 
     <!-- String型 文字列:単体 -->
     <string name="app_name">楽々麻雀\nツール</string>
-    <string name="point">ツール</string>
-    <string name="tools">⚙</string>
+    <string name="tools">ツール</string>
+    <string name="toolsIcon">⚙</string>
     <string name="han">翻数</string>
     <string name="fu">符数</string>
     <string name="oya">親</string>
@@ -100,7 +100,7 @@
     <string name="markResultC">結果：%d符</string>
     <string name="error">エラー\n正しい値を入力してください</string>
     <string name="diceDirection">%d:%s</string>
-
+    <string name="pointCheck">点数計算</string>
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
     <string name="nend_ad50">072ec4b3933ca4229a60320dedd9b662ba3b10fa</string>
@@ -110,5 +110,6 @@
     <string name="use_material">使用素材について</string>
     <string name="privacy_URL">https://scrapbox.io/Fantasy-cherry-blossoms/%3C%E6%A5%BD%E3%80%85%E9%BA%BB%E9%9B%80%E3%83%84%E3%83%BC%E3%83%AB%3E%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC</string>
     <string name="material_URL">https://scrapbox.io/Fantasy-cherry-blossoms/%3C%E6%A5%BD%E3%80%85%E9%BA%BB%E9%9B%80%E3%83%84%E3%83%BC%E3%83%AB%3E%E4%BD%BF%E7%94%A8%E7%B4%A0%E6%9D%90</string>
+    <string name="point">点数</string>
 
 </resources>

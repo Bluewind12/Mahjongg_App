@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".ToolsActivity"
-            android:label="@string/point"
+            android:label="@string/tools"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat"/>
         <activity
