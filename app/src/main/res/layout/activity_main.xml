@@ -79,50 +79,54 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
 
-    <Button
+    <ImageButton
+        android:src="@android:drawable/ic_dialog_dialer"
         android:id="@+id/pointButton"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_setting_background"
-        android:text="@string/toolsIcon"
+        android:contentDescription="@string/toolsIcon"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
+        android:src="@android:drawable/ic_dialog_dialer"
         android:id="@+id/pointButton2"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_setting_background"
-        android:text="@string/toolsIcon"
+        android:contentDescription="@string/toolsIcon"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <ImageButton
+        android:src="@android:drawable/ic_dialog_dialer"
         android:id="@+id/pointButton3"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_setting_background"
-        android:text="@string/toolsIcon"
+        android:contentDescription="@string/toolsIcon"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
+    <ImageButton
+        android:src="@android:drawable/ic_dialog_dialer"
         android:id="@+id/pointButton4"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_setting_background"
-        android:text="@string/toolsIcon"
+        android:contentDescription="@string/toolsIcon"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     //配列を用いたもの
     private lateinit var playerButtons: Array<ImageButton>
     private lateinit var timesTexts: Array<TextView>
-    private lateinit var pointButtons: Array<Button>
+    private lateinit var pointButtons: Array<ImageButton>
     //イメージボタン
     private lateinit var fieldButton: ImageButton
     //データ記録、呼び出し用
