@@ -1,5 +1,7 @@
 package momonyan.mahjongg_tools
 
+import android.app.Activity
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -14,6 +16,9 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.point_tools.*
 import net.nend.android.NendAdInterstitial
 import java.util.*
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
+
 
 class ToolsActivity : AppCompatActivity() {
     private lateinit var okButton: Button
@@ -248,15 +253,16 @@ class ToolsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu1 -> {
-                val uri = Uri.parse(getString(R.string.privacy_URL))
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                startActivity(intent)
-                return true
-            }
-            R.id.menu2 -> {
-                val uri = Uri.parse(getString(R.string.material_URL))
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                startActivity(intent)
+                AlertDialog.Builder(this)
+                        .setTitle("Webページを開きます")
+                        .setMessage("プライバシーポリシーのページを開いてもよろしいですか")
+                        .setPositiveButton("はい") { _, _ ->
+                            val uri = Uri.parse(getString(R.string.privacy_URL))
+                            val intent = Intent(Intent.ACTION_VIEW, uri)
+                            startActivity(intent)
+                        }
+                        .setNegativeButton("いいえ", null)
+                        .show()
                 return true
             }
             else -> Error("Menu Select Error")

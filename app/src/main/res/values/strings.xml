@@ -108,8 +108,7 @@
     <!-- オプションメニュー用 -->
     <string name="privacy">プライバシーポリシー</string>
     <string name="use_material">使用素材について</string>
-    <string name="privacy_URL">https://scrapbox.io/Fantasy-cherry-blossoms/%3C%E6%A5%BD%E3%80%85%E9%BA%BB%E9%9B%80%E3%83%84%E3%83%BC%E3%83%AB%3E%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC</string>
-    <string name="material_URL">https://scrapbox.io/Fantasy-cherry-blossoms/%3C%E6%A5%BD%E3%80%85%E9%BA%BB%E9%9B%80%E3%83%84%E3%83%BC%E3%83%AB%3E%E4%BD%BF%E7%94%A8%E7%B4%A0%E6%9D%90</string>
+    <string name="privacy_URL">https://m.amebaownd.com/#/sites/593007/posts/editor/v2/5390577</string>
     <string name="point">点数</string>
 
 </resources>
