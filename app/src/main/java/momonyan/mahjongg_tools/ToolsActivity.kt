@@ -74,32 +74,13 @@ class ToolsActivity : AppCompatActivity() {
 
         //サイコロ機能
         diceButton.setOnClickListener {
-            val rightDice = Random().nextInt(6) + 1
-            val leftDice = Random().nextInt(6) + 1
-            when (rightDice) {
-                1 -> rightImageView.setImageResource(R.drawable.number_1)
-                2 -> rightImageView.setImageResource(R.drawable.number_2)
-                3 -> rightImageView.setImageResource(R.drawable.number_3)
-                4 -> rightImageView.setImageResource(R.drawable.number_4)
-                5 -> rightImageView.setImageResource(R.drawable.number_5)
-                6 -> rightImageView.setImageResource(R.drawable.number_6)
-            }
-            when (leftDice) {
-                1 -> leftImageView.setImageResource(R.drawable.number_1)
-                2 -> leftImageView.setImageResource(R.drawable.number_2)
-                3 -> leftImageView.setImageResource(R.drawable.number_3)
-                4 -> leftImageView.setImageResource(R.drawable.number_4)
-                5 -> leftImageView.setImageResource(R.drawable.number_5)
-                6 -> leftImageView.setImageResource(R.drawable.number_6)
-            }
-            var direction = ""
-            when ((rightDice + leftDice) % 4) {
-                1 -> direction = "自"
-                2 -> direction = "右"
-                3 -> direction = "対"
-                0 -> direction = "左"
-            }
-            oyaDiceTextView.text = getString(R.string.diceDirection, rightDice + leftDice, direction)
+            val count = CountFunction(1000, 100)
+
+            count.leftImage = leftImageView
+            count.rightImage = rightImageView
+            count.textView = oyaDiceTextView
+            count.start()
+
         }
     }
 
