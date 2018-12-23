@@ -1,7 +1,5 @@
 package momonyan.mahjongg_tools
 
-import android.app.Activity
-import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -14,9 +12,6 @@ import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import kotlinx.android.synthetic.main.point_tools.*
-import net.nend.android.NendAdInterstitial
-import java.util.*
-import android.content.DialogInterface
 import android.support.v7.app.AlertDialog
 
 
@@ -236,7 +231,7 @@ class ToolsActivity : AppCompatActivity() {
             R.id.menu1 -> {
                 AlertDialog.Builder(this)
                         .setTitle("Webページを開きます")
-                        .setMessage("プライバシーポリシーのページを開いてもよろしいですか")
+                        .setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか")
                         .setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.privacy_URL))
                             val intent = Intent(Intent.ACTION_VIEW, uri)

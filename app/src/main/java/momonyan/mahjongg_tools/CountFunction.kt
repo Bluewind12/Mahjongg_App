@@ -1,6 +1,5 @@
 package momonyan.mahjongg_tools
 
-import android.content.Intent
 import android.os.CountDownTimer
 import android.widget.ImageView
 import android.widget.TextView
