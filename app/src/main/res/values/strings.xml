@@ -99,6 +99,7 @@
     <string name="markResult">結果：〇〇符</string>
     <string name="markResultC">結果：%d符</string>
     <string name="error">エラー\n正しい値を入力してください</string>
+
     <string name="pointCheck">点数計算</string>
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
@@ -106,8 +107,10 @@
 
     <!-- オプションメニュー用 -->
     <string name="privacy">プライバシーポリシー</string>
-    <string name="use_material">使用素材について</string>
     <string name="privacy_URL">https://www.gensounosakura.work/posts/5390577</string>
+    <string name="enquete">意見・感想などはこちら</string>
+    <string name="enquete_url">https://goo.gl/forms/5nkpgZ3ykued2lCe2</string>
+
     <string name="point">点数</string>
 
 </resources>

@@ -241,6 +241,19 @@ class ToolsActivity : AppCompatActivity() {
                         .show()
                 return true
             }
+            R.id.menu2 -> {
+                AlertDialog.Builder(this)
+                        .setTitle("Webページを開きます")
+                        .setMessage("[意見・感想・バグ報告について]\nのページを開いてもよろしいですか？")
+                        .setPositiveButton("はい") { _, _ ->
+                            val uri = Uri.parse(getString(R.string.enquete_url))
+                            val intent = Intent(Intent.ACTION_VIEW, uri)
+                            startActivity(intent)
+                        }
+                        .setNegativeButton("いいえ", null)
+                        .show()
+                return true
+            }
             else -> Error("Menu Select Error")
         }
         return false

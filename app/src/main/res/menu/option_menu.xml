@@ -6,4 +6,9 @@
         android:icon="@drawable/kizi"
         app:showAsAction="always"
         android:title="@string/privacy" />
+    <item
+        android:id="@+id/menu2"
+        android:icon="@drawable/anke"
+        app:showAsAction="ifRoom"
+        android:title="@string/enquete" />
 </menu>
