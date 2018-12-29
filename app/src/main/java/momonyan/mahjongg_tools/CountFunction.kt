@@ -5,9 +5,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
 
-/**
- * カウントダウンの動作
- */
 class CountFunction(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
     lateinit var rightImage: ImageView
     lateinit var leftImage: ImageView

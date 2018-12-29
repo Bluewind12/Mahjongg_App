@@ -3,6 +3,7 @@ package momonyan.mahjongg_tools
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
@@ -12,28 +13,27 @@ import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import kotlinx.android.synthetic.main.point_tools.*
-import android.support.v7.app.AlertDialog
 
 
 class ToolsActivity : AppCompatActivity() {
-    private lateinit var okButton: Button
-    private lateinit var pointButtonP: Button
-    private lateinit var pointButtonC: Button
-    private lateinit var markButton: Button
-    private lateinit var markToolButton: Button
-    private lateinit var diceButton: Button
+    private lateinit var okButton : Button
+    private lateinit var pointButtonP : Button
+    private lateinit var pointButtonC : Button
+    private lateinit var markButton : Button
+    private lateinit var markToolButton : Button
+    private lateinit var diceButton : Button
 
-    private lateinit var basicPointTextView: TextView
-    private lateinit var parentTextView: TextView
-    private lateinit var childTextView: TextView
+    private lateinit var basicPointTextView : TextView
+    private lateinit var parentTextView : TextView
+    private lateinit var childTextView : TextView
 
-    private lateinit var rightImageView: ImageView
-    private lateinit var leftImageView: ImageView
+    private lateinit var rightImageView : ImageView
+    private lateinit var leftImageView : ImageView
 
-    private lateinit var translateSpinner: Spinner
-    private lateinit var markSpinner: Spinner
+    private lateinit var translateSpinner : Spinner
+    private lateinit var markSpinner : Spinner
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
 //初期化
@@ -81,7 +81,7 @@ class ToolsActivity : AppCompatActivity() {
 
 
     //スピナーからの読み取り（翻）
-    private fun getRole(): Int {
+    private fun getRole() : Int {
         val roleString = translateSpinner.selectedItem.toString()
         when (roleString) {
             "1翻" -> return 1
@@ -102,7 +102,7 @@ class ToolsActivity : AppCompatActivity() {
     }
 
     //スピナーからの読み取り（符）
-    private fun getMarks(): Int {
+    private fun getMarks() : Int {
         val markString = markSpinner.selectedItem.toString()
         when (markString) {
             "平和ツモ" -> return 10
@@ -121,7 +121,7 @@ class ToolsActivity : AppCompatActivity() {
     }
 
     //点数計算
-    private fun countPoint(point: Int) {
+    private fun countPoint(point : Int) {
         when (point % 10) {
             5 -> setPoint(80, 40, 20)
             6 -> setPoint(120, 60, 30)
@@ -183,7 +183,7 @@ class ToolsActivity : AppCompatActivity() {
     }
 
     //出力
-    private fun setPoint(base: Int, parent: Int, child: Int) {
+    private fun setPoint(base : Int, parent : Int, child : Int) {
         if (base == 0 || parent == 0 || child == 0) {
             basicPointTextView.text = "点数なし"
             parentTextView.text = "点数なし"
@@ -220,13 +220,13 @@ class ToolsActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu : Menu) : Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
         when (item.itemId) {
             R.id.menu1 -> {
                 AlertDialog.Builder(this)
