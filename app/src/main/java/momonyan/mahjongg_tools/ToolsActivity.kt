@@ -83,20 +83,20 @@ class ToolsActivity : AppCompatActivity() {
     //スピナーからの読み取り（翻）
     private fun getRole() : Int {
         val roleString = translateSpinner.selectedItem.toString()
-        when (roleString) {
-            "1翻" -> return 1
-            "2翻" -> return 2
-            "3翻" -> return 3
-            "4翻" -> return 4
-            "5翻" -> return 5
-            "6翻" -> return 6
-            "7翻" -> return 6
-            "8翻" -> return 7
-            "9翻" -> return 7
-            "10翻" -> return 7
-            "11翻" -> return 8
-            "12翻" -> return 8
-            "13翻以上" -> return 9
+        return when (roleString) {
+            "1翻" ->  1
+            "2翻" ->  2
+            "3翻" ->  3
+            "4翻" ->  4
+            "5翻" ->  5
+            "6翻" ->  6
+            "7翻" ->  6
+            "8翻" ->  7
+            "9翻" ->  7
+            "10翻" ->  7
+            "11翻" ->  8
+            "12翻" ->  8
+            "13翻以上" ->  9
             else -> error("翻エラー")
         }
     }
@@ -104,18 +104,18 @@ class ToolsActivity : AppCompatActivity() {
     //スピナーからの読み取り（符）
     private fun getMarks() : Int {
         val markString = markSpinner.selectedItem.toString()
-        when (markString) {
-            "平和ツモ" -> return 10
-            "七対子" -> return 20
-            "30符" -> return 30
-            "40符" -> return 40
-            "50符" -> return 50
-            "60符" -> return 60
-            "70符" -> return 70
-            "80符" -> return 80
-            "90符" -> return 90
-            "100符" -> return 100
-            "110符" -> return 110
+        return when (markString) {
+            "平和ツモ" -> 10
+            "七対子" -> 20
+            "30符" -> 30
+            "40符" -> 40
+            "50符" -> 50
+            "60符" -> 60
+            "70符" -> 70
+            "80符" -> 80
+            "90符" -> 90
+            "100符" -> 100
+            "110符" -> 110
             else -> error("符エラー")
         }
     }

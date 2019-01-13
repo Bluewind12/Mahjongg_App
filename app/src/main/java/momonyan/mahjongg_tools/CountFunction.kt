@@ -21,7 +21,7 @@ class CountFunction(millisInFuture: Long, countDownInterval: Long) : CountDownTi
             else -> direction = ""
         }
         val sumDice = rightDice + leftDice
-        textView.text = "賽：" + sumDice + "-" + direction
+        textView.text = "賽：$sumDice - $direction"
     }
 
     // インターバルで呼ばれる
