@@ -10,33 +10,33 @@ import kotlin.math.ceil
 class MarkToolActivity : AppCompatActivity() {
 
     //和了
-    private lateinit var completionSpinner: Spinner
+    private lateinit var completionSpinner : Spinner
     //雀頭
-    private lateinit var headSpinner: Spinner
+    private lateinit var headSpinner : Spinner
     //待ち
-    private lateinit var waitSpinner: Spinner
+    private lateinit var waitSpinner : Spinner
     //順子
-    private lateinit var shuntuTyuTyanSpinner: Spinner
-    private lateinit var shuntuYaoThuSpinner: Spinner
+    private lateinit var shuntuTyuTyanSpinner : Spinner
+    private lateinit var shuntuYaoThuSpinner : Spinner
     //明刻子
-    private lateinit var koutuMeiTyuTyanSpinner: Spinner
-    private lateinit var koutuMeiYaoThuSpinner: Spinner
+    private lateinit var koutuMeiTyuTyanSpinner : Spinner
+    private lateinit var koutuMeiYaoThuSpinner : Spinner
     //暗刻子
-    private lateinit var koutuAnTyuTyanSpinner: Spinner
-    private lateinit var koutuAnYaoThuSpinner: Spinner
+    private lateinit var koutuAnTyuTyanSpinner : Spinner
+    private lateinit var koutuAnYaoThuSpinner : Spinner
     //明槓子
-    private lateinit var kantuMeiTyuTyanSpinner: Spinner
-    private lateinit var kantuMeiYaoThuSpinner: Spinner
+    private lateinit var kantuMeiTyuTyanSpinner : Spinner
+    private lateinit var kantuMeiYaoThuSpinner : Spinner
     //暗槓子
-    private lateinit var kantuAnTyuTyanSpinner: Spinner
-    private lateinit var kantuAnYaoThuSpinner: Spinner
+    private lateinit var kantuAnTyuTyanSpinner : Spinner
+    private lateinit var kantuAnYaoThuSpinner : Spinner
     //計算
-    private lateinit var resultButton: Button
-    private lateinit var resultText: TextView
+    private lateinit var resultButton : Button
+    private lateinit var resultText : TextView
 
     var resultInt = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mark_tool)
         init()
@@ -88,12 +88,12 @@ class MarkToolActivity : AppCompatActivity() {
             if (sumCheck) {
                 val resultUp = ceil(resultInt / 10.0)
                 if (selectCheck()) {
-                    resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10)
+                    resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10, resultInt)
                 } else {
                     resultText.text = getString(R.string.error)
                 }
             } else {
-                resultText.text = getString(R.string.markResultC, resultInt)
+                resultText.text = getString(R.string.markResultC, resultInt, resultInt)
             }
         }
     }
@@ -187,13 +187,10 @@ class MarkToolActivity : AppCompatActivity() {
         val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
 
-        resultInt += (KoMTanYao * 2 + KoMYaoThu * 4
-                + KoATanYao * 4 + KoAYaoThu * 8
-                + KaMTanYao * 8 + KaMYaoThu * 16
-                + KaATanYao * 16 + KaAYaoThu * 32)
+        resultInt += (KoMTanYao * 2 + KoMYaoThu * 4 + KoATanYao * 4 + KoAYaoThu * 8 + KaMTanYao * 8 + KaMYaoThu * 16 + KaATanYao * 16 + KaAYaoThu * 32)
     }
 
-    private fun selectCheck(): Boolean {
+    private fun selectCheck() : Boolean {
         val STanYao = shuntuTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val SYaoThu = shuntuYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
         val KoMTanYao = koutuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
