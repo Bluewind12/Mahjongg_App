@@ -3,28 +3,29 @@ package momonyan.mahjongg_tools
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.ImageButton
 import android.widget.TextView
 import net.nend.android.NendAdInterstitial
 
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
-    private lateinit var playerButtons: Array<ImageButton>
-    private lateinit var timesTexts: Array<TextView>
-    private lateinit var pointButtons: Array<ImageButton>
+    private lateinit var playerButtons : Array<ImageButton>
+    private lateinit var timesTexts : Array<TextView>
+    private lateinit var boostTexts : Array<TextView>
+    private lateinit var pointButtons : Array<ImageButton>
     //イメージボタン
-    private lateinit var fieldButton: ImageButton
+    private lateinit var fieldButton : ImageButton
     //データ記録、呼び出し用
-    private lateinit var dataStore: SharedPreferences
-    private lateinit var editor: SharedPreferences.Editor
+    private lateinit var dataStore : SharedPreferences
+    private lateinit var editor : SharedPreferences.Editor
     //数値管理
     private var fieldNum = 0
     private var parent = 0
     private var times = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
         setContentView(R.layout.activity_main)
@@ -81,22 +82,11 @@ class MainActivity : AppCompatActivity() {
 
     //初期設定
     private fun initialSetting() {
-        playerButtons = arrayOf(
-                findViewById(R.id.imageButton1),
-                findViewById(R.id.imageButton2),
-                findViewById(R.id.imageButton3),
-                findViewById(R.id.imageButton4))
-        timesTexts = arrayOf(
-                findViewById(R.id.honba1),
-                findViewById(R.id.honba2),
-                findViewById(R.id.honba3),
-                findViewById(R.id.honba4))
+        playerButtons = arrayOf(findViewById(R.id.imageButton1), findViewById(R.id.imageButton2), findViewById(R.id.imageButton3), findViewById(R.id.imageButton4))
+        timesTexts = arrayOf(findViewById(R.id.honba1), findViewById(R.id.honba2), findViewById(R.id.honba3), findViewById(R.id.honba4))
+        boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
         fieldButton = findViewById(R.id.imageButtonF)
-        pointButtons = arrayOf(
-                findViewById(R.id.pointButton),
-                findViewById(R.id.pointButton2),
-                findViewById(R.id.pointButton3),
-                findViewById(R.id.pointButton4))
+        pointButtons = arrayOf(findViewById(R.id.pointButton), findViewById(R.id.pointButton2), findViewById(R.id.pointButton3), findViewById(R.id.pointButton4))
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         editor = dataStore.edit()
         editor.apply()
@@ -115,13 +105,17 @@ class MainActivity : AppCompatActivity() {
         timesTexts[1].rotation = 0f
         timesTexts[2].rotation = -90f
         timesTexts[3].rotation = -180f
+        boostTexts[0].rotation = 90f
+        boostTexts[1].rotation = 0f
+        boostTexts[2].rotation = -90f
+        boostTexts[3].rotation = -180f
     }
 
     //状態変更
-    private fun changeState(touchButtonNum: Int) {
+    private fun changeState(touchButtonNum : Int) {
         if (parent == touchButtonNum) {
             times++
-            timesTexts[touchButtonNum].text = getString(R.string.place, times)
+            setState(touchButtonNum)
         } else {
             parent = touchButtonNum
             times = 0
@@ -134,7 +128,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //プレイヤー状態のセット
-    private fun setState(setNum: Int) {
+    private fun setState(setNum : Int) {
         playerButtons[setNum].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
@@ -143,10 +137,11 @@ class MainActivity : AppCompatActivity() {
         timesTexts[(setNum + 1) % 4].text = " "
         timesTexts[(setNum + 2) % 4].text = " "
         timesTexts[(setNum + 3) % 4].text = " "
+        setBoostWind()
     }
 
     //場のセット
-    private fun setFieldWind(windNum: Int) {
+    private fun setFieldWind(windNum : Int) {
         when (windNum) {
             0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
             1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)
@@ -154,6 +149,15 @@ class MainActivity : AppCompatActivity() {
             3 -> fieldButton.setImageResource(R.drawable.hougaku4_kita)
             else -> error("error")
         }
+        setState(parent)
         NendAdInterstitial.showAd(this)
+    }
+
+    private fun setBoostWind() {
+        //0東, 1南, 2西 ,3北
+        boostTexts[(parent + fieldNum) % 4].text = "場風"
+        boostTexts[(parent + fieldNum + 1) % 4].text = ""
+        boostTexts[(parent + fieldNum + 2) % 4].text = ""
+        boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
 }

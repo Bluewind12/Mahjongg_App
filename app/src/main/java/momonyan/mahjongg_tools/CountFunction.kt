@@ -12,7 +12,7 @@ class CountFunction(millisInFuture: Long, countDownInterval: Long) : CountDownTi
     var rightDice = 0
     var leftDice = 0
     override fun onFinish() {
-        var direction = ""
+        val direction :String
         when ((rightDice + leftDice) % 4) {
             1 -> direction = "自"
             2 -> direction = "右"
@@ -21,7 +21,7 @@ class CountFunction(millisInFuture: Long, countDownInterval: Long) : CountDownTi
             else -> direction = ""
         }
         val sumDice = rightDice + leftDice
-        textView.text = "賽：$sumDice - $direction"
+        textView.text = "$sumDice - $direction"
     }
 
     // インターバルで呼ばれる

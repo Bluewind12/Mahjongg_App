@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "977896163467",
+    "firebase_url": "https://momonyan-apps.firebaseio.com",
+    "project_id": "momonyan-apps",
+    "storage_bucket": "momonyan-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977896163467:android:01efa90d100fb08a",
+        "android_client_info": {
+          "package_name": "momonyan.mahjongg_tools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977896163467-oo16de6r645hkarivj3n3n75lnvrhcll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "momonyan.mahjongg_tools",
+            "certificate_hash": "9922198f06a8960e21b110ab03c06ed245fd6298"
+          }
+        },
+        {
+          "client_id": "977896163467-ovt7njanp7mfp2pdl1lpjfeinh84sv1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByM_s4U7vzh8GgICtWZ2UUy4gdkDxNeUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977896163467-ovt7njanp7mfp2pdl1lpjfeinh84sv1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
