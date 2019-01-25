@@ -9,7 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+    
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ankoutu"
+                android:text="@string/ankantu"
                 android:textSize="18sp"
                 app:layout_column="0"
                 app:layout_gravity="center"
@@ -307,7 +307,7 @@
             app:layout_constraintBottom_toTopOf="@+id/nend2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
+    
         <TextView
             android:id="@+id/markResultText"
             android:layout_width="wrap_content"
@@ -318,8 +318,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/calculateButton"
-            app:layout_constraintStart_toEndOf="@+id/calculateButton"
-            app:layout_constraintTop_toTopOf="@+id/calculateButton" />
+            app:layout_constraintStart_toEndOf="@+id/calculateButton" />
 
         <net.nend.android.NendAdView
             android:id="@+id/nend2"
@@ -330,5 +329,50 @@
             app:layout_constraintStart_toStartOf="parent"
             nendsdk:NendApiKey="@string/nend_ad100"
             nendsdk:NendSpotId="@integer/nend_ad100" />
+    
+        <TextView
+            android:id="@+id/syoukei1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintStart_toEndOf="@+id/spinner" />
+    
+        <TextView
+            android:id="@+id/syoukei2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+            app:layout_constraintStart_toEndOf="@+id/spinner2" />
+    
+        <TextView
+            android:id="@+id/syoukei3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner3"
+            app:layout_constraintStart_toEndOf="@+id/spinner3" />
+    
+        <TextView
+            android:id="@+id/syoukei4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
+            app:layout_constraintStart_toEndOf="@+id/gridLayout" />
+    
+        <TextView
+            android:id="@+id/syoukei5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/markResultText"
+            app:layout_constraintStart_toEndOf="@+id/calculateButton" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

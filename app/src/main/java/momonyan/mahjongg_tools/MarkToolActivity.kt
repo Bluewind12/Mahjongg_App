@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import kotlinx.android.synthetic.main.mark_tool.*
 import kotlin.math.ceil
 
 class MarkToolActivity : AppCompatActivity() {
@@ -50,49 +51,63 @@ class MarkToolActivity : AppCompatActivity() {
             when (compS) {
                 "ロン：鳴きなし" -> {
                     resultInt += 20 + 10
+                    syoukei1.text = getString(R.string.markSyoukei,10)
                     calculation()
                 }
                 "ロン：鳴きあり" -> {
                     resultInt += 20
+                    syoukei1.text = getString(R.string.markSyoukei,0)
                     calculation()
                 }
                 "ツモ：鳴きなし" -> {
                     resultInt += 20 + 2
+                    syoukei1.text = getString(R.string.markSyoukei,2)
                     calculation()
                 }
                 "ツモ：鳴きあり" -> {
                     resultInt += 20 + 2
+                    syoukei1.text = getString(R.string.markSyoukei,2)
                     calculation()
                 }
                 "ツモ：リンシャン" -> {
                     resultInt += 20 + 0
+                    syoukei1.text = getString(R.string.markSyoukei,0)
                     calculation()
                 }
                 "ピンフ：ツモ" -> {
                     resultInt += 20 + 0
+                    syoukei1.text = getString(R.string.markSyoukei,20)
                     sumCheck = false
                 }
                 "ピンフ：ロン" -> {
                     resultInt += 20 + 10
+                    syoukei1.text = getString(R.string.markSyoukei,30)
                     sumCheck = false
                 }
                 "七対子：ツモ" -> {
                     resultInt += 20 + 5
+                    syoukei1.text = getString(R.string.markSyoukei,25)
                     sumCheck = false
                 }
                 "七対子：ロン" -> {
                     resultInt += 20 + 5
+                    syoukei1.text = getString(R.string.markSyoukei,25)
                     sumCheck = false
                 }
             }
             if (sumCheck) {
                 val resultUp = ceil(resultInt / 10.0)
                 if (selectCheck()) {
+                    syoukei5.text = "和了：20府"
                     resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10, resultInt)
                 } else {
                     resultText.text = getString(R.string.error)
                 }
             } else {
+                syoukei2.text =""
+                syoukei3.text =""
+                syoukei4.text =""
+                syoukei5.text =""
                 resultText.text = getString(R.string.markResultC, resultInt, resultInt)
             }
         }
@@ -137,21 +152,27 @@ class MarkToolActivity : AppCompatActivity() {
         when (headS) {
             "数牌" -> {
                 resultInt += 0
+                syoukei2.text = getString(R.string.markSyoukei,0)
             }
             "三元牌" -> {
                 resultInt += 2
+                syoukei2.text = getString(R.string.markSyoukei,2)
             }
             "場風牌" -> {
                 resultInt += 2
+                syoukei2.text = getString(R.string.markSyoukei,2)
             }
             "自風牌" -> {
                 resultInt += 2
+                syoukei2.text = getString(R.string.markSyoukei,2)
             }
             "客風牌" -> {
                 resultInt += 0
+                syoukei2.text = getString(R.string.markSyoukei,0)
             }
             "場風・自風牌" -> {
                 resultInt += 4
+                syoukei2.text = getString(R.string.markSyoukei,4)
             }
         }
     }
@@ -161,18 +182,23 @@ class MarkToolActivity : AppCompatActivity() {
         when (waitS) {
             "単騎待ち（ﾀﾝｷ）" -> {
                 resultInt += 2
+                syoukei3.text = getString(R.string.markSyoukei,2)
             }
             "辺張待ち（ﾍﾟﾝﾁｬﾝ）" -> {
                 resultInt += 2
+                syoukei3.text = getString(R.string.markSyoukei,2)
             }
             "嵌張待ち（ｶﾝﾁｬﾝ）" -> {
                 resultInt += 2
+                syoukei3.text = getString(R.string.markSyoukei,2)
             }
             "両面待ち（ﾘｬﾝﾒﾝ）" -> {
                 resultInt += 0
+                syoukei3.text = getString(R.string.markSyoukei,0)
             }
             "双碰待ち（ｼｬﾝﾎﾟﾝ）" -> {
                 resultInt += 0
+                syoukei3.text = getString(R.string.markSyoukei,0)
             }
         }
     }
@@ -187,7 +213,9 @@ class MarkToolActivity : AppCompatActivity() {
         val KaATanYao = kantuAnTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val KaAYaoThu = kantuAnYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
 
-        resultInt += (KoMTanYao * 2 + KoMYaoThu * 4 + KoATanYao * 4 + KoAYaoThu * 8 + KaMTanYao * 8 + KaMYaoThu * 16 + KaATanYao * 16 + KaAYaoThu * 32)
+        val mentu = (KoMTanYao * 2 + KoMYaoThu * 4 + KoATanYao * 4 + KoAYaoThu * 8 + KaMTanYao * 8 + KaMYaoThu * 16 + KaATanYao * 16 + KaAYaoThu * 32)
+        resultInt += mentu
+        syoukei4.text = getString(R.string.markSyoukei,mentu)
     }
 
     private fun selectCheck() : Boolean {
