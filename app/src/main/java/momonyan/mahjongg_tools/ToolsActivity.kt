@@ -1,6 +1,8 @@
 package momonyan.mahjongg_tools
 
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -33,13 +35,17 @@ class ToolsActivity : AppCompatActivity() {
     private lateinit var translateSpinner : Spinner
     private lateinit var markSpinner : Spinner
 
+    private lateinit var audioAttributes : AudioAttributes
+    private lateinit var soundPool : SoundPool
+    private var sound = 0
+
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
-//初期化
+        //初期化
         init()
 
-//計算の決定ボタンの動作
+        //計算の決定ボタンの動作
         okButton.setOnClickListener {
             val role = getRole()
             val mark = getMarks()
@@ -70,12 +76,13 @@ class ToolsActivity : AppCompatActivity() {
         //サイコロ機能
         diceButton.setOnClickListener {
             val count = CountFunction(1000, 100)
-
             count.leftImage = leftImageView
             count.rightImage = rightImageView
             count.textView = oyaDiceTextView
             count.start()
 
+            //効果音
+            soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
     }
 
@@ -84,19 +91,19 @@ class ToolsActivity : AppCompatActivity() {
     private fun getRole() : Int {
         val roleString = translateSpinner.selectedItem.toString()
         return when (roleString) {
-            "1翻" ->  1
-            "2翻" ->  2
-            "3翻" ->  3
-            "4翻" ->  4
-            "5翻" ->  5
-            "6翻" ->  6
-            "7翻" ->  6
-            "8翻" ->  7
-            "9翻" ->  7
-            "10翻" ->  7
-            "11翻" ->  8
-            "12翻" ->  8
-            "13翻以上" ->  9
+            "1翻" -> 1
+            "2翻" -> 2
+            "3翻" -> 3
+            "4翻" -> 4
+            "5翻" -> 5
+            "6翻" -> 6
+            "7翻" -> 6
+            "8翻" -> 7
+            "9翻" -> 7
+            "10翻" -> 7
+            "11翻" -> 8
+            "12翻" -> 8
+            "13翻以上" -> 9
             else -> error("翻エラー")
         }
     }
@@ -218,6 +225,10 @@ class ToolsActivity : AppCompatActivity() {
         rightImageView = findViewById(R.id.rightImage)
         leftImageView = findViewById(R.id.leftImage)
 
+        audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
+        soundPool = SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(2).build()
+        sound = soundPool.load(this, R.raw.dise, 1);
+
     }
 
     override fun onCreateOptionsMenu(menu : Menu) : Boolean {
@@ -229,29 +240,19 @@ class ToolsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item : MenuItem) : Boolean {
         when (item.itemId) {
             R.id.menu1 -> {
-                AlertDialog.Builder(this)
-                        .setTitle("Webページを開きます")
-                        .setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか")
-                        .setPositiveButton("はい") { _, _ ->
-                            val uri = Uri.parse(getString(R.string.privacy_URL))
-                            val intent = Intent(Intent.ACTION_VIEW, uri)
-                            startActivity(intent)
-                        }
-                        .setNegativeButton("いいえ", null)
-                        .show()
+                AlertDialog.Builder(this).setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                    val uri = Uri.parse(getString(R.string.privacy_URL))
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    startActivity(intent)
+                }.setNegativeButton("いいえ", null).show()
                 return true
             }
             R.id.menu2 -> {
-                AlertDialog.Builder(this)
-                        .setTitle("Webページを開きます")
-                        .setMessage("[意見・感想・バグ報告について]\nのページを開いてもよろしいですか？")
-                        .setPositiveButton("はい") { _, _ ->
-                            val uri = Uri.parse(getString(R.string.enquete_url))
-                            val intent = Intent(Intent.ACTION_VIEW, uri)
-                            startActivity(intent)
-                        }
-                        .setNegativeButton("いいえ", null)
-                        .show()
+                AlertDialog.Builder(this).setTitle("Webページを開きます").setMessage("[意見・感想・バグ報告について]\nのページを開いてもよろしいですか？").setPositiveButton("はい") { _, _ ->
+                    val uri = Uri.parse(getString(R.string.enquete_url))
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    startActivity(intent)
+                }.setNegativeButton("いいえ", null).show()
                 return true
             }
             else -> Error("Menu Select Error")
