@@ -1,10 +1,8 @@
 package momonyan.mahjongg_tools
 
-import android.app.ActionBar
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
@@ -117,15 +115,30 @@ class MarkToolActivity : AppCompatActivity() {
         }
 
         gridLayout.post {
-            while (spaceView1.minimumWidth != gridLayout.width) {
-                //TODO Layout設定
-                Log.d("TAGA","TEST${gridLayout.width}")
-                spaceView1.layoutParams.width = gridLayout.width
-                spaceView2.layoutParams.width = gridLayout.width
-                spaceView3.layoutParams.width = gridLayout.width
-                spaceView4.layoutParams.width = gridLayout.width
-                spaceView5.layoutParams.width = gridLayout.width
-            }
+            Log.d("TAGA", "${gridLayout.width} = ${spaceView1.width}")
+            //横線
+            //数値入れ
+            spaceView1.layoutParams.width = gridLayout.width
+            spaceView2.layoutParams.width = gridLayout.width
+            spaceView3.layoutParams.width = gridLayout.width
+            spaceView4.layoutParams.width = gridLayout.width
+            spaceView5.layoutParams.width = gridLayout.width
+            //セット
+            spaceView1.requestLayout()
+            spaceView2.requestLayout()
+            spaceView3.requestLayout()
+            spaceView4.requestLayout()
+            spaceView5.requestLayout()
+
+            //縦線
+            //数値入れ
+            spaceView6.layoutParams.height = gridLayout.height
+            spaceView7.layoutParams.height = gridLayout.height
+            //セット
+            spaceView6.requestLayout()
+            spaceView7.requestLayout()
+
+            Log.d("TAGA", "${gridLayout.width} = ${spaceView1.width}")
         }
     }
 

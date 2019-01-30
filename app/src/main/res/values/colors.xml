@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="noFill">#FFFFFF</color>
     <color name="Oya">#DD2222</color>
+    <color name="gridBorderColor">#AAAAAA</color>
 </resources>

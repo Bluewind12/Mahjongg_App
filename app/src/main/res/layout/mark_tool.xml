@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/markToolScrollLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
@@ -134,8 +135,6 @@
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="8dp"
-			android:layout_marginEnd="16dp"
-			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="@+id/textView16"
 			app:layout_constraintTop_toBottomOf="@+id/textView16">
 			
@@ -159,7 +158,7 @@
 				
 				android:text="@string/tyutyan"
 				android:textSize="18sp"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="0" />
 			
@@ -170,17 +169,18 @@
 				android:layout_margin="2dp"
 				android:text="@string/tanyao"
 				android:textSize="18sp"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="0" />
 			
 			<View
 				android:id="@+id/spaceView1"
 				android:layout_width="1dp"
-				android:layout_height="2dp"
-				android:background="@color/colorAccent"
+				android:layout_height="4dp"
+				android:alpha="1"
+				android:background="@color/gridBorderColor"
 				app:layout_column="0"
-				app:layout_columnSpan="3"
+				app:layout_columnSpan="5"
 				app:layout_row="1" />
 			
 			<!-- 2行目 -->
@@ -201,7 +201,7 @@
 				android:layout_height="wrap_content"
 				android:layout_margin="2dp"
 				android:entries="@array/list6"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="2" />
 			
@@ -212,7 +212,7 @@
 				android:layout_margin="2dp"
 				
 				android:entries="@array/list6"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="2" />
 			
@@ -220,9 +220,10 @@
 				android:id="@+id/spaceView2"
 				android:layout_width="1dp"
 				android:layout_height="2dp"
-				android:background="@color/colorAccent"
+				android:alpha="0.75"
+				android:background="@color/gridBorderColor"
 				app:layout_column="0"
-				app:layout_columnSpan="3"
+				app:layout_columnSpan="5"
 				app:layout_row="3" />
 			
 			<!-- 3行目 -->
@@ -245,7 +246,7 @@
 				android:layout_height="wrap_content"
 				android:layout_margin="2dp"
 				android:entries="@array/list6"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="4" />
 			
@@ -255,7 +256,7 @@
 				android:layout_height="wrap_content"
 				android:layout_margin="2dp"
 				android:entries="@array/list6"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="4" />
 			
@@ -263,9 +264,10 @@
 				android:id="@+id/spaceView3"
 				android:layout_width="1dp"
 				android:layout_height="2dp"
-				android:background="@color/colorAccent"
+				android:alpha="0.75"
+				android:background="@color/gridBorderColor"
 				app:layout_column="0"
-				app:layout_columnSpan="3"
+				app:layout_columnSpan="5"
 				app:layout_row="5" />
 			
 			<!-- 4行目 -->
@@ -290,7 +292,7 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="6" />
 			
@@ -302,7 +304,7 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="6" />
 			
@@ -310,9 +312,10 @@
 				android:id="@+id/spaceView4"
 				android:layout_width="1dp"
 				android:layout_height="2dp"
-				android:background="@color/colorAccent"
+				android:alpha="0.75"
+				android:background="@color/gridBorderColor"
 				app:layout_column="0"
-				app:layout_columnSpan="3"
+				app:layout_columnSpan="5"
 				app:layout_row="7" />
 			<!-- 5行目 -->
 			<TextView
@@ -336,7 +339,7 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="8" />
 			
@@ -348,7 +351,7 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="8" />
 			
@@ -356,9 +359,10 @@
 				android:id="@+id/spaceView5"
 				android:layout_width="1dp"
 				android:layout_height="2dp"
-				android:background="@color/colorAccent"
+				android:alpha="0.75"
+				android:background="@color/gridBorderColor"
 				app:layout_column="0"
-				app:layout_columnSpan="3"
+				app:layout_columnSpan="5"
 				app:layout_row="9" />
 			<!-- 6行目 -->
 			<TextView
@@ -384,7 +388,7 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="1"
+				app:layout_column="2"
 				app:layout_gravity="center"
 				app:layout_row="10" />
 			
@@ -396,9 +400,29 @@
 				
 				
 				android:entries="@array/list6"
-				app:layout_column="2"
+				app:layout_column="4"
 				app:layout_gravity="center"
 				app:layout_row="10" />
+			
+			<View
+				android:id="@+id/spaceView6"
+				android:layout_width="4dp"
+				android:layout_height="1dp"
+				android:alpha="1"
+				android:background="@color/gridBorderColor"
+				app:layout_column="1"
+				app:layout_row="0"
+				app:layout_rowSpan="11" />
+			
+			<View
+				android:id="@+id/spaceView7"
+				android:layout_width="2dp"
+				android:layout_height="1dp"
+				android:alpha="0.75"
+				android:background="@color/gridBorderColor"
+				app:layout_column="3"
+				app:layout_row="0"
+				app:layout_rowSpan="11" />
 		</android.support.v7.widget.GridLayout>
 		
 		<Button
@@ -440,7 +464,7 @@
 			android:id="@+id/syoukei1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="24dp"
+			android:layout_marginStart="16dp"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner"
 			app:layout_constraintStart_toEndOf="@+id/spinner" />
@@ -449,7 +473,7 @@
 			android:id="@+id/syoukei2"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="24dp"
+			android:layout_marginStart="16dp"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner2"
 			app:layout_constraintStart_toEndOf="@+id/spinner2" />
@@ -458,7 +482,7 @@
 			android:id="@+id/syoukei3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="24dp"
+			android:layout_marginStart="16dp"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner3"
 			app:layout_constraintStart_toEndOf="@+id/spinner3" />
@@ -467,7 +491,7 @@
 			android:id="@+id/syoukei4"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="24dp"
+			android:layout_marginStart="16dp"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
 			app:layout_constraintStart_toEndOf="@+id/gridLayout" />
