@@ -2,18 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 	<item
-		android:id="@+id/menu_home"
+		android:id="@+id/mark_menu_home"
 		android:icon="@drawable/home_icon"
 		android:title="@string/homeBack"
 		app:showAsAction="ifRoom" />
 	<item
-		android:id="@+id/menu1"
-		android:icon="@drawable/kizi"
-		android:title="@string/privacy"
-		app:showAsAction="ifRoom" />
-	<item
-		android:id="@+id/menu2"
-		android:icon="@drawable/anke"
-		android:title="@string/enquete"
+		android:id="@+id/mark_back"
+		android:icon="@drawable/back_icon"
+		android:title="@string/backString"
 		app:showAsAction="ifRoom" />
 </menu>

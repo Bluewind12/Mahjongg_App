@@ -255,6 +255,10 @@ class ToolsActivity : AppCompatActivity() {
                 }.setNegativeButton("いいえ", null).show()
                 return true
             }
+            R.id.menu_home -> {
+                finish()
+                return true
+            }
             else -> Error("Menu Select Error")
         }
         return false

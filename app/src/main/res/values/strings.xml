@@ -100,6 +100,8 @@
     <string name="markResultC">結果：%d符（%d符）</string>
     <string name="markSyoukei">%d符</string>
     <string name="error">エラー\n正しい値を入力してください</string>
+    <string name="backString">戻る</string>
+    <string name="homeBack">場管理へ戻る</string>
 
     <string name="pointCheck">点数計算</string>
     <!-- 広告用 -->
