@@ -36,23 +36,20 @@ class MainActivity : AppCompatActivity() {
 
         setState(parent)
         setFieldWind(fieldNum)
-        playerButtons[0].setOnClickListener {
-            changeState(0)
-        }
-        playerButtons[1].setOnClickListener {
-            changeState(1)
-        }
-        playerButtons[2].setOnClickListener {
-            changeState(2)
-        }
-        playerButtons[3].setOnClickListener {
-            changeState(3)
+        //単推し
+        for (i in 0 until playerButtons.size) {
+            playerButtons[i].setOnClickListener {
+                changeState(i, false)
+            }
+            playerButtons[i].setOnLongClickListener {
+                changeState(i, true)
+                true
+            }
         }
 
         //中央(場風)タッチ時
         fieldButton.setOnClickListener {
             fieldNum++
-
             if (fieldNum == 4) {
                 fieldNum = 0
             }
@@ -60,23 +57,24 @@ class MainActivity : AppCompatActivity() {
             editor.putInt("field", fieldNum)
             editor.apply()
         }
+        //長押し
+        fieldButton.setOnLongClickListener {
+            fieldNum--
+            if (fieldNum == -1) {
+                fieldNum = 3
+            }
+            setFieldWind(fieldNum)
+            editor.putInt("field", fieldNum)
+            editor.apply()
+            true
+        }
 
-        //プレイヤーボタンタッチ時
-        pointButtons[0].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButtons[1].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButtons[2].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
-        }
-        pointButtons[3].setOnClickListener {
-            val intent = Intent(this, ToolsActivity::class.java)
-            startActivity(intent)
+        //ツールボタンクリック時
+        pointButtons.forEach {
+            it.setOnClickListener {
+                val intent = Intent(this, ToolsActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -111,15 +109,35 @@ class MainActivity : AppCompatActivity() {
         boostTexts[3].rotation = -180f
     }
 
-    //状態変更
-    private fun changeState(touchButtonNum : Int) {
-        if (parent == touchButtonNum) {
-            times++
-            setState(touchButtonNum)
+    /**
+     * 状態変更
+     * @author BlueWind
+     * @param touchButtonNum タッチされたプレイヤー番号
+     * @param longFlag true:長押し false:単押
+     */
+    private fun changeState(touchButtonNum : Int, longFlag : Boolean) {
+        if (!longFlag) {
+            //単押(増加)
+            if (parent == touchButtonNum) {
+                times++
+                setState(touchButtonNum)
+            } else {
+                parent = touchButtonNum
+                times = 0
+                setState(touchButtonNum)
+            }
         } else {
-            parent = touchButtonNum
-            times = 0
-            setState(touchButtonNum)
+            //長押(減少)
+            if (parent == touchButtonNum) {
+                if (times > 0) {
+                    times--
+                }
+                setState(touchButtonNum)
+            } else {
+                parent = touchButtonNum
+                times = 0
+                setState(touchButtonNum)
+            }
         }
         editor.putInt("times", times)
         editor.putInt("parent", parent)
@@ -129,11 +147,11 @@ class MainActivity : AppCompatActivity() {
 
     //プレイヤー状態のセット
     private fun setState(setNum : Int) {
-        playerButtons[setNum].setImageResource(R.drawable.hougaku1_higashi)
+        playerButtons[setNum % 4].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
         playerButtons[(setNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
-        timesTexts[setNum].text = getString(R.string.place, times)
+        timesTexts[setNum % 4].text = getString(R.string.place, times)
         timesTexts[(setNum + 1) % 4].text = " "
         timesTexts[(setNum + 2) % 4].text = " "
         timesTexts[(setNum + 3) % 4].text = " "
