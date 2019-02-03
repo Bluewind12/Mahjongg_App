@@ -100,10 +100,12 @@
     <string name="markResultC">結果：%d符（%d符）</string>
     <string name="markSyoukei">%d符</string>
     <string name="error">エラー\n正しい値を入力してください</string>
-    <string name="backString">戻る</string>
-    <string name="homeBack">場管理へ戻る</string>
-
+    <string name="point">点数</string>
     <string name="pointCheck">点数計算</string>
+    <string name="pointTables">点数関連</string>
+    <string name="yakuTables">役関連</string>
+    <string name="yakuTable">役一覧</string>
+    <string name="wordList">単語表</string>
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
     <string name="nend_ad50">072ec4b3933ca4229a60320dedd9b662ba3b10fa</string>
@@ -113,6 +115,6 @@
     <string name="privacy_URL">https://www.gensounosakura.work/posts/5390577</string>
     <string name="enquete">意見・感想などはこちら</string>
     <string name="enquete_url">https://goo.gl/forms/5nkpgZ3ykued2lCe2</string>
-
-    <string name="point">点数</string>
+    <string name="backString">戻る</string>
+    <string name="homeBack">場管理へ戻る</string>
 </resources>
