@@ -8,12 +8,6 @@
 		app:showAsAction="ifRoom" />
 	
 	<item
-		android:id="@+id/theme_menu"
-		android:icon="@drawable/home_icon"
-		android:title="@string/theme"
-		app:showAsAction="ifRoom" />
-	
-	<item
 		android:id="@+id/menu1"
 		android:icon="@drawable/kizi"
 		android:title="@string/privacy"
