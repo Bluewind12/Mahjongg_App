@@ -1,5 +1,6 @@
 package momonyan.mahjongg_tools
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -43,6 +44,14 @@ class MarkToolActivity : AppCompatActivity() {
     var resultInt = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {
+        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> setTheme(R.style.DarkThemeAction)
+            "Light" -> setTheme(R.style.LightThemeAction)
+            "Mat" -> setTheme(R.style.MatThemeAction)
+            else -> error(2)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mark_tool)
         init()

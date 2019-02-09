@@ -1,5 +1,6 @@
 package momonyan.mahjongg_tools
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageButton
@@ -7,6 +8,13 @@ import android.widget.ImageButton
 class TableOutputActivity : AppCompatActivity() {
     private lateinit var imageView: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
+        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> setTheme(R.style.DarkTheme)
+            "Light" -> setTheme(R.style.LightTheme)
+            "Mat" -> setTheme(R.style.MatTheme)
+            else -> error(2)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.table_view)
         imageView = findViewById(R.id.imageViewOutput)

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import net.nend.android.NendAdInterstitial
@@ -26,6 +27,15 @@ class MainActivity : AppCompatActivity() {
     private var times = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {
+        //テーマ変更
+        dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> setTheme(R.style.DarkTheme)
+            "Light" -> setTheme(R.style.LightTheme)
+            "Mat" -> setTheme(R.style.MatTheme)
+            else -> error(2)
+        }
+
         super.onCreate(savedInstanceState)
         NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
         setContentView(R.layout.activity_main)
@@ -76,6 +86,40 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        //フリック
+        val resetIntent = Intent(this, MainActivity::class.java)
+        val flickView = window.decorView // Activity画面
+        val adjustX = 150.0f
+        val adjustY = 150.0f
+        object : FlickCheck(flickView, adjustX, adjustY) {
+            override fun getFlick(swipe : Int) {
+                when (swipe) {
+                    FlickCheck.LEFT_FLICK -> {
+                        Log.d("Theme", "左")
+                        when (dataStore.getString("Theme", "Dark")) {
+                            "Dark" -> editor.putString("Theme", "Light")
+                            "Light" -> editor.putString("Theme", "Mat")
+                            "Mat" -> editor.putString("Theme", "Dark")
+                            else -> error(2)
+                        }
+                        editor.commit()
+                    }
+                    FlickCheck.RIGHT_FLICK -> {
+                        Log.d("Theme", "右")
+                        when (dataStore.getString("Theme", "Dark")) {
+                            "Dark" -> editor.putString("Theme", "Mat")
+                            "Light" -> editor.putString("Theme", "Dark")
+                            "Mat" -> editor.putString("Theme", "Light")
+                            else -> error(2)
+                        }
+                        editor.commit()
+                    }
+                }
+                finish()
+                startActivity(resetIntent)
+            }
+        }
     }
 
     //初期設定
@@ -85,7 +129,6 @@ class MainActivity : AppCompatActivity() {
         boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
         fieldButton = findViewById(R.id.imageButtonF)
         pointButtons = arrayOf(findViewById(R.id.pointButton), findViewById(R.id.pointButton2), findViewById(R.id.pointButton3), findViewById(R.id.pointButton4))
-        dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         editor = dataStore.edit()
         editor.apply()
         fieldNum = dataStore.getInt("field", 0)

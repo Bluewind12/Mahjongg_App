@@ -1,5 +1,6 @@
 package momonyan.mahjongg_tools
 
+import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.SoundPool
@@ -40,6 +41,14 @@ class ToolsActivity : AppCompatActivity() {
     private var sound = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {
+        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> setTheme(R.style.DarkThemeAction)
+            "Light" -> setTheme(R.style.LightThemeAction)
+            "Mat" -> setTheme(R.style.MatThemeAction)
+            else -> error(2)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.point_tools)
         //初期化
