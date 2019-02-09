@@ -106,6 +106,7 @@
     <string name="yakuTables">役関連</string>
     <string name="yakuTable">役一覧</string>
     <string name="wordList">単語表</string>
+    <string name="theme">テーマ変更</string>
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
     <string name="nend_ad50">072ec4b3933ca4229a60320dedd9b662ba3b10fa</string>
