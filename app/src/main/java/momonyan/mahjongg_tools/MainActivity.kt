@@ -221,4 +221,17 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 2) % 4].text = ""
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
+
+    private fun changeStyle(style : Int) {
+        val buttonBackground : Int
+        when (style) {
+            R.style.DarkTheme -> buttonBackground = R.drawable.dark_setting_button
+            R.style.LightTheme -> buttonBackground = R.drawable.light_setting_button
+            R.style.MatTheme -> buttonBackground = R.drawable.mat_setting_button
+            else -> buttonBackground = R.drawable.dark_setting_button
+        }
+        pointButtons.forEach {
+            it.background = getDrawable(buttonBackground)
+        }
+    }
 }

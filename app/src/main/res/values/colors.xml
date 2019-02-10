@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="noFill">#FFFFFF</color>
+    <color name="buttonBack">#555599</color>
     <color name="Oya">#DD2222</color>
     <color name="gridBorderColor">#AAAAAA</color>
 </resources>
