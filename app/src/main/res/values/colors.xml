@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="noFill">#FFFFFF</color>
-    <color name="buttonBack">#555599</color>
-    <color name="Oya">#DD2222</color>
-    <color name="gridBorderColor">#AAAAAA</color>
+	<!-- ダークモード -->
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorAccent">#FF4081</color>
+	<!-- ライトモード -->
+	<color name="colorPrimaryLight">#3F51B5</color>
+	<color name="colorPrimaryDarkLight">#303F9F</color>
+	<color name="colorAccentLight">#FF4081</color>
+	
+	<!-- マットモード -->
+	<color name="colorPrimaryMat">#155015</color>
+	<color name="colorPrimaryDarkMat">#154006</color>
+	<color name="colorAccentMat">#FFDD33</color>
+	
+	<color name="noFill">#FFFFFF</color>
+	<color name="buttonBack">#555599</color>
+	<color name="Oya">#DD2222</color>
+	<color name="gridBorderColor">#AAAAAA</color>
+	<color name="matBackGround">#006600</color>
 </resources>

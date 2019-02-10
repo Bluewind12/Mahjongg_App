@@ -26,13 +26,24 @@ class MainActivity : AppCompatActivity() {
     private var parent = 0
     private var times = 0
 
+    private var style = 0
+
     override fun onCreate(savedInstanceState : Bundle?) {
         //テーマ変更
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
-            "Dark" -> setTheme(R.style.DarkTheme)
-            "Light" -> setTheme(R.style.LightTheme)
-            "Mat" -> setTheme(R.style.MatTheme)
+            "Dark" -> {
+                setTheme(R.style.DarkTheme)
+                style = R.style.DarkTheme
+            }
+            "Light" -> {
+                setTheme(R.style.LightTheme)
+                style = R.style.LightTheme
+            }
+            "Mat" -> {
+                setTheme(R.style.MatTheme)
+                style = R.style.MatTheme
+            }
             else -> error(2)
         }
 
@@ -41,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //初期状態セット
         initialSetting()
+
+        //ボタンカラー変更
+        changeStyle()
         //回転セット
         rotateSetting()
 
@@ -222,7 +236,7 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
 
-    private fun changeStyle(style : Int) {
+    private fun changeStyle() {
         val buttonBackground : Int
         when (style) {
             R.style.DarkTheme -> buttonBackground = R.drawable.dark_setting_button
