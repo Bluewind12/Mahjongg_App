@@ -34,15 +34,12 @@ class MainActivity : AppCompatActivity() {
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> {
                 setTheme(R.style.DarkTheme)
-                style = R.style.DarkTheme
             }
             "Light" -> {
                 setTheme(R.style.LightTheme)
-                style = R.style.LightTheme
             }
             "Mat" -> {
                 setTheme(R.style.MatTheme)
-                style = R.style.MatTheme
             }
             else -> error(2)
         }
@@ -52,9 +49,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //初期状態セット
         initialSetting()
-
-        //ボタンカラー変更
-        changeStyle()
         //回転セット
         rotateSetting()
 
@@ -236,16 +230,4 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
 
-    private fun changeStyle() {
-        val buttonBackground : Int
-        when (style) {
-            R.style.DarkTheme -> buttonBackground = R.drawable.dark_setting_button
-            R.style.LightTheme -> buttonBackground = R.drawable.light_setting_button
-            R.style.MatTheme -> buttonBackground = R.drawable.mat_setting_button
-            else -> buttonBackground = R.drawable.dark_setting_button
-        }
-        pointButtons.forEach {
-            it.background = getDrawable(buttonBackground)
-        }
-    }
 }
