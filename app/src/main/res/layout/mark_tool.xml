@@ -432,7 +432,7 @@
 			android:layout_marginStart="44dp"
 			android:layout_marginTop="24dp"
 			android:layout_marginBottom="16dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="@string/function"
 			app:layout_constraintBottom_toTopOf="@+id/nend2"
 			app:layout_constraintStart_toStartOf="parent"

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/scrollView2"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -29,7 +30,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="64dp"
 			android:layout_marginEnd="16dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="@string/function"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -213,7 +214,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginStart="24dp"
 			android:layout_marginTop="8dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="@string/pointTableP"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -223,7 +224,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="28dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="@string/fuImage"
 			app:layout_constraintBottom_toBottomOf="@+id/pointTableC"
 			app:layout_constraintStart_toEndOf="@+id/pointTableC"
@@ -235,7 +236,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="@string/pointTableC"
 			app:layout_constraintBottom_toBottomOf="@+id/pointTableP"
 			app:layout_constraintStart_toEndOf="@+id/pointTableP"
@@ -252,7 +253,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="1.0"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/yakuButton" />
+			app:layout_constraintTop_toBottomOf="@+id/markTable" />
 		
 		<TextView
 			android:id="@+id/textView2"
@@ -272,7 +273,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginStart="24dp"
 			android:layout_marginTop="8dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="移動"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -309,22 +310,11 @@
 			android:layout_marginStart="24dp"
 			android:layout_marginTop="8dp"
 			android:layout_marginBottom="16dp"
-			android:background="?attr/buttonStyle"
+			android:background="?attr/colorButtonNormal"
 			android:text="振る"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/textView10" />
-		
-		<Button
-			android:id="@+id/yakuButton"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:layout_marginTop="8dp"
-			android:background="?attr/buttonStyle"
-			android:text="@string/yakuTable"
-			app:layout_constraintStart_toStartOf="@+id/textView11"
-			app:layout_constraintTop_toBottomOf="@+id/textView11" />
 		
 		<ImageView
 			android:id="@+id/rightImage"
@@ -389,15 +379,6 @@
 			android:text="@string/pointTables"
 			app:layout_constraintStart_toStartOf="@+id/textView19"
 			app:layout_constraintTop_toBottomOf="@+id/textView19" />
-		
-		<TextView
-			android:id="@+id/textView11"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="8dp"
-			android:text="@string/yakuTables"
-			app:layout_constraintStart_toStartOf="@+id/textView8"
-			app:layout_constraintTop_toBottomOf="@+id/pointTableP" />
 	
 	</android.support.constraint.ConstraintLayout>
 

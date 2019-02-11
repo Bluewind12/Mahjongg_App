@@ -2,10 +2,10 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/buttonBack" />
     <padding
-        android:bottom="15sp"
-        android:left="25sp"
-        android:right="25sp"
-        android:top="15sp" />
+        android:bottom="5sp"
+        android:left="5sp"
+        android:right="5sp"
+        android:top="5sp" />
     <corners android:radius="8sp"/>
 
     <stroke
