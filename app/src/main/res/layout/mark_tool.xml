@@ -18,7 +18,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="16dp"
 			android:text="@string/agari"
-			android:textColor="@color/colorAccent"
+			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginTop="16dp"
 			android:layout_marginEnd="8dp"
-			android:background="@color/colorPrimaryDark"
+			android:background="?attr/colorPrimaryDark"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/spinner" />
@@ -53,7 +53,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="16dp"
 			android:text="@string/head"
-			android:textColor="@color/colorAccent"
+			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view5" />
@@ -76,7 +76,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginTop="16dp"
 			android:layout_marginEnd="8dp"
-			android:background="@color/colorPrimaryDark"
+			android:background="?attr/colorPrimaryDark"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/spinner2" />
@@ -88,7 +88,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="16dp"
 			android:text="@string/machi"
-			android:textColor="@color/colorAccent"
+			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view6" />
@@ -111,7 +111,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginTop="16dp"
 			android:layout_marginEnd="8dp"
-			android:background="@color/colorPrimaryDark"
+			android:background="?attr/colorPrimaryDark"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +124,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="16dp"
 			android:text="@string/mentu"
-			android:textColor="@color/colorAccent"
+			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view7" />
@@ -178,7 +178,7 @@
 				android:layout_width="1dp"
 				android:layout_height="4dp"
 				android:alpha="1"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="0"
 				app:layout_columnSpan="5"
 				app:layout_row="1" />
@@ -221,7 +221,7 @@
 				android:layout_width="1dp"
 				android:layout_height="2dp"
 				android:alpha="0.75"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="0"
 				app:layout_columnSpan="5"
 				app:layout_row="3" />
@@ -265,7 +265,7 @@
 				android:layout_width="1dp"
 				android:layout_height="2dp"
 				android:alpha="0.75"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="0"
 				app:layout_columnSpan="5"
 				app:layout_row="5" />
@@ -313,7 +313,7 @@
 				android:layout_width="1dp"
 				android:layout_height="2dp"
 				android:alpha="0.75"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="0"
 				app:layout_columnSpan="5"
 				app:layout_row="7" />
@@ -360,7 +360,7 @@
 				android:layout_width="1dp"
 				android:layout_height="2dp"
 				android:alpha="0.75"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="0"
 				app:layout_columnSpan="5"
 				app:layout_row="9" />
@@ -409,7 +409,7 @@
 				android:layout_width="4dp"
 				android:layout_height="1dp"
 				android:alpha="1"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="1"
 				app:layout_row="0"
 				app:layout_rowSpan="11" />
@@ -419,7 +419,7 @@
 				android:layout_width="2dp"
 				android:layout_height="1dp"
 				android:alpha="0.75"
-				android:background="@color/gridBorderColor"
+				android:background="?attr/colorAccent"
 				app:layout_column="3"
 				app:layout_row="0"
 				app:layout_rowSpan="11" />
@@ -444,7 +444,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginStart="32dp"
 			android:text="@string/markResult"
-			android:textColor="@color/colorAccent"
+			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
 			android:textStyle="bold"
 			app:layout_constraintBottom_toBottomOf="@+id/calculateButton"
