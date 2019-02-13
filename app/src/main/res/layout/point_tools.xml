@@ -241,19 +241,19 @@
 			app:layout_constraintBottom_toBottomOf="@+id/pointTableP"
 			app:layout_constraintStart_toEndOf="@+id/pointTableP"
 			app:layout_constraintTop_toTopOf="@+id/pointTableP" />
-		
+
 		<View
 			android:id="@+id/view4"
 			android:layout_width="match_parent"
 			android:layout_height="5dp"
 			android:layout_marginStart="8dp"
-			android:layout_marginTop="16dp"
+			android:layout_marginTop="8dp"
 			android:layout_marginEnd="8dp"
 			android:background="?attr/colorPrimary"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/markTable" />
+			app:layout_constraintTop_toBottomOf="@+id/yakuTableChangeButton" />
 		
 		<TextView
 			android:id="@+id/textView2"
@@ -379,7 +379,26 @@
 			android:text="@string/pointTables"
 			app:layout_constraintStart_toStartOf="@+id/textView19"
 			app:layout_constraintTop_toBottomOf="@+id/textView19" />
-	
+
+		<TextView
+			android:id="@+id/textView11"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:text="@string/yakuTables"
+			app:layout_constraintStart_toStartOf="@+id/textView8"
+			app:layout_constraintTop_toBottomOf="@+id/pointTableP" />
+
+		<Button
+			android:id="@+id/yakuTableChangeButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:background="?attr/colorButtonNormal"
+			android:text="@string/yakuTable"
+			app:layout_constraintStart_toStartOf="@+id/pointTableP"
+			app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
 	</android.support.constraint.ConstraintLayout>
 
 
