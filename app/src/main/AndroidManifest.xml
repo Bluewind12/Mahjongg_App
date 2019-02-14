@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	package="momonyan.mahjongg_tools">
-	
-	<uses-permission android:name="android.permission.INTERNET" />
-	<application
-		android:allowBackup="true"
-		android:hardwareAccelerated="false"
-		android:icon="@drawable/ma_zyan500"
-		android:label="@string/app_name"
-		android:roundIcon="@drawable/ma_zyan500"
-		android:supportsRtl="true"
-		android:theme="@style/Theme.AppCompat.NoActionBar"
-		tools:ignore="GoogleAppIndexingWarning">
-		
-		<activity
-			android:name=".MainActivity"
-			android:screenOrientation="portrait">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity
-			android:name=".ToolsActivity"
-			android:label="@string/tools"
-			android:screenOrientation="portrait"
-			android:theme="@style/Theme.AppCompat" />
-		<activity
-			android:name=".TableOutputActivity"
-			android:label="親-点数表"
-			android:screenOrientation="portrait" />
-		<activity
-			android:name=".MarkToolActivity"
-			android:label="符計算"
-			android:screenOrientation="portrait"
-			android:theme="@style/Theme.AppCompat"/>
-	
-	</application>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="momonyan.mahjongg_tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ma_zyan500"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ma_zyan500"
+        android:supportsRtl="true"
+        android:theme="@style/DarkTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ToolsActivity"
+            android:label="@string/tools"
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkThemeAction" />
+        <activity
+            android:name=".MarkToolActivity"
+            android:label="符計算"
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkThemeAction" />
+        <activity
+            android:name=".TableOutputActivity"
+            android:label="親-点数表"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+    </application>
 
 </manifest>
