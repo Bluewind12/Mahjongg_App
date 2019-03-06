@@ -1,12 +1,12 @@
 package momonyan.mahjongg_tools
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
@@ -247,21 +247,32 @@ class ToolsActivity : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+        setTheme(R.style.defaultTheme)
         when (item.itemId) {
+            R.id.menu0 -> {
+                AlertDialog.Builder(this)
+                        .setTitle("Webページを開きます").setMessage("[幻想乃桜工房のHP]\nを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                            val uri = Uri.parse(getString(R.string.fantasy_url))
+                            startActivity(Intent(Intent.ACTION_VIEW, uri))
+                        }.setNegativeButton("いいえ", null)
+                        .setIcon(R.drawable.fantasy).show()
+                return true
+            }
             R.id.menu1 -> {
-                AlertDialog.Builder(this).setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                AlertDialog.Builder(this)
+                        .setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                     val uri = Uri.parse(getString(R.string.privacy_URL))
-                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                    startActivity(intent)
-                }.setNegativeButton("いいえ", null).show()
+                            startActivity(Intent(Intent.ACTION_VIEW, uri))
+                        }.setNegativeButton("いいえ", null)
+                        .setIcon(R.drawable.kizi).show()
                 return true
             }
             R.id.menu2 -> {
                 AlertDialog.Builder(this).setTitle("Webページを開きます").setMessage("[意見・感想・バグ報告について]\nのページを開いてもよろしいですか？").setPositiveButton("はい") { _, _ ->
                     val uri = Uri.parse(getString(R.string.enquete_url))
-                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                    startActivity(intent)
-                }.setNegativeButton("いいえ", null).show()
+                    startActivity(Intent(Intent.ACTION_VIEW, uri))
+                }.setNegativeButton("いいえ", null)
+                        .setIcon(R.drawable.anke).show()
                 return true
             }
             R.id.menu_home -> {

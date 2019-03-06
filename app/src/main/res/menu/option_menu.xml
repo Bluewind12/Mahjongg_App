@@ -6,15 +6,14 @@
 		android:icon="@drawable/home_icon"
 		android:title="@string/homeBack"
 		app:showAsAction="ifRoom" />
-	
+
+	<item
+		android:id="@+id/menu0"
+		android:title="@string/fantasyHp" />
 	<item
 		android:id="@+id/menu1"
-		android:icon="@drawable/kizi"
-		android:title="@string/privacy"
-		app:showAsAction="never" />
+		android:title="@string/privacy" />
 	<item
 		android:id="@+id/menu2"
-		android:icon="@drawable/anke"
-		android:title="@string/enquete"
-		app:showAsAction="never" />
+		android:title="@string/enquete" />
 </menu>

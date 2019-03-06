@@ -118,4 +118,7 @@
     <string name="enquete_url">https://goo.gl/forms/5nkpgZ3ykued2lCe2</string>
     <string name="backString">戻る</string>
     <string name="homeBack">場管理へ戻る</string>
+    <string name="fantasyHp">幻想乃桜工房のHP</string>
+    <string name="fantasy_url">https://www.gensounosakura.work</string>
+
 </resources>

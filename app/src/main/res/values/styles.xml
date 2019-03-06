@@ -2,7 +2,6 @@
 	
 	<!-- Base application theme. -->
 	<style name="DarkTheme" parent="Theme.AppCompat.NoActionBar">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
@@ -10,7 +9,6 @@
 	</style>
 	
 	<style name="LightTheme" parent="Theme.AppCompat.Light.NoActionBar">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimaryLight</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
 		<item name="colorAccent">@color/colorAccentLight</item>
@@ -18,7 +16,6 @@
 	</style>
 	
 	<style name="MatTheme" parent="Theme.AppCompat.Light.NoActionBar">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimaryMat</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkMat</item>
 		<item name="colorAccent">@color/colorAccentMat</item>
@@ -29,7 +26,6 @@
 	
 	<!-- アクションバーあり -->
 	<style name="DarkThemeAction" parent="Theme.AppCompat">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
@@ -37,7 +33,6 @@
 	</style>
 	
 	<style name="LightThemeAction" parent="Theme.AppCompat.Light.DarkActionBar">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimaryLight</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
 		<item name="colorAccent">@color/colorAccentLight</item>
@@ -46,7 +41,6 @@
 	</style>
 	
 	<style name="MatThemeAction" parent="Theme.AppCompat">
-		<!-- Customize your theme here. -->
 		<item name="colorPrimary">@color/colorPrimaryMat</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkMat</item>
 		<item name="colorAccent">@color/colorAccentMat</item>
@@ -54,4 +48,5 @@
 		<item name="colorButtonNormal">@drawable/mat_setting_button</item>
 	</style>
 
+	<style name="defaultTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
 </resources>
