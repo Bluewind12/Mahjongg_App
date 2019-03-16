@@ -109,11 +109,13 @@
     <string name="theme">テーマ変更</string>
 
     <!-- 説明 -->
-    <string name="description1">順子（シュンツ）\n同じ種類で数字が３つ連続している組み合わせ</string>
-    <string name="description2">明刻（ミンコ）\n「ポン」をして集めた３つの同じ牌の組み合わせ</string>
-    <string name="description3">暗刻（アンコ）\n「ポン」をせずに集めた３つの同じ牌の組み合わせ</string>
-    <string name="description4">明槓（ミンカン）\n「大明槓」「小明槓」「加槓」を行なった場合</string>
-    <string name="description5">暗槓（アンカン）\n「暗槓」を行なった場合</string>
+    <string name="description1">順子（シュンツ）\n\n同じ種類で数字が３つ連続している組み合わせ</string>
+    <string name="description2">明刻（ミンコ）\n\n「ポン」をして集めた３つの同じ牌の組み合わせ</string>
+    <string name="description3">暗刻（アンコ）\n\n「ポン」をせずに集めた３つの同じ牌の組み合わせ</string>
+    <string name="description4">明槓（ミンカン）\n\n「大明槓」「小明槓」「加槓」を行なった場合</string>
+    <string name="description5">暗槓（アンカン）\n\n「暗槓」を行なった場合</string>
+    <string name="description01">中張牌（チュンチャン）\n断么牌（タンヤオ）\n\n数牌の二から八の牌</string>
+    <string name="description02">么九牌（ヤオチュー）\n\n字牌と、数牌のうちの一と九の牌の総称。</string>
 
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>

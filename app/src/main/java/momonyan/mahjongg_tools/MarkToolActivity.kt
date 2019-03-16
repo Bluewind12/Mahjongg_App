@@ -156,7 +156,6 @@ class MarkToolActivity : AppCompatActivity() {
         }
 
         mentuItemText.setOnLongClickListener {
-            Log.d("TESTER_LOG", "1")
             val inflater = layoutInflater
             val v = inflater.inflate(R.layout.description_mentu, null)
             v.descriptionTextView.text = getString(R.string.description1)
@@ -168,7 +167,6 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText2.setOnLongClickListener {
-            Log.d("TESTER_LOG", "2")
             val inflater = layoutInflater
             val v = inflater.inflate(R.layout.description_mentu, null)
             v.descriptionTextView.text = getString(R.string.description2)
@@ -180,7 +178,6 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText3.setOnLongClickListener {
-            Log.d("TESTER_LOG", "3")
             val inflater = layoutInflater
             val v = inflater.inflate(R.layout.description_mentu, null)
             v.descriptionTextView.text = getString(R.string.description3)
@@ -192,7 +189,6 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText4.setOnLongClickListener {
-            Log.d("TESTER_LOG", "4")
             val inflater = layoutInflater
             val v = inflater.inflate(R.layout.description_mentu, null)
             v.descriptionTextView.text = getString(R.string.description4)
@@ -204,11 +200,32 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText5.setOnLongClickListener {
-            Log.d("TESTER_LOG", "5")
             val inflater = layoutInflater
             val v = inflater.inflate(R.layout.description_mentu, null)
             v.descriptionTextView.text = getString(R.string.description5)
             v.descriptionImage.setImageResource(R.drawable.description_5)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        tyutyanTextView.setOnLongClickListener {
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description01)
+            v.descriptionImage.setImageResource(R.drawable.description_01)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        kokyuTextView.setOnLongClickListener {
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description02)
+            v.descriptionImage.setImageResource(R.drawable.description_02)
             val toast = Toast(this)
             toast.duration = Toast.LENGTH_LONG
             toast.view = v
