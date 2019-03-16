@@ -7,4 +7,7 @@
         android:right="5sp"
         android:top="5sp" />
     <solid android:color="@color/noFill" />
+    <stroke
+        android:width="5sp"
+        android:color="#AAAAAA" />
 </shape>

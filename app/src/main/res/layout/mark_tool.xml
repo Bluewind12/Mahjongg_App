@@ -22,7 +22,7 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
-		
+
 		<Spinner
 			android:id="@+id/spinner"
 			android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="8dp"
 			android:entries="@array/list3"
-			android:spinnerMode="dialog"
+			android:spinnerMode="dropdown"
 			app:layout_constraintStart_toStartOf="@+id/textView3"
 			app:layout_constraintTop_toBottomOf="@+id/textView3" />
 		
@@ -57,7 +57,7 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view5" />
-		
+
 		<Spinner
 			android:id="@+id/spinner2"
 			android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="8dp"
 			android:entries="@array/list4"
-			android:spinnerMode="dialog"
+			android:spinnerMode="dropdown"
 			app:layout_constraintStart_toStartOf="@+id/textView7"
 			app:layout_constraintTop_toBottomOf="@+id/textView7" />
 		
@@ -92,7 +92,7 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view6" />
-		
+
 		<Spinner
 			android:id="@+id/spinner3"
 			android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="8dp"
 			android:entries="@array/list5"
-			android:spinnerMode="dialog"
+			android:spinnerMode="dropdown"
 			app:layout_constraintStart_toStartOf="@+id/textView7"
 			app:layout_constraintTop_toBottomOf="@+id/textView9" />
 		
