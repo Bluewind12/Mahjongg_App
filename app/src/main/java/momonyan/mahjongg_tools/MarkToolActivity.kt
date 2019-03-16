@@ -10,6 +10,8 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
 import kotlin.math.ceil
 
@@ -112,7 +114,7 @@ class MarkToolActivity : AppCompatActivity() {
             if (sumCheck) {
                 val resultUp = ceil(resultInt / 10.0)
                 if (selectCheck()) {
-                    syoukei5.text = "和了：20府"
+                    syoukei5.text = "和了：20符"
                     resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10, resultInt)
                 } else {
                     resultText.text = getString(R.string.error)
@@ -151,6 +153,67 @@ class MarkToolActivity : AppCompatActivity() {
             spaceView7.requestLayout()
 
             Log.d("TAGA", "${gridLayout.width} = ${spaceView1.width}")
+        }
+
+        mentuItemText.setOnLongClickListener {
+            Log.d("TESTER_LOG", "1")
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description1)
+            v.descriptionImage.setImageResource(R.drawable.description_1)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        mentuItemText2.setOnLongClickListener {
+            Log.d("TESTER_LOG", "2")
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description2)
+            v.descriptionImage.setImageResource(R.drawable.description_2)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        mentuItemText3.setOnLongClickListener {
+            Log.d("TESTER_LOG", "3")
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description3)
+            v.descriptionImage.setImageResource(R.drawable.description_3)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        mentuItemText4.setOnLongClickListener {
+            Log.d("TESTER_LOG", "4")
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description4)
+            v.descriptionImage.setImageResource(R.drawable.description_4)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
+        }
+        mentuItemText5.setOnLongClickListener {
+            Log.d("TESTER_LOG", "5")
+            val inflater = layoutInflater
+            val v = inflater.inflate(R.layout.description_mentu, null)
+            v.descriptionTextView.text = getString(R.string.description5)
+            v.descriptionImage.setImageResource(R.drawable.description_5)
+            val toast = Toast(this)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = v
+            toast.show()
+            true
         }
     }
 
