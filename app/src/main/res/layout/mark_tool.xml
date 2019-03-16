@@ -504,5 +504,14 @@
 			android:layout_marginBottom="8dp"
 			app:layout_constraintBottom_toTopOf="@+id/markResultText"
 			app:layout_constraintStart_toEndOf="@+id/calculateButton" />
+
+		<TextView
+			android:id="@+id/textView11"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:text="単語を長押しで簡易説明"
+			app:layout_constraintBottom_toBottomOf="@+id/textView16"
+			app:layout_constraintStart_toEndOf="@+id/textView16" />
 	</android.support.constraint.ConstraintLayout>
 </ScrollView>
