@@ -130,5 +130,6 @@
     <string name="homeBack">場管理へ戻る</string>
     <string name="fantasyHp">幻想乃桜工房のHP</string>
     <string name="fantasy_url">https://www.gensounosakura.work</string>
+    <string name="mentuDescript">単語を長押しで簡易説明</string>
 
 </resources>

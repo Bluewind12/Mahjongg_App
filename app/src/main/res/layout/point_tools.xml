@@ -335,17 +335,20 @@
 			app:layout_constraintStart_toEndOf="@+id/diceButton"
 			app:layout_constraintTop_toBottomOf="@+id/view8"
 			app:srcCompat="@drawable/number_1" />
-		
-		<net.nend.android.NendAdView
-			android:id="@+id/nend"
-			android:layout_width="match_parent"
-			android:layout_height="50sp"
-			android:layout_marginTop="8dp"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/view2"
-			nendsdk:NendApiKey="@string/nend_ad50"
-			nendsdk:NendSpotId="@integer/nend_ad50" />
+
+        <net.nend.android.NendAdView
+            android:id="@+id/nend"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            nendsdk:NendAdjustSize="true"
+            nendsdk:NendApiKey="@string/nend_ad50"
+            nendsdk:NendSpotId="@integer/nend_ad50" />
 		
 		<View
 			android:id="@+id/view_nend"
