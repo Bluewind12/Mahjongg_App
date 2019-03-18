@@ -157,6 +157,7 @@ class MarkToolActivity : AppCompatActivity() {
         val toast = Toast(this)
         toast.duration = Toast.LENGTH_LONG
         mentuItemText.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description1Title)
             descriptionView.descriptionTextView.text = getString(R.string.description1)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_1)
             toast.view = descriptionView
@@ -164,6 +165,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText2.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description2Title)
             descriptionView.descriptionTextView.text = getString(R.string.description2)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_2)
             toast.view = descriptionView
@@ -171,6 +173,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText3.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description3Title)
             descriptionView.descriptionTextView.text = getString(R.string.description3)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_3)
             toast.view = descriptionView
@@ -178,6 +181,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText4.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description4Title)
             descriptionView.descriptionTextView.text = getString(R.string.description4)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_4)
             toast.view = descriptionView
@@ -185,6 +189,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         mentuItemText5.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description5Title)
             descriptionView.descriptionTextView.text = getString(R.string.description5)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_5)
             toast.view = descriptionView
@@ -192,6 +197,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         tyutyanTextView.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description01Title)
             descriptionView.descriptionTextView.text = getString(R.string.description01)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_01)
             toast.view = descriptionView
@@ -199,6 +205,7 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         kokyuTextView.setOnLongClickListener {
+            descriptionView.descriptionTitleText.text = getString(R.string.description02Title)
             descriptionView.descriptionTextView.text = getString(R.string.description02)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_02)
             toast.view = descriptionView
@@ -206,40 +213,47 @@ class MarkToolActivity : AppCompatActivity() {
             true
         }
         //スピナーセレクト
-        var firstFlag = true
+        //雀頭
+        var firstFlagHead = true
+        val headView = layoutInflater.inflate(R.layout.description_mentu, null)
+        val headToast = Toast(this)
         headSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             //何も選択されなかった時の動作
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
 
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                if (firstFlag) {
-                    firstFlag = false
+                if (firstFlagHead) {
+                    firstFlagHead = false
                 } else {
-                    val headView = layoutInflater.inflate(R.layout.description_mentu, null)
-                    val headToast = Toast(this@MarkToolActivity)
                     when (position) {
                         0 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_1)
+                            headView.descriptionTitleText.text = getString(R.string.head1Title)
+                            headView.descriptionTextView.text = getString(R.string.head1)
                             headView.descriptionImage.setImageResource(R.drawable.head_1)
                         }
                         1 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_2)
+                            headView.descriptionTitleText.text = getString(R.string.head2Title)
+                            headView.descriptionTextView.text = getString(R.string.head2)
                             headView.descriptionImage.setImageResource(R.drawable.head_2)
                         }
                         2 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_3)
+                            headView.descriptionTitleText.text = getString(R.string.head3Title)
+                            headView.descriptionTextView.text = getString(R.string.head3)
                             headView.descriptionImage.setImageResource(R.drawable.head_3)
                         }
                         3 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_4)
+                            headView.descriptionTitleText.text = getString(R.string.head4Title)
+                            headView.descriptionTextView.text = getString(R.string.head4)
                             headView.descriptionImage.setImageResource(R.drawable.head_4)
                         }
                         4 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_5)
+                            headView.descriptionTitleText.text = getString(R.string.head5Title)
+                            headView.descriptionTextView.text = getString(R.string.head5)
                             headView.descriptionImage.setImageResource(R.drawable.head_5)
                         }
                         5 -> {
-                            headView.descriptionTextView.text = getString(R.string.head_6)
+                            headView.descriptionTitleText.text = getString(R.string.head6Title)
+                            headView.descriptionTextView.text = getString(R.string.head6)
                             headView.descriptionImage.setImageResource(R.drawable.head_6)
                         }
                         else -> error("ポジションエラー$position")
@@ -249,6 +263,53 @@ class MarkToolActivity : AppCompatActivity() {
                 }
             }
         }
+
+        //待ち方
+        var firstFlagWait = true
+        val waitView = layoutInflater.inflate(R.layout.description_mentu, null)
+        val waitToast = Toast(this)
+        waitSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            //何も選択されなかった時の動作
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                if (firstFlagWait) {
+                    firstFlagWait = false
+                } else {
+                    when (position) {
+                        0 -> {
+                            waitView.descriptionTitleText.text = getString(R.string.waitDest1Title)
+                            waitView.descriptionTextView.text = getString(R.string.waitDest1)
+                            waitView.descriptionImage.setImageResource(R.drawable.wait_dest1)
+                        }
+                        1 -> {
+                            waitView.descriptionTitleText.text = getString(R.string.waitDest2Title)
+                            waitView.descriptionTextView.text = getString(R.string.waitDest2)
+                            waitView.descriptionImage.setImageResource(R.drawable.wait_dest2)
+                        }
+                        2 -> {
+                            waitView.descriptionTitleText.text = getString(R.string.waitDest3Title)
+                            waitView.descriptionTextView.text = getString(R.string.waitDest3)
+                            waitView.descriptionImage.setImageResource(R.drawable.wait_dest3)
+                        }
+                        3 -> {
+                            waitView.descriptionTitleText.text = getString(R.string.waitDest4Title)
+                            waitView.descriptionTextView.text = getString(R.string.waitDest4)
+                            waitView.descriptionImage.setImageResource(R.drawable.wait_dest4)
+                        }
+                        4 -> {
+                            waitView.descriptionTitleText.text = getString(R.string.waitDest5Title)
+                            waitView.descriptionTextView.text = getString(R.string.waitDest5)
+                            waitView.descriptionImage.setImageResource(R.drawable.wait_dest5)
+                        }
+                        else -> error("ポジションエラー$position")
+                    }
+                    waitToast.view = waitView
+                    waitToast.show()
+                }
+            }
+        }
+
     }
 
     private fun init() {

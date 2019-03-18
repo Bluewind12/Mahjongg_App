@@ -109,21 +109,47 @@
     <string name="theme">テーマ変更</string>
 
     <!-- 説明 -->
-    <string name="description1">順子（シュンツ）\n\n同じ種類で数字が３つ連続している組み合わせ</string>
-    <string name="description2">明刻（ミンコ）\n\n「ポン」をして集めた３つの同じ牌の組み合わせ</string>
-    <string name="description3">暗刻（アンコ）\n\n「ポン」をせずに集めた３つの同じ牌の組み合わせ</string>
-    <string name="description4">明槓（ミンカン）\n\n「大明槓」「小明槓」「加槓」を行なった場合</string>
-    <string name="description5">暗槓（アンカン）\n\n「暗槓」を行なった場合</string>
-    <string name="description01">中張牌（チュンチャン）\n断么牌（タンヤオ）\n\n数牌の二から八の牌</string>
-    <string name="description02">么九牌（ヤオチュー）\n\n字牌と、数牌のうちの一と九の牌の総称。</string>
+    <string name="description1">同じ種類で数字が３つ連続している組み合わせ</string>
+    <string name="description2">「ポン」をして集めた３つの同じ牌の組み合わせ</string>
+    <string name="description3">「ポン」をせずに集めた３つの同じ牌の組み合わせ</string>
+    <string name="description4">「大明槓」「小明槓」「加槓」を行なった場合</string>
+    <string name="description5">「暗槓」を行なった場合</string>
+    <string name="description01">数牌の二から八の牌</string>
+    <string name="description02">字牌と、数牌のうちの一と九の牌の総称。</string>
+
+    <string name="description1Title">順子（シュンツ）</string>
+    <string name="description2Title">明刻（ミンコ）</string>
+    <string name="description3Title">暗刻（アンコ）</string>
+    <string name="description4Title">明槓（ミンカン）</string>
+    <string name="description5Title">暗槓（アンカン）</string>
+    <string name="description01Title">中張牌（チュンチャン）,断么牌（タンヤオ）</string>
+    <string name="description02Title">么九牌（ヤオチュー）</string>
 
     <!-- 雀頭説明 -->
-    <string name="head_1">数牌（シュウ）\n\n1~9の数牌</string>
-    <string name="head_2">三元牌（サンゲン）\n\n[白][発][中]の牌</string>
-    <string name="head_3">場風牌（バカゼ）\n圏風牌（チャンフォン）\n\n場風が東の時の[東]\n場風が南の時の[南]\n\n</string>
-    <string name="head_4">自風牌（ジカゼ）\n門風牌（メンフォン）\n\n東家の時の[東]\n南家の時の[南]</string>
-    <string name="head_5">客風牌（コーフォン）\nオタ風牌\n\n場風牌、自風牌のどちらでもない風牌</string>
-    <string name="head_6">場風・自風牌\n連風牌（リェンフォン）\n\n場風牌、自風牌のどちらもの風牌</string>
+    <string name="head1">1~9の数牌</string>
+    <string name="head2">[白][発][中]の牌</string>
+    <string name="head3">場風が東の時の[東]\n場風が南の時の[南]</string>
+    <string name="head4">東家の時の[東]\n南家の時の[南]</string>
+    <string name="head5">場風牌、自風牌のどちらでもない風牌</string>
+    <string name="head6">場風牌、自風牌のどちらもの風牌</string>
+    <string name="head1Title">数牌（シュウ）</string>
+    <string name="head2Title">三元牌（サンゲン）</string>
+    <string name="head3Title">場風牌（バカゼ）,圏風牌（チャンフォン）</string>
+    <string name="head4Title">自風牌（ジカゼ）,門風牌（メンフォン）</string>
+    <string name="head5Title">客風牌（コーフォン）,オタ風牌</string>
+    <string name="head6Title">場風・自風牌 ,連風牌（リェンフォン）</string>
+
+    <!-- 雀頭説明 -->
+    <string name="waitDest1">雀頭が一枚\n→ 雀頭となる１種類の待ち</string>
+    <string name="waitDest2">[8,9]の時の[7]や\n[1,2]の時の[3]といった１種類の待ち</string>
+    <string name="waitDest3">[2,4]の時の[3]や\n[6,8]の時の[7]といった１種類の待ち</string>
+    <string name="waitDest4">[3,4]の時の[2,5]や\n[7,8]の時の[6,9]といった２種類以上の待ち</string>
+    <string name="waitDest5">対子が２組\n→ 雀頭,刻子となる待ち</string>
+    <string name="waitDest1Title">単騎待ち（タンキ）</string>
+    <string name="waitDest2Title">辺張待ち（ペンチャン）</string>
+    <string name="waitDest3Title">嵌張待ち（カンチャン）</string>
+    <string name="waitDest4Title">両面待ち（リャンメン）</string>
+    <string name="waitDest5Title">双碰待ち（シャンポン）</string>
 
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
