@@ -9,5 +9,5 @@
     <solid android:color="@color/noFill" />
     <stroke
         android:width="5sp"
-        android:color="#AAFFFFFF" />
+        android:color="#BBBBBB" />
 </shape>

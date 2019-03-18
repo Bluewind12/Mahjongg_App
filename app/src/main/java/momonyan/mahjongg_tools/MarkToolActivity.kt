@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
 import kotlin.math.ceil
@@ -207,8 +205,50 @@ class MarkToolActivity : AppCompatActivity() {
             toast.show()
             true
         }
+        //スピナーセレクト
+        var firstFlag = true
+        headSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            //何も選択されなかった時の動作
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
 
-
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                if (firstFlag) {
+                    firstFlag = false
+                } else {
+                    val headView = layoutInflater.inflate(R.layout.description_mentu, null)
+                    val headToast = Toast(this@MarkToolActivity)
+                    when (position) {
+                        0 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_1)
+                            headView.descriptionImage.setImageResource(R.drawable.head_1)
+                        }
+                        1 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_2)
+                            headView.descriptionImage.setImageResource(R.drawable.head_2)
+                        }
+                        2 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_3)
+                            headView.descriptionImage.setImageResource(R.drawable.head_3)
+                        }
+                        3 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_4)
+                            headView.descriptionImage.setImageResource(R.drawable.head_4)
+                        }
+                        4 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_5)
+                            headView.descriptionImage.setImageResource(R.drawable.head_5)
+                        }
+                        5 -> {
+                            headView.descriptionTextView.text = getString(R.string.head_6)
+                            headView.descriptionImage.setImageResource(R.drawable.head_6)
+                        }
+                        else -> error("ポジションエラー$position")
+                    }
+                    headToast.view = headView
+                    headToast.show()
+                }
+            }
+        }
     }
 
     private fun init() {

@@ -117,6 +117,14 @@
     <string name="description01">中張牌（チュンチャン）\n断么牌（タンヤオ）\n\n数牌の二から八の牌</string>
     <string name="description02">么九牌（ヤオチュー）\n\n字牌と、数牌のうちの一と九の牌の総称。</string>
 
+    <!-- 雀頭説明 -->
+    <string name="head_1">数牌（シュウ）\n\n1~9の数牌</string>
+    <string name="head_2">三元牌（サンゲン）\n\n[白][発][中]の牌</string>
+    <string name="head_3">場風牌（バカゼ）\n圏風牌（チャンフォン）\n\n場風が東の時の[東]\n場風が南の時の[南]\n\n</string>
+    <string name="head_4">自風牌（ジカゼ）\n門風牌（メンフォン）\n\n東家の時の[東]\n南家の時の[南]</string>
+    <string name="head_5">客風牌（コーフォン）\nオタ風牌\n\n場風牌、自風牌のどちらでもない風牌</string>
+    <string name="head_6">場風・自風牌\n連風牌（リェンフォン）\n\n場風牌、自風牌のどちらもの風牌</string>
+
     <!-- 広告用 -->
     <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
     <string name="nend_ad50">072ec4b3933ca4229a60320dedd9b662ba3b10fa</string>
