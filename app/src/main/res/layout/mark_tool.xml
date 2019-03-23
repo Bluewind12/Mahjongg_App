@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/markToolScrollLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
@@ -426,6 +427,19 @@
 			app:layout_constraintBottom_toBottomOf="@+id/calculateButton"
 			app:layout_constraintStart_toEndOf="@+id/calculateButton" />
 
+		<ImageView
+			android:id="@+id/imageView3"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_marginStart="8dp"
+			android:adjustViewBounds="true"
+			app:layout_constraintBottom_toBottomOf="@+id/nend2"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/nend2"
+			nendsdk:srcCompat="@drawable/gensou_logo"
+			android:contentDescription="@string/logo_image" />
+
 		<net.nend.android.NendAdView
 			android:id="@+id/nend2"
 			android:layout_width="320dp"
@@ -496,5 +510,6 @@
 			android:text="@string/mentuDescript"
 			app:layout_constraintBottom_toBottomOf="@+id/textView16"
 			app:layout_constraintStart_toEndOf="@+id/textView16" />
+
 	</android.support.constraint.ConstraintLayout>
 </ScrollView>

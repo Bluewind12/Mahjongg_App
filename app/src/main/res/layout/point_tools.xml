@@ -2,7 +2,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/scrollView2"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -336,7 +335,19 @@
 			app:layout_constraintTop_toBottomOf="@+id/view8"
 			app:srcCompat="@drawable/number_1" />
 
-        <net.nend.android.NendAdView
+		<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:adjustViewBounds="true"
+			android:contentDescription="@string/logo_image"
+			app:layout_constraintBottom_toBottomOf="@+id/nend"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/nend"
+			nendsdk:srcCompat="@drawable/gensou_logo" />
+
+		<net.nend.android.NendAdView
             android:id="@+id/nend"
             android:layout_width="match_parent"
             android:layout_height="50sp"
