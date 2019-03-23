@@ -166,5 +166,12 @@
     <string name="fantasy_url">https://www.gensounosakura.work</string>
     <string name="mentuDescript">単語を長押しで簡易説明</string>
     <string name="logo_image">Logo Image</string>
+    <string name="first_dice">2：右</string>
+    <string name="roll">振る</string>
+    <string name="dice_title">サイコロ</string>
+    <string name="move">移動</string>
+    <string name="fu_calculate_title">符計算ツール</string>
+    <string name="table_title">表一式</string>
+    <string name="blank_table" />
 
 </resources>
