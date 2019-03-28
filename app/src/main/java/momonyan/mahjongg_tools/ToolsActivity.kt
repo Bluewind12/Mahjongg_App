@@ -11,10 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
 
 
@@ -92,6 +89,28 @@ class ToolsActivity : AppCompatActivity() {
 
             //効果音
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+
+        //TextViewの長押し時の説明文の表示に関しての部分
+        pointCalculationTextView.setOnLongClickListener {
+            Toast.makeText(this, "飜数と符数を入力して計算を押すと計算されます", Toast.LENGTH_LONG).show()
+            true
+        }
+        pointTextView.setOnLongClickListener {
+            Toast.makeText(this, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます", Toast.LENGTH_LONG).show()
+            true
+        }
+        tableViewTextView.setOnLongClickListener {
+            Toast.makeText(this, "麻雀の点数表を表示します", Toast.LENGTH_LONG).show()
+            true
+        }
+        markPointJunpTextView.setOnLongClickListener {
+            Toast.makeText(this, "符の計算ツール画面への移動ボタンです", Toast.LENGTH_LONG).show()
+            true
+        }
+        diceTextView.setOnLongClickListener {
+            Toast.makeText(this, "サイコロが振れます\n左・右・対・自の表示もあります", Toast.LENGTH_LONG).show()
+            true
         }
     }
 

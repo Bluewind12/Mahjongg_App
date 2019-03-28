@@ -10,9 +10,9 @@
 	<android.support.constraint.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
-		
+
 		<TextView
-			android:id="@+id/textView"
+			android:id="@+id/pointCalculationTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
@@ -90,7 +90,7 @@
 			app:layout_constraintTop_toBottomOf="@+id/calculationButton" />
 		
 		<TextView
-			android:id="@+id/textView6"
+			android:id="@+id/pointTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
@@ -113,7 +113,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0.1"
 			app:layout_constraintStart_toEndOf="@+id/basicText"
-			app:layout_constraintTop_toBottomOf="@+id/textView6" />
+			app:layout_constraintTop_toBottomOf="@+id/pointTextView" />
 		
 		<TextView
 			android:id="@+id/basicText"
@@ -124,7 +124,7 @@
 			android:text="@string/machi"
 			android:textSize="18sp"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textView6" />
+			app:layout_constraintTop_toBottomOf="@+id/pointTextView" />
 		
 		<TextView
 			android:id="@+id/childText"
@@ -196,7 +196,7 @@
 			app:layout_constraintTop_toTopOf="@+id/textView13" />
 		
 		<TextView
-			android:id="@+id/textView19"
+			android:id="@+id/tableViewTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
@@ -255,7 +255,7 @@
 			app:layout_constraintTop_toBottomOf="@+id/markTable" />
 		
 		<TextView
-			android:id="@+id/textView2"
+			android:id="@+id/markPointJunpTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
@@ -275,7 +275,7 @@
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/move"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textView2" />
+			app:layout_constraintTop_toBottomOf="@+id/markPointJunpTextView" />
 		
 		<View
 			android:id="@+id/view8"
@@ -291,7 +291,7 @@
 			app:layout_constraintTop_toBottomOf="@+id/markToolButton" />
 		
 		<TextView
-			android:id="@+id/textView10"
+			android:id="@+id/diceTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
@@ -313,7 +313,7 @@
 			android:text="@string/roll"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textView10" />
+			app:layout_constraintTop_toBottomOf="@+id/diceTextView" />
 		
 		<ImageView
 			android:id="@+id/rightImage"
@@ -391,8 +391,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/pointTables"
-			app:layout_constraintStart_toStartOf="@+id/textView19"
-			app:layout_constraintTop_toBottomOf="@+id/textView19" />
+			app:layout_constraintStart_toStartOf="@+id/tableViewTextView"
+			app:layout_constraintTop_toBottomOf="@+id/tableViewTextView" />
 	
 	</android.support.constraint.ConstraintLayout>
 
