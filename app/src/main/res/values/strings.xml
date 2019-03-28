@@ -173,5 +173,6 @@
     <string name="fu_calculate_title">符計算ツール</string>
     <string name="table_title">表一式</string>
     <string name="blank_table" />
+    <string name="windDescription">風表示</string>
 
 </resources>

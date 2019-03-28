@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	tools:context=".MainActivity"
 	tools:layout_editor_absoluteY="81dp">
-	
+
 	<ImageButton
 		android:id="@+id/imageButton1"
 		android:layout_width="100dp"
@@ -16,11 +16,13 @@
 		android:layout_marginBottom="8dp"
 		android:background="@null"
 		android:scaleType="fitXY"
+		android:contentDescription="@string/windDescription"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@mipmap/ic_launcher" />
-	
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
 	<ImageButton
 		android:id="@+id/imageButton2"
 		android:layout_width="100dp"
@@ -31,10 +33,12 @@
 		android:background="@null"
 		android:scaleType="fitXY"
 		app:layout_constraintBottom_toBottomOf="parent"
+		android:contentDescription="@string/windDescription"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:srcCompat="@mipmap/ic_launcher" />
-	
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
 	<ImageButton
 		android:id="@+id/imageButton3"
 		android:layout_width="100dp"
@@ -45,10 +49,12 @@
 		android:background="@null"
 		android:scaleType="fitXY"
 		app:layout_constraintBottom_toBottomOf="parent"
+		android:contentDescription="@string/windDescription"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@mipmap/ic_launcher" />
-	
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
 	<ImageButton
 		android:id="@+id/imageButton4"
 		android:layout_width="100dp"
@@ -58,11 +64,13 @@
 		android:layout_marginEnd="8dp"
 		android:background="@null"
 		android:scaleType="fitXY"
+		android:contentDescription="@string/windDescription"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@mipmap/ic_launcher" />
-	
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
 	<ImageButton
 		android:id="@+id/imageButtonF"
 		android:layout_width="100dp"
@@ -72,12 +80,14 @@
 		android:layout_marginEnd="8dp"
 		android:layout_marginBottom="8dp"
 		android:background="@null"
+		android:contentDescription="@string/windDescription"
 		android:scaleType="fitXY"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@mipmap/ic_launcher" />
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
 	
 	<ImageButton
 		android:id="@+id/pointButton"
@@ -130,39 +140,43 @@
 		android:textSize="24sp"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
-	
+
 	<TextView
 		android:id="@+id/honba1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toEndOf="@+id/imageButton1"
-		app:layout_constraintTop_toTopOf="parent" />
-	
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="本場表示" />
+
 	<TextView
 		android:id="@+id/honba2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		app:layout_constraintBottom_toTopOf="@+id/imageButton2"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
-	
+		app:layout_constraintStart_toStartOf="parent"
+		tools:text="本場表示" />
+
 	<TextView
 		android:id="@+id/honba3"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-		app:layout_constraintTop_toTopOf="parent" />
-	
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="本場表示" />
+
 	<TextView
 		android:id="@+id/honba4"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-	
+		app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+		tools:text="本場表示" />
+
 	<TextView
 		android:id="@+id/boost1"
 		android:layout_width="wrap_content"
@@ -171,8 +185,9 @@
 		android:layout_marginTop="8dp"
 		android:textColor="@color/Oya"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
-	
+		app:layout_constraintTop_toBottomOf="@+id/imageButton1"
+		tools:text="親表示" />
+
 	<TextView
 		android:id="@+id/boost2"
 		android:layout_width="wrap_content"
@@ -181,8 +196,9 @@
 		android:layout_marginBottom="8dp"
 		android:textColor="@color/Oya"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintStart_toEndOf="@+id/imageButton2" />
-	
+		app:layout_constraintStart_toEndOf="@+id/imageButton2"
+		tools:text="親表示" />
+
 	<TextView
 		android:id="@+id/boost3"
 		android:layout_width="wrap_content"
@@ -191,8 +207,9 @@
 		android:layout_marginBottom="8dp"
 		android:textColor="@color/Oya"
 		app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-		app:layout_constraintEnd_toEndOf="parent" />
-	
+		app:layout_constraintEnd_toEndOf="parent"
+		tools:text="親表示" />
+
 	<TextView
 		android:id="@+id/boost4"
 		android:layout_width="wrap_content"
@@ -201,7 +218,8 @@
 		android:layout_marginEnd="8dp"
 		android:textColor="@color/Oya"
 		app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="親表示" />
 
 
 </android.support.constraint.ConstraintLayout>
