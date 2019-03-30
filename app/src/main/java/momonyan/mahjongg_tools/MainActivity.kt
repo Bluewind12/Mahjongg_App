@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity() {
         //レビュー
         RateOrFeedback(this)
                 // レビュー用ストアURL
-                .setPlayStoreUrl("https://play.google.com/store/apps/details?id=momonyan.contactlensmanage")
+                .setPlayStoreUrl("https://play.google.com/store/apps/details?id=momonyan.mahjongg_tools")
                 // 改善点・要望の送信先メールアドレス
                 .setFeedbackEmail("gensounosakurakikimimi@gmail.com")
                 // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
