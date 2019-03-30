@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import jp.co.runners.rateorfeedback.RateOrFeedback
 import net.nend.android.NendAdInterstitial
 
 class MainActivity : AppCompatActivity() {
@@ -128,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(resetIntent)
             }
         }
+        showReview()
     }
 
     //初期設定
@@ -167,6 +169,7 @@ class MainActivity : AppCompatActivity() {
      * @param longFlag true:長押し false:単押
      */
     private fun changeState(touchButtonNum : Int, longFlag : Boolean) {
+        showReview()
         if (!longFlag) {
             //単押(増加)
             if (parent == touchButtonNum) {
@@ -230,4 +233,30 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
 
+    private fun showReview() {
+        //レビュー
+        RateOrFeedback(this)
+                // レビュー用ストアURL
+                .setPlayStoreUrl("https://play.google.com/store/apps/details?id=momonyan.contactlensmanage")
+                // 改善点・要望の送信先メールアドレス
+                .setFeedbackEmail("gensounosakurakikimimi@gmail.com")
+                // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
+                // この値をインクリメントすることで再度ダイアログが表示されるようになります。
+                .setReviewRequestId(0)
+                // 前回ダイアログを表示してから次にダイアログを表示してよいタイミングまでの期間です。
+                .setIntervalFromPreviousShowing(60 * 60 * 24 * 7)//7日
+                // アプリをインストールしてから、ここで指定された期間はダイアログを表示しません。
+                .setNotShowTermSecondsFromInstall(60 * 60 * 1)//1時間
+                .setAskLikeAppDialogMessage("このアプリはどうですか?")
+                .setAskLikeAppDialogPositiveTitle("使いやすい！")
+                .setAskLikeAppDialogNegativeTitle("そうでもない")
+                .setRequestReviewDialogMessage("それはよかった！\nもしよければストアでレビューして頂けないでしょうか？")
+                .setRequestReviewDialogPositiveTitle("レビューする!")
+                .setRequestReviewDialogNegativeTitle("今はしない")
+                .setRequestFeedbackDialogMessage("改善点や要望を送信しますか？")
+                .setRequestFeedbackDialogPositiveTitle("送信する!")
+                .setRequestFeedbackDialogNegativeTitle("今はしない")
+                // 条件次第でダイアログを表示する
+                .showIfNeeds()
+    }
 }
