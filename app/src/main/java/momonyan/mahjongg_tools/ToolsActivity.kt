@@ -286,14 +286,6 @@ class ToolsActivity : AppCompatActivity() {
                         .setIcon(R.drawable.kizi).show()
                 return true
             }
-            R.id.menu2 -> {
-                AlertDialog.Builder(this).setTitle("Webページを開きます").setMessage("[意見・感想・バグ報告について]\nのページを開いてもよろしいですか？").setPositiveButton("はい") { _, _ ->
-                    val uri = Uri.parse(getString(R.string.enquete_url))
-                    startActivity(Intent(Intent.ACTION_VIEW, uri))
-                }.setNegativeButton("いいえ", null)
-                        .setIcon(R.drawable.anke).show()
-                return true
-            }
             R.id.menu_home -> {
                 finish()
                 return true

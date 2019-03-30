@@ -13,7 +13,4 @@
 	<item
 		android:id="@+id/menu1"
 		android:title="@string/privacy" />
-	<item
-		android:id="@+id/menu2"
-		android:title="@string/enquete" />
 </menu>
