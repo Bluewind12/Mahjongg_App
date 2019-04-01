@@ -32,6 +32,12 @@
             android:label="符計算"
             android:screenOrientation="portrait"
             android:theme="@style/DarkThemeAction" />
+
+        <activity
+            android:name=".YakuListViewActivity"
+            android:label="役一覧表"
+            android:screenOrientation="portrait"
+            android:theme="@style/DarkThemeAction" />
         <activity
             android:name=".TableOutputActivity"
             android:label="親-点数表"

@@ -78,6 +78,12 @@ class ToolsActivity : AppCompatActivity() {
             val intent = Intent(this, MarkToolActivity::class.java)
             startActivity(intent)
         }
+        //役一覧画面への繊維
+
+        yakuJumpButton.setOnClickListener {
+            val intent = Intent(this, YakuListViewActivity::class.java)
+            startActivity(intent)
+        }
 
         //サイコロ機能
         diceButton.setOnClickListener {
@@ -110,6 +116,11 @@ class ToolsActivity : AppCompatActivity() {
         }
         diceTextView.setOnLongClickListener {
             Toast.makeText(this, "サイコロが振れます\n左・右・対・自の表示もあります", Toast.LENGTH_LONG).show()
+            true
+        }
+
+        yakuTextView.setOnLongClickListener {
+            Toast.makeText(this, "役の一覧表への移動ボタンです", Toast.LENGTH_LONG).show()
             true
         }
     }

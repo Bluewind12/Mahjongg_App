@@ -253,27 +253,33 @@
 			app:layout_constraintHorizontal_bias="1.0"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/markTable" />
-		
+
 		<TextView
 			android:id="@+id/markPointJunpTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
 			android:text="@string/fu_calculate_title"
 			android:textColor="?attr/colorAccent"
 			android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/view9"
+            app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view4" />
-		
+
 		<Button
 			android:id="@+id/markToolButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
 			android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/move"
+            app:layout_constraintEnd_toStartOf="@+id/view9"
+            app:layout_constraintHorizontal_bias="0.3"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/markPointJunpTextView" />
 		
@@ -289,8 +295,8 @@
 			app:layout_constraintHorizontal_bias="0.0"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/markToolButton" />
-		
-		<TextView
+
+        <TextView
 			android:id="@+id/diceTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -340,7 +346,6 @@
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			android:adjustViewBounds="true"
-			android:contentDescription="@string/logo_image"
 			app:layout_constraintBottom_toBottomOf="@+id/nend"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
@@ -393,8 +398,52 @@
 			android:text="@string/pointTables"
 			app:layout_constraintStart_toStartOf="@+id/tableViewTextView"
 			app:layout_constraintTop_toBottomOf="@+id/tableViewTextView" />
-	
-	</android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/view9"
+            android:layout_width="5dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/view8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <Button
+            android:id="@+id/yakuJumpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/colorButtonNormal"
+            android:text="@string/move"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@+id/view9"
+            app:layout_constraintTop_toBottomOf="@+id/yakuTextView" />
+
+        <TextView
+            android:id="@+id/yakuTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/yaku_table_string"
+            android:textColor="?attr/colorAccent"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/view9"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+    </android.support.constraint.ConstraintLayout>
 
 
 </ScrollView>
