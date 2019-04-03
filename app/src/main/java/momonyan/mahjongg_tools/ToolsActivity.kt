@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
 
@@ -85,6 +86,7 @@ class ToolsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         //サイコロ機能
         diceButton.setOnClickListener {
             val count = CountFunction(1000, 100)
@@ -123,6 +125,10 @@ class ToolsActivity : AppCompatActivity() {
             Toast.makeText(this, "役の一覧表への移動ボタンです", Toast.LENGTH_LONG).show()
             true
         }
+
+        //とりあえずの消し
+        yakuTextView.visibility = View.GONE
+        yakuJumpButton.visibility = View.GONE
     }
 
 
