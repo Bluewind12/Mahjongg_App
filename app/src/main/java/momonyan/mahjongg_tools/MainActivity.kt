@@ -3,12 +3,15 @@ package momonyan.mahjongg_tools
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import net.nend.android.NendAdInterstitial
+
 
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
@@ -128,6 +131,16 @@ class MainActivity : AppCompatActivity() {
                 startActivity(resetIntent)
             }
         }
+
+        setTheme(R.style.defaultTheme)
+        var viewNum = dataStore.getInt("ViewNum", 0)
+        if (viewNum == 5) {
+            dataStore.edit().putInt("ViewNum", -15).apply()
+            viewAlertDialog()
+        }else {
+            viewNum++
+            dataStore.edit().putInt("ViewNum", viewNum).apply()
+        }
     }
 
     //初期設定
@@ -231,4 +244,47 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 2) % 4].text = ""
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
+
+    private fun viewAlertDialog() {
+        AlertDialog.Builder(this)
+                .setTitle(getString(R.string.rate_dialog_title)) //タイトル
+                .setMessage(getString(R.string.rate_dialog_message)) //内容
+                .setPositiveButton(getString(R.string.rate_dialog_ok)) { _, _ ->
+                    //レビューページに飛ばす用のアラートダイアログ
+                    AlertDialog.Builder(this)
+                            .setTitle(getString(R.string.rate_dialog_title))
+                            .setMessage(getString(R.string.rate_dialog_store_message))
+                            .setPositiveButton(getString(R.string.rate_dialog_store_ok)) { _, _ ->
+                                val uri = Uri.parse("market://details?id=momonyan.mahjongg_tools")
+                                val intent = Intent(Intent.ACTION_VIEW, uri)
+                                startActivity(intent)
+                            }
+                            .setNegativeButton(getString(R.string.rate_dialog_store_no)) { _, _ ->
+                                dataStore.edit().putInt("ViewNum", 0).apply()
+                            }
+                            .show()
+                }
+                .setNegativeButton(getString(R.string.rate_dialog_no)) { _, _ ->
+                    //問い合わせに飛ばすためのアラートダイアログ
+                    AlertDialog.Builder(this)
+                            .setTitle(getString(R.string.rate_dialog_title))
+                            .setMessage(getString(R.string.rate_dialog_mail_message))
+                            .setPositiveButton(getString(R.string.rate_dialog_mail_ok)) { _, _ ->
+                                val intent = Intent()
+                                intent.action = Intent.ACTION_SENDTO
+                                intent.type = "text/plain"
+                                intent.data = Uri.parse("mailto:gensounosakurakikimimi@gmail.com")
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "問い合わせ：麻雀ツール")
+                                intent.putExtra(Intent.EXTRA_TEXT, "")
+                                startActivity(Intent.createChooser(intent, null))
+                                dataStore.edit().putInt("ViewNum", -5).apply()
+                            }
+                            .setNegativeButton(getString(R.string.rate_dialog_mail_no)) { _, _ ->
+                                dataStore.edit().putInt("ViewNum", 0).apply()
+                            }
+                            .show()
+                }
+                .show()
+    }
+
 }
