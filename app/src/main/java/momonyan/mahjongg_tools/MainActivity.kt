@@ -282,7 +282,7 @@ class MainActivity : AppCompatActivity() {
                                 .show()
                     }
                     .show()
-        } else {
+        } else if(viewNum < viewLimit){
             viewNum++
             dataStore.edit().putInt("ViewNum", viewNum).apply()
         }
