@@ -173,6 +173,8 @@
     <string name="blank_table" />
     <string name="windDescription">風表示</string>
     <string name="yaku_table_string">役一覧表</string>
+    <string name="reviewString">レビューをする</string>
+    <string name="reviewUrl">market://details?id=momonyan.mahjongg_tools</string>
 
     <!-- レビュー誘導 -->
     <string name="rate_dialog_title">レビューをお願いします！</string>

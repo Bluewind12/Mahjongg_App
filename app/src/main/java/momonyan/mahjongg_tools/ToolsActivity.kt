@@ -303,6 +303,15 @@ class ToolsActivity : AppCompatActivity() {
                         .setIcon(R.drawable.kizi).show()
                 return true
             }
+            R.id.menu_review -> {
+                AlertDialog.Builder(this)
+                        .setTitle("レビューページへ").setMessage("[レビュー]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                            val uri = Uri.parse(getString(R.string.reviewUrl))
+                            startActivity(Intent(Intent.ACTION_VIEW, uri))
+                        }.setNegativeButton("いいえ", null)
+                        .setIcon(R.drawable.review_image).show()
+                return true
+            }
             R.id.menu_home -> {
                 finish()
                 return true

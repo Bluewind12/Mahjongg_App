@@ -13,4 +13,7 @@
 	<item
 		android:id="@+id/menu1"
 		android:title="@string/privacy" />
+	<item
+		android:id="@+id/menu_review"
+		android:title="@string/reviewString" />
 </menu>
