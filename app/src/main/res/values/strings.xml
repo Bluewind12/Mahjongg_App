@@ -190,5 +190,8 @@
     <string name="rate_dialog_mail_message">改善点・意見を送りますか？</string>
     <string name="rate_dialog_mail_ok">はい</string>
     <string name="rate_dialog_mail_no">また今度</string>
+    <string name="first_wind">東</string>
+    <string name="wind_description">風</string>
+    <string name="roll_wind">回す</string>
 
 </resources>

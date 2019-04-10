@@ -296,7 +296,7 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/markToolButton" />
 
-        <TextView
+		<TextView
 			android:id="@+id/diceTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -307,20 +307,18 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view8" />
-		
+
 		<Button
 			android:id="@+id/diceButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="24dp"
 			android:layout_marginTop="8dp"
-			android:layout_marginBottom="16dp"
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/roll"
-			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/diceTextView" />
-		
+
 		<ImageView
 			android:id="@+id/rightImage"
 			android:layout_width="65dp"
@@ -350,7 +348,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="@+id/nend"
-			nendsdk:srcCompat="@drawable/gensou_logo" />
+			app:srcCompat="@drawable/gensou_logo" />
 
 		<net.nend.android.NendAdView
             android:id="@+id/nend"
@@ -390,7 +388,7 @@
 			app:layout_constraintBottom_toBottomOf="@+id/rightImage"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/rightImage" />
-		
+
 		<TextView
 			android:id="@+id/textView8"
 			android:layout_width="wrap_content"
@@ -442,9 +440,68 @@
             app:layout_constraintStart_toEndOf="@+id/view9"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
+		<View
+			android:id="@+id/view10"
+			android:layout_width="match_parent"
+			android:layout_height="5dp"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginEnd="8dp"
+			android:background="?attr/colorPrimary"
+			app:layout_constraintTop_toBottomOf="@+id/diceButton" />
+
+		<TextView
+			android:id="@+id/windRandTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:text="@string/wind_description"
+			android:textColor="?attr/colorAccent"
+			android:textSize="20sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+		<Button
+			android:id="@+id/diceButton2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="16dp"
+			android:background="?attr/colorButtonNormal"
+			android:text="@string/roll_wind"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/windRandTextView" />
+
+		<ImageView
+			android:id="@+id/windRandImage"
+			android:layout_width="65dp"
+			android:layout_height="65dp"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="32dp"
+			android:layout_marginEnd="8dp"
+			app:layout_constraintEnd_toStartOf="@+id/windRandOutputTextView"
+			app:layout_constraintStart_toEndOf="@+id/diceButton2"
+			app:layout_constraintTop_toBottomOf="@+id/view10"
+			app:srcCompat="@drawable/hougaku1_higashi"/>
+
+		<TextView
+			android:id="@+id/windRandOutputTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:text="@string/first_wind"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			app:layout_constraintBottom_toBottomOf="@+id/windRandImage"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintStart_toStartOf="@+id/oyaDiceTextView" />
 
 
-    </android.support.constraint.ConstraintLayout>
+	</android.support.constraint.ConstraintLayout>
 
 
 </ScrollView>
