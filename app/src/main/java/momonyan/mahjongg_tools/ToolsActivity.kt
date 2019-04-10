@@ -89,12 +89,21 @@ class ToolsActivity : AppCompatActivity() {
 
         //サイコロ機能
         diceButton.setOnClickListener {
-            val count = CountFunction(1000, 100)
+            val count = CountFunctionDice(1000, 100)
             count.leftImage = leftImageView
             count.rightImage = rightImageView
             count.textView = oyaDiceTextView
             count.start()
+            //効果音
+            soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
 
+        //サイコロ機能
+        windRollButton.setOnClickListener {
+            val count = CountFunctionWind(1000, 100)
+            count.windImage = windRandImage
+            count.textView = windRandOutputTextView
+            count.start()
             //効果音
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
@@ -123,6 +132,11 @@ class ToolsActivity : AppCompatActivity() {
 
         yakuTextView.setOnLongClickListener {
             Toast.makeText(this, "役の一覧表への移動ボタンです", Toast.LENGTH_LONG).show()
+            true
+        }
+
+        windRandTextView.setOnLongClickListener {
+            Toast.makeText(this, "風がランダムで表示されます。\n東南西北が表示されます。", Toast.LENGTH_LONG).show()
             true
         }
 

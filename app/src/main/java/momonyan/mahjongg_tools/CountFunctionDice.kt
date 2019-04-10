@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
 
-class CountFunction(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
+class CountFunctionDice(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
     lateinit var rightImage: ImageView
     lateinit var leftImage: ImageView
     lateinit var textView: TextView
