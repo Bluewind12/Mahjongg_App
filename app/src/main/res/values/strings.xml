@@ -175,21 +175,9 @@
     <string name="yaku_table_string">役一覧表</string>
     <string name="reviewString">レビューをする</string>
     <string name="reviewUrl">market://details?id=momonyan.mahjongg_tools</string>
+    <string name="reviewMail">gensounosakurakikimimi@gmail.com</string>
 
-    <!-- レビュー誘導 -->
-    <string name="rate_dialog_title">レビューをお願いします！</string>
-    <!-- 初期 -->
-    <string name="rate_dialog_message">このアプリはどうですか？</string>
-    <string name="rate_dialog_ok">使いやすい</string>
-    <string name="rate_dialog_no">そうでもない</string>
-    <!-- Store -->
-    <string name="rate_dialog_store_message">よろしければレビューをお願いします！</string>
-    <string name="rate_dialog_store_ok">OK！</string>
-    <string name="rate_dialog_store_no">また今度</string>
-    <!-- Mail -->
-    <string name="rate_dialog_mail_message">改善点・意見を送りますか？</string>
-    <string name="rate_dialog_mail_ok">はい</string>
-    <string name="rate_dialog_mail_no">また今度</string>
+
     <string name="first_wind">東</string>
     <string name="wind_description">風</string>
     <string name="roll_wind">回す</string>

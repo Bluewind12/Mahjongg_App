@@ -3,13 +3,12 @@ package momonyan.mahjongg_tools
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import jp.co.runners.rateorfeedback.RateOrFeedback
 import net.nend.android.NendAdInterstitial
 
 
@@ -28,8 +27,6 @@ class MainActivity : AppCompatActivity() {
     private var fieldNum = 0
     private var parent = 0
     private var times = 0
-
-    private var style = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {
         //テーマ変更
@@ -133,7 +130,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         setTheme(R.style.defaultTheme)
-        viewAlertDialog(5)
     }
 
     //初期設定
@@ -206,6 +202,7 @@ class MainActivity : AppCompatActivity() {
 
     //プレイヤー状態のセット
     private fun setState(setNum : Int) {
+        viewAlertDialog()
         playerButtons[setNum % 4].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
@@ -238,54 +235,20 @@ class MainActivity : AppCompatActivity() {
         boostTexts[(parent + fieldNum + 3) % 4].text = ""
     }
 
-    private fun viewAlertDialog(viewLimit: Int) {
-        var viewNum = dataStore.getInt("ViewNum", 0)
-        if (viewNum == viewLimit) {
-            dataStore.edit().putInt("ViewNum", -15).apply()
-            AlertDialog.Builder(this)
-                    .setTitle(getString(R.string.rate_dialog_title)) //タイトル
-                    .setMessage(getString(R.string.rate_dialog_message)) //内容
-                    .setPositiveButton(getString(R.string.rate_dialog_ok)) { _, _ ->
-                        //レビューページに飛ばす用のアラートダイアログ
-                        AlertDialog.Builder(this)
-                                .setTitle(getString(R.string.rate_dialog_title))
-                                .setMessage(getString(R.string.rate_dialog_store_message))
-                                .setPositiveButton(getString(R.string.rate_dialog_store_ok)) { _, _ ->
-                                    val uri = Uri.parse("market://details?id=momonyan.mahjongg_tools")
-                                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                                    startActivity(intent)
-                                    dataStore.edit().putInt("ViewNum", 10).apply()
-                                }
-                                .setNegativeButton(getString(R.string.rate_dialog_store_no)) { _, _ ->
-                                    dataStore.edit().putInt("ViewNum", 0).apply()
-                                }
-                                .show()
-                    }
-                    .setNegativeButton(getString(R.string.rate_dialog_no)) { _, _ ->
-                        //問い合わせに飛ばすためのアラートダイアログ
-                        AlertDialog.Builder(this)
-                                .setTitle(getString(R.string.rate_dialog_title))
-                                .setMessage(getString(R.string.rate_dialog_mail_message))
-                                .setPositiveButton(getString(R.string.rate_dialog_mail_ok)) { _, _ ->
-                                    val intent = Intent()
-                                    intent.action = Intent.ACTION_SENDTO
-                                    intent.type = "text/plain"
-                                    intent.data = Uri.parse("mailto:gensounosakurakikimimi@gmail.com")
-                                    intent.putExtra(Intent.EXTRA_SUBJECT, "問い合わせ：麻雀ツール")
-                                    intent.putExtra(Intent.EXTRA_TEXT, "")
-                                    startActivity(Intent.createChooser(intent, null))
-                                    dataStore.edit().putInt("ViewNum", -5).apply()
-                                }
-                                .setNegativeButton(getString(R.string.rate_dialog_mail_no)) { _, _ ->
-                                    dataStore.edit().putInt("ViewNum", 0).apply()
-                                }
-                                .show()
-                    }
-                    .show()
-        } else if(viewNum < viewLimit){
-            viewNum++
-            dataStore.edit().putInt("ViewNum", viewNum).apply()
-        }
+    private fun viewAlertDialog() {
+        RateOrFeedback(this)
+                // レビュー用ストアURL
+                .setPlayStoreUrl(getString(R.string.reviewUrl))
+                // 改善点・要望の送信先メールアドレス
+                .setFeedbackEmail(getString(R.string.reviewMail))
+                // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
+                // この値をインクリメントすることで再度ダイアログが表示されるようになります。
+                .setReviewRequestId(0)
+                // 前回ダイアログを表示してから次にダイアログを表示してよいタイミングまでの期間です。
+                .setIntervalFromPreviousShowing(60 * 60 * 3)//3時間
+                // アプリをインストールしてから、ここで指定された期間はダイアログを表示しません。
+                .setNotShowTermSecondsFromInstall(60 * 60)//1時間
+                .showIfNeeds()
     }
 
 }
