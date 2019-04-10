@@ -463,7 +463,7 @@
 			app:layout_constraintTop_toBottomOf="@+id/view10" />
 
 		<Button
-			android:id="@+id/diceButton2"
+			android:id="@+id/windRollButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="24dp"
@@ -483,7 +483,7 @@
 			android:layout_marginTop="32dp"
 			android:layout_marginEnd="8dp"
 			app:layout_constraintEnd_toStartOf="@+id/windRandOutputTextView"
-			app:layout_constraintStart_toEndOf="@+id/diceButton2"
+			app:layout_constraintStart_toEndOf="@+id/windRollButton"
 			app:layout_constraintTop_toBottomOf="@+id/view10"
 			app:srcCompat="@drawable/hougaku1_higashi"/>
 
