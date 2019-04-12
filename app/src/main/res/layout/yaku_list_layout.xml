@@ -8,11 +8,9 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -36,12 +34,6 @@
             android:text="@string/yakuTable_3han" />
 
         <android.support.design.widget.TabItem
-            android:id="@+id/tabItem5han"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/yakuTable_5han" />
-
-        <android.support.design.widget.TabItem
             android:id="@+id/tabItem6han"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,11 +44,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_yakuman" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItemLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/local" />
     </android.support.design.widget.TabLayout>
 
-    <android.support.v4.view.ViewPager
-        android:layout_width="395dp"
-        android:layout_height="659dp"
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -65,4 +63,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
 </android.support.constraint.ConstraintLayout>

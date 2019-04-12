@@ -187,5 +187,6 @@
     <string name="yakuTable_5han">5飜</string>
     <string name="yakuTable_6han">6飜</string>
     <string name="yakuTable_yakuman">役満</string>
+    <string name="local">ローカル</string>
 
 </resources>
