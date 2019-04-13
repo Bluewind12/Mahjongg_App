@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
 
@@ -141,8 +140,8 @@ class ToolsActivity : AppCompatActivity() {
         }
 
         //とりあえずの消し
-        yakuTextView.visibility = View.GONE
-        yakuJumpButton.visibility = View.GONE
+        //yakuTextView.visibility = View.GONE
+        //yakuJumpButton.visibility = View.GONE
     }
 
 
@@ -286,8 +285,7 @@ class ToolsActivity : AppCompatActivity() {
 
         audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
         soundPool = SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(2).build()
-        sound = soundPool.load(this, R.raw.dise, 1);
-
+        sound = soundPool.load(this, R.raw.dise, 1)
     }
 
     override fun onCreateOptionsMenu(menu : Menu) : Boolean {

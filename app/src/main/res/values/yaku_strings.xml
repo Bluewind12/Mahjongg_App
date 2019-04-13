@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="one_han_names">
+    <string-array name="yaku_names">
         <item>門前自摸(メンゼンツモ),1飜,門前,鳴いていない状態でツモによって上がった場合の役。</item>
         <item>立直(リーチ),1飜,門前,リーチ後に上がった場合の役。</item>
         <item>一発(イッパツ),1飜,門前,リーチ後の１巡の間にあがると成立。\n鳴きが入ると無効に。</item>
