@@ -45,11 +45,6 @@
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_yakuman" />
 
-        <android.support.design.widget.TabItem
-            android:id="@+id/tabItemLocal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/local" />
     </android.support.design.widget.TabLayout>
 
     <android.support.v7.widget.RecyclerView
