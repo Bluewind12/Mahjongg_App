@@ -1,5 +1,6 @@
 package momonyan.mahjongg_tools
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -10,6 +11,13 @@ class YakuListViewActivity : AppCompatActivity() {
     private lateinit var mDataImage: Array<Int>
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> setTheme(R.style.DarkThemeAction)
+            "Light" -> setTheme(R.style.LightThemeAction)
+            "Mat" -> setTheme(R.style.MatThemeAction)
+            else -> error(2)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.yaku_list_layout)
         mDataImage = arrayOf()

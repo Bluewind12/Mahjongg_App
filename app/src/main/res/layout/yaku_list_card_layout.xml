@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#22000000"
+    app:cardUseCompatPadding="true">
 
 
     <android.support.constraint.ConstraintLayout
@@ -31,6 +33,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:scaleType="fitStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +42,16 @@
 
         <TextView
             android:id="@+id/yakuDescriptionTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/yakuTitleTextView"
+            android:layout_marginEnd="24dp"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/yakuHansuTextView"
             tools:text="説明表示" />
 
@@ -52,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="18dp"
             android:layout_marginStart="16dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/yakuHansuTextView"
             app:layout_constraintStart_toEndOf="@+id/yakuHansuTextView"
             app:layout_constraintTop_toTopOf="@+id/yakuHansuTextView"
@@ -63,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/yakuTitleTextView"
             app:layout_constraintTop_toBottomOf="@+id/yakuTitleTextView"
             tools:text="飜数" />
