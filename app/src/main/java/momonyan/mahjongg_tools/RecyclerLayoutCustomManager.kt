@@ -23,7 +23,8 @@ class RecyclerLayoutCustomManager : LinearLayoutManager {
     private inner class TopSnappedSmoothScroller(context: Context) : LinearSmoothScroller(context) {
 
         override fun computeScrollVectorForPosition(targetPosition: Int): PointF? {
-            return this.computeScrollVectorForPosition(targetPosition)
+            return this@RecyclerLayoutCustomManager
+                    .computeScrollVectorForPosition(targetPosition)
         }
 
         override fun getVerticalSnapPreference(): Int {

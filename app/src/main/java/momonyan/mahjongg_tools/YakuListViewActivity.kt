@@ -37,5 +37,7 @@ class YakuListViewActivity : AppCompatActivity() {
         // RecyclerViewにAdapterとLayoutManagerの設定
         yakuRecyclerView.adapter = adapter
         yakuRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        yakuRecyclerView.layoutManager = RecyclerLayoutCustomManager(this)
+
     }
 }
