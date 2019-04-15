@@ -2,8 +2,10 @@ package momonyan.mahjongg_tools
 
 import android.content.Context
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import kotlinx.android.synthetic.main.yaku_list_layout.*
 
 class YakuListViewActivity : AppCompatActivity() {
@@ -39,5 +41,24 @@ class YakuListViewActivity : AppCompatActivity() {
         yakuRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         yakuRecyclerView.layoutManager = RecyclerLayoutCustomManager(this)
 
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+            }
+
+            override fun onTabSelected(p0: TabLayout.Tab?) {
+                when (p0!!.position) {
+                    0 -> yakuRecyclerView.smoothScrollToPosition(0)
+                    1 -> yakuRecyclerView.smoothScrollToPosition(11)
+                    2 -> yakuRecyclerView.smoothScrollToPosition(22)
+                    3 -> yakuRecyclerView.smoothScrollToPosition(25)
+                    4 -> yakuRecyclerView.smoothScrollToPosition(26)
+                }
+            }
+
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+            }
+        })
+        //0,11,22,25,26
     }
 }
