@@ -5,12 +5,17 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import kotlinx.android.synthetic.main.yaku_list_layout.*
+
 
 class YakuListViewActivity : AppCompatActivity() {
     private var mDataList: ArrayList<YakuDataClass> = ArrayList()
     private lateinit var mDataImage: Array<Int>
+
+    private var tabSelectFrag = true
+    private var tabInt = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
@@ -38,8 +43,36 @@ class YakuListViewActivity : AppCompatActivity() {
 
         // RecyclerViewにAdapterとLayoutManagerの設定
         yakuRecyclerView.adapter = adapter
-        yakuRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         yakuRecyclerView.layoutManager = RecyclerLayoutCustomManager(this)
+        yakuRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val visibleItemCount = recyclerView.childCount
+                val manager = recyclerView.layoutManager as LinearLayoutManager?
+                val firstVisibleItem = manager!!.findFirstVisibleItemPosition()
+                val lastInScreen = firstVisibleItem + visibleItemCount
+                Log.e("TabSystem:First", "$firstVisibleItem")
+                Log.e("TabSystem:Visible", "$visibleItemCount")
+                Log.e("TabSystem:last", "$lastInScreen")
+                if (tabSelectFrag) {
+                    when (firstVisibleItem) {
+                        0 -> tabLayout.getTabAt(0)!!.select()
+                        11 -> tabLayout.getTabAt(1)!!.select()
+                        22 -> tabLayout.getTabAt(2)!!.select()
+                        25 -> tabLayout.getTabAt(3)!!.select()
+                        26 -> tabLayout.getTabAt(4)!!.select()
+                    }
+                }
+                if(tabInt == firstVisibleItem){
+                    tabSelectFrag = true
+                }
+            }
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+            }
+        })
 
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
@@ -47,12 +80,28 @@ class YakuListViewActivity : AppCompatActivity() {
             }
 
             override fun onTabSelected(p0: TabLayout.Tab?) {
+                tabSelectFrag = false
                 when (p0!!.position) {
-                    0 -> yakuRecyclerView.smoothScrollToPosition(0)
-                    1 -> yakuRecyclerView.smoothScrollToPosition(11)
-                    2 -> yakuRecyclerView.smoothScrollToPosition(22)
-                    3 -> yakuRecyclerView.smoothScrollToPosition(25)
-                    4 -> yakuRecyclerView.smoothScrollToPosition(26)
+                    0 -> {
+                        yakuRecyclerView.smoothScrollToPosition(0)
+                        tabInt = 0
+                    }
+                    1 -> {
+                        yakuRecyclerView.smoothScrollToPosition(11)
+                        tabInt = 11
+                    }
+                    2 -> {
+                        yakuRecyclerView.smoothScrollToPosition(22)
+                        tabInt = 22
+                    }
+                    3 -> {
+                        yakuRecyclerView.smoothScrollToPosition(25)
+                        tabInt = 25
+                    }
+                    4 -> {
+                        yakuRecyclerView.smoothScrollToPosition(26)
+                        tabInt = 26
+                    }
                 }
             }
 
@@ -60,5 +109,6 @@ class YakuListViewActivity : AppCompatActivity() {
             }
         })
         //0,11,22,25,26
+
     }
 }
