@@ -17,9 +17,10 @@ class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : RecyclerV
         val item = mValues[position]
         val stringData = item.dataString.split(",")
         holder.mTitle.text = stringData[0]
-        holder.mHansu.text = stringData[1]
-        holder.mMachi.text = stringData[2]
-        holder.mDescription.text = stringData[3]
+        holder.mRead.text = stringData[1]
+        holder.mHansu.text = stringData[2]
+        holder.mMachi.text = stringData[3]
+        holder.mDescription.text = stringData[4]
         holder.mImage.setImageResource(item.image)
     }
 
