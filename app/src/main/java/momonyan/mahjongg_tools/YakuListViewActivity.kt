@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import kotlinx.android.synthetic.main.yaku_list_layout.*
 
 
@@ -34,7 +33,7 @@ class YakuListViewActivity : AppCompatActivity() {
             mDataList.add(
                     YakuDataClass(
                             mStringData[i],
-                            R.drawable.hougaku1_higashi
+                            R.drawable.non_image
                     )
             )
         }
@@ -48,13 +47,8 @@ class YakuListViewActivity : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val visibleItemCount = recyclerView.childCount
                 val manager = recyclerView.layoutManager as LinearLayoutManager?
                 val firstVisibleItem = manager!!.findFirstVisibleItemPosition()
-                val lastInScreen = firstVisibleItem + visibleItemCount
-                Log.e("TabSystem:First", "$firstVisibleItem")
-                Log.e("TabSystem:Visible", "$visibleItemCount")
-                Log.e("TabSystem:last", "$lastInScreen")
                 if (tabSelectFrag) {
                     when (firstVisibleItem) {
                         0 -> tabLayout.getTabAt(0)!!.select()
@@ -67,10 +61,6 @@ class YakuListViewActivity : AppCompatActivity() {
                 if(tabInt == firstVisibleItem){
                     tabSelectFrag = true
                 }
-            }
-
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
             }
         })
 
