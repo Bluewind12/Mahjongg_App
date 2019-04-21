@@ -1,6 +1,7 @@
 package momonyan.mahjongg_tools
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
@@ -22,6 +23,12 @@ class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : RecyclerV
         holder.mMachi.text = stringData[3]
         holder.mDescription.text = stringData[4]
         holder.mImage.setImageResource(item.image)
+        holder.mImage.post {
+            Log.d("AAA", "1 - ${holder.mImage.scaleY} : ${stringData[0]}")
+            holder.mImage.scaleY = holder.mImage.scaleY * 1.5f
+            Log.d("AAA", "2 - ${holder.mImage.scaleY} : ${stringData[0]}")
+
+        }
     }
 
     override fun getItemCount(): Int {
