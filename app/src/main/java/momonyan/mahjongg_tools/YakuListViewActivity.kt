@@ -33,7 +33,7 @@ class YakuListViewActivity : AppCompatActivity() {
             mDataList.add(
                     YakuDataClass(
                             mStringData[i],
-                            R.drawable.non_image
+                            getImageInt(mStringData[i].split(",")[5].toInt())
                     )
             )
         }
@@ -99,6 +99,16 @@ class YakuListViewActivity : AppCompatActivity() {
             }
         })
         //0,11,22,25,26
+    }
 
+    private fun getImageInt(imageNum: Int): Int {
+        return when (imageNum) {
+            0 -> R.drawable.non_image
+            11 -> R.drawable.yaku_11
+            12 -> R.drawable.yaku_12
+            13 -> R.drawable.yaku_13
+            14 -> R.drawable.yaku_14
+            else -> R.drawable.non_image
+        }
     }
 }
