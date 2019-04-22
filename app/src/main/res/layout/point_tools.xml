@@ -273,13 +273,12 @@
 			android:id="@+id/markToolButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+			android:layout_marginStart="8dp"
 			android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+			android:layout_marginEnd="8dp"
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/move"
-            app:layout_constraintEnd_toStartOf="@+id/view9"
-            app:layout_constraintHorizontal_bias="0.3"
+			app:layout_constraintEnd_toStartOf="@+id/view9"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/markPointJunpTextView" />
 		
@@ -411,19 +410,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view4" />
 
-        <Button
-            android:id="@+id/yakuJumpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="?attr/colorButtonNormal"
-            android:text="@string/move"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toEndOf="@+id/view9"
-            app:layout_constraintTop_toBottomOf="@+id/yakuTextView" />
+		<Button
+			android:id="@+id/yakuJumpButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp"
+			android:background="?attr/colorButtonNormal"
+			android:text="@string/move"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/view9"
+			app:layout_constraintTop_toBottomOf="@+id/yakuTextView" />
 
         <TextView
             android:id="@+id/yakuTextView"
