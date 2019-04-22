@@ -108,6 +108,30 @@ class YakuListViewActivity : AppCompatActivity() {
             12 -> R.drawable.yaku_12
             13 -> R.drawable.yaku_13
             14 -> R.drawable.yaku_14
+            21 -> R.drawable.yaku_21
+            22 -> R.drawable.yaku_22
+            23 -> R.drawable.yaku_23
+            24 -> R.drawable.yaku_24
+            25 -> R.drawable.yaku_25
+            26 -> R.drawable.yaku_26
+            27 -> R.drawable.yaku_27
+            28 -> R.drawable.yaku_28
+            29 -> R.drawable.yaku_29
+            210 -> R.drawable.yaku_210
+            31 -> R.drawable.yaku_31
+            32 -> R.drawable.yaku_32
+            33 -> R.drawable.yaku_33
+            61 -> R.drawable.yaku_61
+            91 -> R.drawable.yaku_91
+            92 -> R.drawable.yaku_92
+            93 -> R.drawable.yaku_93
+            94 -> R.drawable.yaku_94
+            95 -> R.drawable.yaku_95
+            96 -> R.drawable.yaku_96
+            97 -> R.drawable.yaku_97
+            98 -> R.drawable.yaku_98
+            99 -> R.drawable.yaku_99
+            910 -> R.drawable.yaku_910
             else -> R.drawable.non_image
         }
     }
