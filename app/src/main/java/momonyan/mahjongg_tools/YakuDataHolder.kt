@@ -1,5 +1,6 @@
 package momonyan.mahjongg_tools
 
+import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
@@ -14,4 +15,5 @@ class YakuDataHolder(mView: View) : RecyclerView.ViewHolder(mView) {
     val mHansu: TextView = mView.yakuHansuTextView //飜数
     val mMachi: TextView = mView.yakuMachiTextView //待ち方
     val mImage: ImageView = mView.yakuDescriptionImageView //Image
+    val mConstraintLayout: ConstraintLayout = mView.yakuConstraintLayout
 }

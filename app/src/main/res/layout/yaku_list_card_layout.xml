@@ -9,6 +9,7 @@
 
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/yakuConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_yaku_list_card">

@@ -12,7 +12,9 @@
         android:roundIcon="@drawable/ma_zyan500"
         android:supportsRtl="true"
         android:theme="@style/DarkTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        android:largeHeap="true"
+        >
 
         <activity
             android:name=".MainActivity"

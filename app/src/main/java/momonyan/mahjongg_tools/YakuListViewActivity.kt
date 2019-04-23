@@ -33,7 +33,8 @@ class YakuListViewActivity : AppCompatActivity() {
             mDataList.add(
                     YakuDataClass(
                             mStringData[i],
-                            getImageInt(mStringData[i].split(",")[5].toInt())
+                            getImageInt(mStringData[i].split(",")[5].toInt()),
+                            getDrawable(R.drawable.background_yaku_list_card)!!
                     )
             )
         }
