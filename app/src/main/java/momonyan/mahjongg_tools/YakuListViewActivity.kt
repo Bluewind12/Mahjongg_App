@@ -34,8 +34,11 @@ class YakuListViewActivity : AppCompatActivity() {
                     YakuDataClass(
                             mStringData[i],
                             getImageInt(mStringData[i].split(",")[5].toInt()),
-                            getDrawable(R.drawable.background_yaku_list_card)!!
-                    )
+                            when (mStringData[i].split(",")[2]) {
+                                "1飜", "3飜", "役満" -> getDrawable(R.drawable.background_yaku_list_card_black)!!
+                                "2飜", "6飜" -> getDrawable(R.drawable.background_yaku_list_card_white)!!
+                                else -> getDrawable(R.drawable.background_yaku_list_card)!!
+                            })
             )
         }
         // Adapter作成
