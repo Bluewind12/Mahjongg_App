@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/scrollView2"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -22,16 +23,18 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
-		
+
 		<Button
 			android:id="@+id/calculationButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
 			android:layout_marginTop="64dp"
 			android:layout_marginEnd="16dp"
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/function"
 			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/markSpinner"
 			app:layout_constraintTop_toTopOf="parent" />
 		
 		<TextView
@@ -52,29 +55,25 @@
 			android:text="@string/fu"
 			app:layout_constraintStart_toStartOf="@+id/markSpinner"
 			app:layout_constraintTop_toTopOf="parent" />
-		
+
 		<Spinner
 			android:id="@+id/hanSpinner"
-			android:layout_width="0dp"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="12dp"
-			android:layout_marginEnd="8dp"
 			android:entries="@array/list1"
-			app:layout_constraintEnd_toStartOf="@+id/markSpinner"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/textView4" />
-		
+
 		<Spinner
 			android:id="@+id/markSpinner"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
 			android:layout_marginTop="12dp"
-			android:layout_marginEnd="8dp"
 			android:entries="@array/list2"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/hanSpinner"
 			app:layout_constraintTop_toBottomOf="@+id/textView5" />
 		
 		<View
@@ -206,7 +205,7 @@
 			android:textSize="20sp"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/view_nend" />
-		
+
 		<Button
 			android:id="@+id/pointTableP"
 			android:layout_width="wrap_content"
@@ -216,16 +215,18 @@
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/pointTableP"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textView8" />
-		
+			app:layout_constraintTop_toBottomOf="@+id/tableViewTextView" />
+
 		<Button
 			android:id="@+id/markTable"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="28dp"
+			android:layout_marginEnd="8dp"
 			android:background="?attr/colorButtonNormal"
 			android:text="@string/fuImage"
 			app:layout_constraintBottom_toBottomOf="@+id/pointTableC"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/pointTableC"
 			app:layout_constraintTop_toTopOf="@+id/pointTableC"
 			app:layout_constraintVertical_bias="0.0" />
@@ -388,15 +389,7 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/rightImage" />
 
-		<TextView
-			android:id="@+id/textView8"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/pointTables"
-			app:layout_constraintStart_toStartOf="@+id/tableViewTextView"
-			app:layout_constraintTop_toBottomOf="@+id/tableViewTextView" />
-
-        <View
+		<View
             android:id="@+id/view9"
             android:layout_width="5dp"
             android:layout_height="0dp"
