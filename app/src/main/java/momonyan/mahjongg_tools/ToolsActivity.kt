@@ -35,6 +35,10 @@ class ToolsActivity : AppCompatActivity() {
 
     private lateinit var audioAttributes : AudioAttributes
     private lateinit var soundPool : SoundPool
+
+    //サイコロ
+    private lateinit var countDice: CountFunctionDice
+    private lateinit var countWind: CountFunctionWind
     private var sound = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -85,24 +89,29 @@ class ToolsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //サイコロ初期化
+        countDice = CountFunctionDice(1000, 100)
+        countDice.leftImage = leftImageView
+        countDice.rightImage = rightImageView
+        countDice.textView = oyaDiceTextView
 
         //サイコロ機能
         diceButton.setOnClickListener {
-            val count = CountFunctionDice(1000, 100)
-            count.leftImage = leftImageView
-            count.rightImage = rightImageView
-            count.textView = oyaDiceTextView
-            count.start()
+            countDice.cancel()
+            countDice.start()
             //効果音
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
+        //風初期化
+        countWind = CountFunctionWind(1000, 100)
+        countWind.windImage = windRandImage
+        countWind.textView = windRandOutputTextView
+
         //サイコロ機能
         windRollButton.setOnClickListener {
-            val count = CountFunctionWind(1000, 100)
-            count.windImage = windRandImage
-            count.textView = windRandOutputTextView
-            count.start()
+            countWind.cancel()
+            countWind.start()
             //効果音
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
