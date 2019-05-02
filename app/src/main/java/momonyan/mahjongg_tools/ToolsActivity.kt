@@ -11,12 +11,12 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
 
 
 class ToolsActivity : AppCompatActivity() {
-    private lateinit var okButton : Button
     private lateinit var pointButtonP : Button
     private lateinit var pointButtonC : Button
     private lateinit var markButton : Button
@@ -41,6 +41,10 @@ class ToolsActivity : AppCompatActivity() {
     private lateinit var countWind: CountFunctionWind
     private var sound = 0
 
+    //役
+    private var role: Int = 1
+    private var mark: Int = 10
+
     override fun onCreate(savedInstanceState : Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
@@ -55,11 +59,26 @@ class ToolsActivity : AppCompatActivity() {
         //初期化
         init()
 
-        //計算の決定ボタンの動作
-        okButton.setOnClickListener {
-            val role = getRole()
-            val mark = getMarks()
-            countPoint(role + mark)
+
+        translateSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            //何も選択されなかった時の動作
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+
+            //選択時
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                role = getRole()
+                countPoint(role + mark)
+            }
+        }
+        markSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            //何も選択されなかった時の動作
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+
+            //選択時
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                mark = getMarks()
+                countPoint(role + mark)
+            }
         }
         //画面遷移系
         pointButtonP.setOnClickListener {
@@ -278,7 +297,6 @@ class ToolsActivity : AppCompatActivity() {
 
     //初期化用
     private fun init() {
-        okButton = findViewById(R.id.calculationButton)
         pointButtonP = findViewById(R.id.pointTableP)
         pointButtonC = findViewById(R.id.pointTableC)
         markButton = findViewById(R.id.markTable)
