@@ -20,4 +20,7 @@
 	<color name="buttonBack">#555599</color>
 	<color name="Oya">#DD2222</color>
 	<color name="gridBorderColor">#AAAAAA</color>
+
+	<color name="firstParent">#55FF0000</color>
+	<color name="firstParentLight">#5511DDFF</color>
 </resources>

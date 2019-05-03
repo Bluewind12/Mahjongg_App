@@ -3,6 +3,7 @@ package momonyan.mahjongg_tools
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editor : SharedPreferences.Editor
     //数値管理
     private var fieldNum = 0
+    private var firstPlayer = 0
     private var parent = 0
     private var times = 0
 
@@ -52,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         //回転セット
         rotateSetting()
 
+        setFirstPlayer(firstPlayer)
         setState(parent)
         setFieldWind(fieldNum)
         //単推し
@@ -141,7 +144,9 @@ class MainActivity : AppCompatActivity() {
         pointButtons = arrayOf(findViewById(R.id.pointButton), findViewById(R.id.pointButton2), findViewById(R.id.pointButton3), findViewById(R.id.pointButton4))
         editor = dataStore.edit()
         editor.apply()
+
         fieldNum = dataStore.getInt("field", 0)
+        firstPlayer = dataStore.getInt("firstPlayer", 0)
         parent = dataStore.getInt("parent", 0)
         times = dataStore.getInt("times", 0)
     }
@@ -186,6 +191,9 @@ class MainActivity : AppCompatActivity() {
             if (parent == touchButtonNum) {
                 if (times > 0) {
                     times--
+                } else {
+                    setFirstPlayer(touchButtonNum)
+                    editor.putInt("firstPlayer", touchButtonNum)
                 }
                 setState(touchButtonNum)
             } else {
@@ -213,6 +221,19 @@ class MainActivity : AppCompatActivity() {
         timesTexts[(setNum + 3) % 4].text = " "
         setBoostWind()
     }
+
+    private fun setFirstPlayer(setNum: Int) {
+        if (dataStore.getString("Theme", "Dark") == "Light") {
+            playerButtons[setNum % 4].setBackgroundColor(resources.getColor(R.color.firstParentLight))
+        } else {
+            playerButtons[setNum % 4].setBackgroundColor(resources.getColor(R.color.firstParent))
+        }
+        playerButtons[(setNum + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+        playerButtons[(setNum + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+        playerButtons[(setNum + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+
+    }
+
 
     //場のセット
     private fun setFieldWind(windNum : Int) {
