@@ -224,9 +224,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setFirstPlayer(setNum: Int) {
         if (dataStore.getString("Theme", "Dark") == "Light") {
-            playerButtons[setNum % 4].setBackgroundColor(resources.getColor(R.color.firstParentLight))
+            playerButtons[setNum % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
         } else {
-            playerButtons[setNum % 4].setBackgroundColor(resources.getColor(R.color.firstParent))
+            playerButtons[setNum % 4].background = resources.getDrawable(R.drawable.first_player_background)
         }
         playerButtons[(setNum + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
         playerButtons[(setNum + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
