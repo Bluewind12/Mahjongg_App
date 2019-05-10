@@ -131,7 +131,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(resetIntent)
             }
         }
-
         setTheme(R.style.defaultTheme)
     }
 

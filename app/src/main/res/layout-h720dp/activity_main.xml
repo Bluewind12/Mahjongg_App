@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity"
+	tools:layout_editor_absoluteY="81dp">
+
+	<TextView
+		android:id="@+id/textView6"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:background="@drawable/background_text_box"
+		app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+		app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+		app:layout_constraintStart_toStartOf="@+id/imageButton1"
+		app:layout_constraintTop_toTopOf="@+id/imageButton4" />
+
+	<ImageButton
+		android:id="@+id/imageButton1"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="32dp"
+		android:layout_marginBottom="8dp"
+		android:background="@null"
+		android:contentDescription="@string/windDescription"
+		android:scaleType="fitXY"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/imageButtonF"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
+	<ImageButton
+		android:id="@+id/imageButton2"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="8dp"
+		android:background="@null"
+		android:contentDescription="@string/windDescription"
+		android:scaleType="fitXY"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/imageButtonF"
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
+	<ImageButton
+		android:id="@+id/imageButton3"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
+		android:background="@null"
+		android:contentDescription="@string/windDescription"
+		android:scaleType="fitXY"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/imageButtonF"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
+	<ImageButton
+		android:id="@+id/imageButton4"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="32dp"
+		android:background="@null"
+		android:contentDescription="@string/windDescription"
+		android:scaleType="fitXY"
+		app:layout_constraintBottom_toTopOf="@+id/imageButtonF"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+
+	<ImageButton
+		android:id="@+id/imageButtonF"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:background="@null"
+		android:contentDescription="@string/windDescription"
+		android:scaleType="fitXY"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@mipmap/ic_launcher"
+		tools:srcCompat="@mipmap/ic_launcher" />
+	
+	<ImageButton
+		android:id="@+id/pointButton"
+		android:layout_width="50sp"
+		android:layout_height="50sp"
+		android:layout_marginStart="8dp"
+		android:layout_marginBottom="8dp"
+		android:background="?attr/colorButtonNormal"
+		android:contentDescription="@string/toolsIcon"
+		android:src="@android:drawable/ic_dialog_dialer"
+		android:textSize="24sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+	
+	<ImageButton
+		android:id="@+id/pointButton2"
+		android:layout_width="50sp"
+		android:layout_height="50sp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:background="?attr/colorButtonNormal"
+		android:contentDescription="@string/toolsIcon"
+		android:src="@android:drawable/ic_dialog_dialer"
+		android:textSize="24sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+	
+	<ImageButton
+		android:id="@+id/pointButton3"
+		android:layout_width="50sp"
+		android:layout_height="50sp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:background="?attr/colorButtonNormal"
+		android:contentDescription="@string/toolsIcon"
+		android:src="@android:drawable/ic_dialog_dialer"
+		android:textSize="24sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<ImageButton
+		android:id="@+id/pointButton4"
+		android:layout_width="50sp"
+		android:layout_height="50sp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:background="?attr/colorButtonNormal"
+		android:contentDescription="@string/toolsIcon"
+		android:src="@android:drawable/ic_dialog_dialer"
+		android:textSize="24sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/honba1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/imageButton1"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="本場表示" />
+
+	<TextView
+		android:id="@+id/honba2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		tools:text="本場表示" />
+
+	<TextView
+		android:id="@+id/honba3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="本場表示" />
+
+	<TextView
+		android:id="@+id/honba4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+		tools:text="本場表示" />
+
+	<TextView
+		android:id="@+id/boost1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:textColor="@color/Oya"
+		app:layout_constraintEnd_toStartOf="@+id/honba1"
+		app:layout_constraintStart_toStartOf="@+id/imageButton1"
+		app:layout_constraintTop_toBottomOf="@+id/imageButton1"
+		tools:text="親表示" />
+
+	<TextView
+		android:id="@+id/boost2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:textColor="@color/Oya"
+		app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+		app:layout_constraintStart_toEndOf="@+id/imageButton2"
+		app:layout_constraintTop_toBottomOf="@+id/honba2"
+		tools:text="親表示" />
+
+	<TextView
+		android:id="@+id/boost3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginBottom="8dp"
+		android:textColor="@color/Oya"
+		app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+		app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+		app:layout_constraintStart_toEndOf="@+id/honba3"
+		tools:text="親表示" />
+
+	<TextView
+		android:id="@+id/boost4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:textColor="@color/Oya"
+		app:layout_constraintBottom_toTopOf="@+id/honba4"
+		app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+		app:layout_constraintTop_toTopOf="@+id/imageButton4"
+		tools:text="親表示" />
+
+
+</android.support.constraint.ConstraintLayout>

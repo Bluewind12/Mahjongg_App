@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="@+id/tabLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/tab_selector_background">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem1han"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yakuTable_1han" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem2han"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yakuTable_2han" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem3han"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yakuTable_3han" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem6han"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yakuTable_6han" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItemYakuman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yakuTable_yakuman" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/yakuRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="#20FFFFFF"
+        android:cacheColorHint="?attr/colorPrimary"
+        android:requiresFadingEdge="horizontal|vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+</android.support.constraint.ConstraintLayout>
