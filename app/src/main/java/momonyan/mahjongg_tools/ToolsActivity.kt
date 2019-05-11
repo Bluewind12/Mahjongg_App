@@ -14,9 +14,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
+import net.nend.android.NendAdListener
+import net.nend.android.NendAdView
 
 
-class ToolsActivity : AppCompatActivity() {
+class ToolsActivity : AppCompatActivity(), NendAdListener {
     private lateinit var pointButtonP : Button
     private lateinit var pointButtonC : Button
     private lateinit var markButton : Button
@@ -167,9 +169,7 @@ class ToolsActivity : AppCompatActivity() {
             true
         }
 
-        //とりあえずの消し
-        //yakuTextView.visibility = View.GONE
-        //yakuJumpButton.visibility = View.GONE
+        nend.setListener(this)
     }
 
 
@@ -359,4 +359,24 @@ class ToolsActivity : AppCompatActivity() {
         }
         return false
     }
+
+
+    //NendListener
+    /** 受信エラー通知 */
+    override fun onFailedToReceiveAd(nendAdView: NendAdView) {
+    }
+
+    /** 受信成功通知  */
+    override fun onReceiveAd(nendAdView: NendAdView) {
+        logoImageView.visibility = View.GONE
+    }
+
+    /** クリック通知  */
+    override fun onClick(nendAdView: NendAdView) {
+    }
+
+    /** 復帰通知  */
+    override fun onDismissScreen(arg0: NendAdView) {
+    }
+
 }
