@@ -65,7 +65,7 @@ class YakuListViewActivity : AppCompatActivity() {
                         26 -> tabLayout.getTabAt(4)!!.select()
                     }
                 }
-                if(tabInt == firstVisibleItem){
+                if (tabInt == firstVisibleItem) {
                     tabSelectFrag = true
                 }
             }
@@ -144,13 +144,13 @@ class YakuListViewActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu : Menu) : Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.mark_option_menu, menu)
         return true
     }
 
 
-    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mark_back -> {
                 finish()

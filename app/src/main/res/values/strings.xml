@@ -165,6 +165,7 @@
     <string name="mentuDescript">単語を長押しで簡易説明</string>
     <string name="logo_image">Logo Image</string>
     <string name="first_dice">2：右</string>
+    <string name="dice_result">%d：%s</string>
     <string name="roll">振る</string>
     <string name="dice_title">サイコロ</string>
     <string name="move">移動</string>
@@ -186,5 +187,6 @@
     <string name="yakuTable_3han">3飜</string>
     <string name="yakuTable_6han">6飜</string>
     <string name="yakuTable_yakuman">役満</string>
+    <string name="tumo_20">和了：20符</string>
 
 </resources>

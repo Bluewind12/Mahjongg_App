@@ -10,42 +10,41 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
-import kotlinx.android.synthetic.main.point_tools.*
 import net.nend.android.NendAdListener
 import net.nend.android.NendAdView
 import kotlin.math.ceil
 
 
-class MarkToolActivity : AppCompatActivity() ,NendAdListener{
+class MarkToolActivity : AppCompatActivity(), NendAdListener {
 
     //和了
-    private lateinit var completionSpinner : Spinner
+    private lateinit var completionSpinner: Spinner
     //雀頭
-    private lateinit var headSpinner : Spinner
+    private lateinit var headSpinner: Spinner
     //待ち
-    private lateinit var waitSpinner : Spinner
+    private lateinit var waitSpinner: Spinner
     //順子
-    private lateinit var shuntuTyuTyanSpinner : Spinner
-    private lateinit var shuntuYaoThuSpinner : Spinner
+    private lateinit var shuntuTyuTyanSpinner: Spinner
+    private lateinit var shuntuYaoThuSpinner: Spinner
     //明刻子
-    private lateinit var koutuMeiTyuTyanSpinner : Spinner
-    private lateinit var koutuMeiYaoThuSpinner : Spinner
+    private lateinit var koutuMeiTyuTyanSpinner: Spinner
+    private lateinit var koutuMeiYaoThuSpinner: Spinner
     //暗刻子
-    private lateinit var koutuAnTyuTyanSpinner : Spinner
-    private lateinit var koutuAnYaoThuSpinner : Spinner
+    private lateinit var koutuAnTyuTyanSpinner: Spinner
+    private lateinit var koutuAnYaoThuSpinner: Spinner
     //明槓子
-    private lateinit var kantuMeiTyuTyanSpinner : Spinner
-    private lateinit var kantuMeiYaoThuSpinner : Spinner
+    private lateinit var kantuMeiTyuTyanSpinner: Spinner
+    private lateinit var kantuMeiYaoThuSpinner: Spinner
     //暗槓子
-    private lateinit var kantuAnTyuTyanSpinner : Spinner
-    private lateinit var kantuAnYaoThuSpinner : Spinner
+    private lateinit var kantuAnTyuTyanSpinner: Spinner
+    private lateinit var kantuAnYaoThuSpinner: Spinner
     //計算
-    private lateinit var resultButton : Button
-    private lateinit var resultText : TextView
+    private lateinit var resultButton: Button
+    private lateinit var resultText: TextView
 
     var resultInt = 0
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> setTheme(R.style.DarkThemeAction)
@@ -115,7 +114,7 @@ class MarkToolActivity : AppCompatActivity() ,NendAdListener{
             if (sumCheck) {
                 val resultUp = ceil(resultInt / 10.0)
                 if (selectCheck()) {
-                    syoukei5.text = "和了：20符"
+                    syoukei5.text = getString(R.string.tumo_20)
                     resultText.text = getString(R.string.markResultC, resultUp.toInt() * 10, resultInt)
                 } else {
                     resultText.text = getString(R.string.error)
@@ -421,7 +420,7 @@ class MarkToolActivity : AppCompatActivity() ,NendAdListener{
         syoukei4.text = getString(R.string.markSyoukei, mentu)
     }
 
-    private fun selectCheck() : Boolean {
+    private fun selectCheck(): Boolean {
         val STanYao = shuntuTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
         val SYaoThu = shuntuYaoThuSpinner.selectedItem.toString().dropLast(1).toInt()
         val KoMTanYao = koutuMeiTyuTyanSpinner.selectedItem.toString().dropLast(1).toInt()
@@ -437,13 +436,13 @@ class MarkToolActivity : AppCompatActivity() ,NendAdListener{
         return sumResult <= 4
     }
 
-    override fun onCreateOptionsMenu(menu : Menu) : Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.mark_option_menu, menu)
         return true
     }
 
 
-    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.mark_back -> {
                 finish()
@@ -470,6 +469,7 @@ class MarkToolActivity : AppCompatActivity() ,NendAdListener{
     /** 復帰通知  */
     override fun onDismissScreen(arg0: NendAdView) {
     }
+
     /** 受信成功通知  */
     override fun onReceiveAd(nendAdView: NendAdView) {
         imageView3.visibility = View.GONE

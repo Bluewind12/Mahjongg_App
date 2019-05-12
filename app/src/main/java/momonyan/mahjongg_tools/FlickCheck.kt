@@ -3,7 +3,7 @@ package momonyan.mahjongg_tools
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import android.view.View.OnTouchListener
+
 /**
  * frickViewにはフリックを検知させるViewをセット<br></br>
  * adjustXには左右のフリック距離目安、adjustYには上下のフリック距離目安をセット
@@ -11,14 +11,14 @@ import android.view.View.OnTouchListener
  * @param adjustX
  * @param adjustY
  */
-abstract class FlickCheck(frickView : View, adjustX : Float, adjustY : Float) {
+abstract class FlickCheck(frickView: View, adjustX: Float, adjustY: Float) {
 
     private var adjustX = 150.0f
     private var adjustY = 150.0f
-    private var touchX : Float = 0.toFloat()
-    private var touchY : Float = 0.toFloat()
-    private var nowTouchX : Float = 0.toFloat()
-    private var nowTouchY : Float = 0.toFloat()
+    private var touchX: Float = 0.toFloat()
+    private var touchY: Float = 0.toFloat()
+    private var nowTouchX: Float = 0.toFloat()
+    private var nowTouchY: Float = 0.toFloat()
 
     init {
 
@@ -85,7 +85,7 @@ abstract class FlickCheck(frickView : View, adjustX : Float, adjustY : Float) {
      * 抽象メソッド：フリックを感知した際、方向を表す値をセットする
      * @param swipe
      */
-    abstract fun getFlick(swipe : Int)
+    abstract fun getFlick(swipe: Int)
 
     companion object {
         val LEFT_FLICK = 0

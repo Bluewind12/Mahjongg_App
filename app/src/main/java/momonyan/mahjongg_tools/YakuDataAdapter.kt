@@ -22,7 +22,7 @@ class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : RecyclerV
         holder.mMachi.text = stringData[3]
         holder.mDescription.text = stringData[4]
         holder.mImage.setImageResource(item.image)
-        holder.mConstraintLayout.background =  item.background
+        holder.mConstraintLayout.background = item.background
     }
 
     override fun getItemCount(): Int {

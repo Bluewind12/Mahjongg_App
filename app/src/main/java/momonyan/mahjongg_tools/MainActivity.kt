@@ -15,22 +15,22 @@ import net.nend.android.NendAdInterstitial
 
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
-    private lateinit var playerButtons : Array<ImageButton>
-    private lateinit var timesTexts : Array<TextView>
-    private lateinit var boostTexts : Array<TextView>
-    private lateinit var pointButtons : Array<ImageButton>
+    private lateinit var playerButtons: Array<ImageButton>
+    private lateinit var timesTexts: Array<TextView>
+    private lateinit var boostTexts: Array<TextView>
+    private lateinit var pointButtons: Array<ImageButton>
     //イメージボタン
-    private lateinit var fieldButton : ImageButton
+    private lateinit var fieldButton: ImageButton
     //データ記録、呼び出し用
-    private lateinit var dataStore : SharedPreferences
-    private lateinit var editor : SharedPreferences.Editor
+    private lateinit var dataStore: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
     //数値管理
     private var fieldNum = 0
     private var firstPlayer = 0
     private var parent = 0
     private var times = 0
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         //テーマ変更
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
@@ -104,9 +104,9 @@ class MainActivity : AppCompatActivity() {
         val adjustX = 150.0f
         val adjustY = 150.0f
         object : FlickCheck(flickView, adjustX, adjustY) {
-            override fun getFlick(swipe : Int) {
+            override fun getFlick(swipe: Int) {
                 when (swipe) {
-                    FlickCheck.LEFT_FLICK -> {
+                    LEFT_FLICK -> {
                         Log.d("Theme", "左")
                         when (dataStore.getString("Theme", "Dark")) {
                             "Dark" -> editor.putString("Theme", "Light")
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         editor.commit()
                     }
-                    FlickCheck.RIGHT_FLICK -> {
+                    RIGHT_FLICK -> {
                         Log.d("Theme", "右")
                         when (dataStore.getString("Theme", "Dark")) {
                             "Dark" -> editor.putString("Theme", "Mat")
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
      * @param touchButtonNum タッチされたプレイヤー番号
      * @param longFlag true:長押し false:単押
      */
-    private fun changeState(touchButtonNum : Int, longFlag : Boolean) {
+    private fun changeState(touchButtonNum: Int, longFlag: Boolean) {
 
 
         if (!longFlag) {
@@ -208,7 +208,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //プレイヤー状態のセット
-    private fun setState(setNum : Int) {
+    private fun setState(setNum: Int) {
         viewAlertDialog()
         playerButtons[setNum % 4].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
@@ -235,7 +235,7 @@ class MainActivity : AppCompatActivity() {
 
 
     //場のセット
-    private fun setFieldWind(windNum : Int) {
+    private fun setFieldWind(windNum: Int) {
         when (windNum) {
             0 -> fieldButton.setImageResource(R.drawable.hougaku1_higashi)
             1 -> fieldButton.setImageResource(R.drawable.hougaku3_minami)

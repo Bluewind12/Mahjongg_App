@@ -12,7 +12,7 @@ class CountFunctionDice(millisInFuture: Long, countDownInterval: Long) : CountDo
     var rightDice = 0
     var leftDice = 0
     override fun onFinish() {
-        val direction :String
+        val direction: String
         when ((rightDice + leftDice) % 4) {
             1 -> direction = "自"
             2 -> direction = "右"

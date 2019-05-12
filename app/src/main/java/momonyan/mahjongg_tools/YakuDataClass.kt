@@ -6,5 +6,4 @@ class YakuDataClass(
         var dataString: String,
         var image: Int,
         var background: Drawable
-) {
-}
+)

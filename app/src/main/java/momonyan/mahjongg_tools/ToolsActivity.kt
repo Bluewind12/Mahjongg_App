@@ -19,24 +19,24 @@ import net.nend.android.NendAdView
 
 
 class ToolsActivity : AppCompatActivity(), NendAdListener {
-    private lateinit var pointButtonP : Button
-    private lateinit var pointButtonC : Button
-    private lateinit var markButton : Button
-    private lateinit var markToolButton : Button
-    private lateinit var diceButton : Button
+    private lateinit var pointButtonP: Button
+    private lateinit var pointButtonC: Button
+    private lateinit var markButton: Button
+    private lateinit var markToolButton: Button
+    private lateinit var diceButton: Button
 
-    private lateinit var basicPointTextView : TextView
-    private lateinit var parentTextView : TextView
-    private lateinit var childTextView : TextView
+    private lateinit var basicPointTextView: TextView
+    private lateinit var parentTextView: TextView
+    private lateinit var childTextView: TextView
 
-    private lateinit var rightImageView : ImageView
-    private lateinit var leftImageView : ImageView
+    private lateinit var rightImageView: ImageView
+    private lateinit var leftImageView: ImageView
 
-    private lateinit var translateSpinner : Spinner
-    private lateinit var markSpinner : Spinner
+    private lateinit var translateSpinner: Spinner
+    private lateinit var markSpinner: Spinner
 
-    private lateinit var audioAttributes : AudioAttributes
-    private lateinit var soundPool : SoundPool
+    private lateinit var audioAttributes: AudioAttributes
+    private lateinit var soundPool: SoundPool
 
     //サイコロ
     private lateinit var countDice: CountFunctionDice
@@ -47,7 +47,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     private var role: Int = 1
     private var mark: Int = 10
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> setTheme(R.style.DarkThemeAction)
@@ -174,7 +174,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
 
     //スピナーからの読み取り（翻）
-    private fun getRole() : Int {
+    private fun getRole(): Int {
         val roleString = translateSpinner.selectedItem.toString()
         return when (roleString) {
             "1翻" -> 1
@@ -195,7 +195,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     }
 
     //スピナーからの読み取り（符）
-    private fun getMarks() : Int {
+    private fun getMarks(): Int {
         val markString = markSpinner.selectedItem.toString()
         return when (markString) {
             "平和ツモ" -> 10
@@ -214,7 +214,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     }
 
     //点数計算
-    private fun countPoint(point : Int) {
+    private fun countPoint(point: Int) {
         when (point % 10) {
             5 -> setPoint(80, 40, 20)
             6 -> setPoint(120, 60, 30)
@@ -276,7 +276,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     }
 
     //出力
-    private fun setPoint(base : Int, parent : Int, child : Int) {
+    private fun setPoint(base: Int, parent: Int, child: Int) {
         if (base == 0 || parent == 0 || child == 0) {
             basicPointTextView.text = "点数なし"
             parentTextView.text = "点数なし"
@@ -315,13 +315,13 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         sound = soundPool.load(this, R.raw.dise, 1)
     }
 
-    override fun onCreateOptionsMenu(menu : Menu) : Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
 
-    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         setTheme(R.style.defaultTheme)
         when (item.itemId) {
             R.id.menu0 -> {
@@ -336,7 +336,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
             R.id.menu1 -> {
                 AlertDialog.Builder(this)
                         .setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
-                    val uri = Uri.parse(getString(R.string.privacy_URL))
+                            val uri = Uri.parse(getString(R.string.privacy_URL))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
                         }.setNegativeButton("いいえ", null)
                         .setIcon(R.drawable.kizi).show()
