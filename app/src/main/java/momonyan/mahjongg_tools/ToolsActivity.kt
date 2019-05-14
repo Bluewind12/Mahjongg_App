@@ -138,35 +138,28 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         }
 
         //TextViewの長押し時の説明文の表示に関しての部分
-        pointCalculationTextView.setOnLongClickListener {
+        pointCalculationTextView.setOnClickListener {
             Toast.makeText(this, "飜数と符数を入力して計算を押すと計算されます", Toast.LENGTH_LONG).show()
-            true
         }
-        pointTextView.setOnLongClickListener {
+        pointTextView.setOnClickListener {
             Toast.makeText(this, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます", Toast.LENGTH_LONG).show()
-            true
         }
-        tableViewTextView.setOnLongClickListener {
+        tableViewTextView.setOnClickListener {
             Toast.makeText(this, "麻雀の点数表を表示します", Toast.LENGTH_LONG).show()
-            true
         }
-        markPointJunpTextView.setOnLongClickListener {
+        markPointJunpTextView.setOnClickListener {
             Toast.makeText(this, "符の計算ツール画面への移動ボタンです", Toast.LENGTH_LONG).show()
-            true
         }
-        diceTextView.setOnLongClickListener {
+        diceTextView.setOnClickListener {
             Toast.makeText(this, "サイコロが振れます\n左・右・対・自の表示もあります", Toast.LENGTH_LONG).show()
-            true
         }
 
-        yakuTextView.setOnLongClickListener {
+        yakuTextView.setOnClickListener {
             Toast.makeText(this, "役の一覧表への移動ボタンです", Toast.LENGTH_LONG).show()
-            true
         }
 
-        windRandTextView.setOnLongClickListener {
+        windRandTextView.setOnClickListener {
             Toast.makeText(this, "風がランダムで表示されます。\n東南西北が表示されます。", Toast.LENGTH_LONG).show()
-            true
         }
 
         nend.setListener(this)

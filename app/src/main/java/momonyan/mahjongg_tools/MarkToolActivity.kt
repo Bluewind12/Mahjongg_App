@@ -158,61 +158,54 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         val descriptionView = inflater.inflate(R.layout.description_mentu, null)
         val toast = Toast(this)
         toast.duration = Toast.LENGTH_LONG
-        mentuItemText.setOnLongClickListener {
+        mentuItemText.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description1Title)
             descriptionView.descriptionTextView.text = getString(R.string.description1)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_1)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        mentuItemText2.setOnLongClickListener {
+        mentuItemText2.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description2Title)
             descriptionView.descriptionTextView.text = getString(R.string.description2)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_2)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        mentuItemText3.setOnLongClickListener {
+        mentuItemText3.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description3Title)
             descriptionView.descriptionTextView.text = getString(R.string.description3)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_3)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        mentuItemText4.setOnLongClickListener {
+        mentuItemText4.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description4Title)
             descriptionView.descriptionTextView.text = getString(R.string.description4)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_4)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        mentuItemText5.setOnLongClickListener {
+        mentuItemText5.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description5Title)
             descriptionView.descriptionTextView.text = getString(R.string.description5)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_5)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        tyutyanTextView.setOnLongClickListener {
+        tyutyanTextView.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description01Title)
             descriptionView.descriptionTextView.text = getString(R.string.description01)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_01)
             toast.view = descriptionView
             toast.show()
-            true
         }
-        kokyuTextView.setOnLongClickListener {
+        kokyuTextView.setOnClickListener {
             descriptionView.descriptionTitleText.text = getString(R.string.description02Title)
             descriptionView.descriptionTextView.text = getString(R.string.description02)
             descriptionView.descriptionImage.setImageResource(R.drawable.description_02)
             toast.view = descriptionView
             toast.show()
-            true
         }
         //スピナーセレクト
         //雀頭
