@@ -1,8 +1,9 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.yakulist
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import momonyan.mahjongg_tools.R
 
 class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : RecyclerView.Adapter<YakuDataHolder>() {
 

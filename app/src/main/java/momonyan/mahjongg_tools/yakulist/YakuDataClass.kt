@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.yakulist
 
 import android.graphics.drawable.Drawable
 

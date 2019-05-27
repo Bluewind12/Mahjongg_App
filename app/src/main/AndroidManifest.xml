@@ -36,7 +36,7 @@
             android:theme="@style/DarkThemeAction" />
 
         <activity
-            android:name=".YakuListViewActivity"
+            android:name=".yakulist.YakuListViewActivity"
             android:label="役一覧表"
             android:screenOrientation="portrait"
             android:theme="@style/DarkThemeAction" />

@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.yakulist
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.yaku_list_layout.*
+import momonyan.mahjongg_tools.MainActivity
+import momonyan.mahjongg_tools.R
+import momonyan.mahjongg_tools.RecyclerLayoutCustomManager
 
 
 class YakuListViewActivity : AppCompatActivity() {

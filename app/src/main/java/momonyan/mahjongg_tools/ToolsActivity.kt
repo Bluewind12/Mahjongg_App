@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.point_tools.*
+import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
 import net.nend.android.NendAdListener
 import net.nend.android.NendAdView
 
@@ -140,6 +141,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         //TextViewの長押し時の説明文の表示に関しての部分
         pointCalculationTextView.setOnClickListener {
             Toast.makeText(this, "飜数と符数を入力して計算を押すと計算されます", Toast.LENGTH_LONG).show()
+            val a = it
         }
         pointTextView.setOnClickListener {
             Toast.makeText(this, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます", Toast.LENGTH_LONG).show()

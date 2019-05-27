@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.yakulist
 
 import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
