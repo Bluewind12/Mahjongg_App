@@ -3,6 +3,7 @@ package momonyan.mahjongg_tools
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
@@ -139,32 +140,23 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         }
 
         //TextViewの長押し時の説明文の表示に関しての部分
-        pointCalculationTextView.setOnClickListener {
-            Toast.makeText(this, "飜数と符数を入力して計算を押すと計算されます", Toast.LENGTH_LONG).show()
-            val a = it
-        }
-        pointTextView.setOnClickListener {
-            Toast.makeText(this, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます", Toast.LENGTH_LONG).show()
-        }
-        tableViewTextView.setOnClickListener {
-            Toast.makeText(this, "麻雀の点数表を表示します", Toast.LENGTH_LONG).show()
-        }
-        markPointJunpTextView.setOnClickListener {
-            Toast.makeText(this, "符の計算ツール画面への移動ボタンです", Toast.LENGTH_LONG).show()
-        }
-        diceTextView.setOnClickListener {
-            Toast.makeText(this, "サイコロが振れます\n左・右・対・自の表示もあります", Toast.LENGTH_LONG).show()
-        }
-
-        yakuTextView.setOnClickListener {
-            Toast.makeText(this, "役の一覧表への移動ボタンです", Toast.LENGTH_LONG).show()
-        }
-
-        windRandTextView.setOnClickListener {
-            Toast.makeText(this, "風がランダムで表示されます。\n東南西北が表示されます。", Toast.LENGTH_LONG).show()
-        }
+        setTextDescription(pointCalculationTextView, "飜数と符数を入力して計算を押すと計算されます")
+        setTextDescription(pointTextView, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます")
+        setTextDescription(tableViewTextView, "麻雀の点数表を表示します")
+        setTextDescription(markPointJunpTextView, "符の計算ツール画面への移動ボタンです")
+        setTextDescription(diceTextView, "サイコロが振れます\n左・右・対・自の表示もあります")
+        setTextDescription(yakuTextView, "役の一覧表への移動ボタンです")
+        setTextDescription(windRandTextView, "風がランダムで表示されます。\n東南西北が表示されます。")
 
         nend.setListener(this)
+    }
+
+    private fun setTextDescription(text: TextView, des: String) {
+
+        text.setOnClickListener {
+            Toast.makeText(this, des, Toast.LENGTH_LONG).show()
+        }
+        text.paintFlags = text.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
     }
 
 
