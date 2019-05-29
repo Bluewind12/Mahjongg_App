@@ -63,7 +63,6 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -73,8 +72,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundImage" value="C:\Users\chibimomo\Desktop\APP\NICONB.png" />
-                                      <entry key="foregroundImage" value="C:\Users\chibimomo\Desktop\APP\new_icon.png" />
+                                      <entry key="backgroundImage" value="C:\Users\chibimomo\Desktop\APP\icon_b.png" />
+                                      <entry key="foregroundImage" value="C:\Users\chibimomo\Desktop\APP\icon_f.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
