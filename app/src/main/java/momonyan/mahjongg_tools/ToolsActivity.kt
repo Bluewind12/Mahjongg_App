@@ -275,10 +275,17 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
                 160 -> basicPointTextView.text = getString(R.string.pointAlias, "倍満", base * 100)
                 240 -> basicPointTextView.text = getString(R.string.pointAlias, "三倍満", base * 100)
                 320 -> basicPointTextView.text = getString(R.string.pointAlias, "数え役満", base * 100)
+                77 -> basicPointTextView.text = getString(R.string.pointAlias, "切り上げ満貫", base * 100)
                 else -> basicPointTextView.text = (base * 100).toString()
             }
-            parentTextView.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
-            childTextView.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
+            if (base != 77) {
+                parentTextView.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
+                childTextView.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
+            } else {
+                // 切り上げ満貫時
+                parentTextView.text = getString(R.string.parentPoint2, (base + parent) * 100, 12000, parent * 100, 4000)
+                childTextView.text = getString(R.string.childPoint2, base * 100, 8000, parent * 100, 4000, child * 100, 2000)
+            }
         }
     }
 

@@ -81,7 +81,9 @@
     <string name="fuImage">符計算表</string>
     <string name="function">計算</string>
     <string name="parentPoint">%d：(%dオール)</string>
+    <string name="parentPoint2">%d(%d)：(%dオール(%dオール))</string>
     <string name="childPoint">%d：(%d,%d)</string>
+    <string name="childPoint2">%d(%d)：(%d(%d),%d(%d))</string>
     <string name="place">%d本場</string>
     <string name="pointAlias">%s\n%d</string>
     <string name="kihon">基本点</string>
