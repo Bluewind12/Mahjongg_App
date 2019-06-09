@@ -2,6 +2,7 @@ package momonyan.mahjongg_tools
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -333,6 +334,13 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         //計算
         resultButton = findViewById(R.id.calculateButton)
         resultText = findViewById(R.id.markResultText)
+
+        textView3.paintFlags = textView3.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        textView7.paintFlags = textView7.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        textView9.paintFlags = textView9.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        textView16.paintFlags = textView16.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+
+
     }
 
     private fun calculation() {
