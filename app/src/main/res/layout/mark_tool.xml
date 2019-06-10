@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:nendsdk="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/markToolScrollLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
@@ -456,41 +457,44 @@
 			android:id="@+id/syoukei1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
 
+			android:layout_marginEnd="16dp"
+			android:text="10符"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner"
-			app:layout_constraintStart_toEndOf="@+id/spinner" />
+			app:layout_constraintEnd_toEndOf="parent" />
 
 		<TextView
 			android:id="@+id/syoukei2"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
 
+			android:layout_marginEnd="16dp"
+			android:text="2符"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner2"
-			app:layout_constraintStart_toEndOf="@+id/spinner2" />
+			app:layout_constraintEnd_toEndOf="parent" />
 
 		<TextView
 			android:id="@+id/syoukei3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
 
+			android:layout_marginEnd="16dp"
+			android:text="2符"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/spinner3"
-			app:layout_constraintStart_toEndOf="@+id/spinner3" />
+			app:layout_constraintEnd_toEndOf="parent" />
 
 		<TextView
 			android:id="@+id/syoukei4"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
 
+			android:layout_marginEnd="16dp"
 			android:textSize="18sp"
 			app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
-			app:layout_constraintStart_toEndOf="@+id/gridLayout" />
+			app:layout_constraintEnd_toEndOf="parent" />
 
 		<TextView
 			android:id="@+id/syoukei5"
