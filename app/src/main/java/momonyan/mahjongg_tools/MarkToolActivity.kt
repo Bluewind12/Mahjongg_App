@@ -335,12 +335,10 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         resultButton = findViewById(R.id.calculateButton)
         resultText = findViewById(R.id.markResultText)
 
-        textView3.paintFlags = textView3.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
-        textView7.paintFlags = textView7.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
-        textView9.paintFlags = textView9.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
-        textView16.paintFlags = textView16.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
-
-
+        markToolTitleTextView.paintFlags = markToolTitleTextView.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        markToolTitleTextView2.paintFlags = markToolTitleTextView2.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        markToolTitleTextView3.paintFlags = markToolTitleTextView3.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+        markToolTitleTextView4.paintFlags = markToolTitleTextView4.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
     }
 
     private fun calculation() {
