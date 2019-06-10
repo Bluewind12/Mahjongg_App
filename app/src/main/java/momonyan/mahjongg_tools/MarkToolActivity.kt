@@ -58,6 +58,44 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         setContentView(R.layout.mark_tool)
         init()
 
+        completionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val compS = parent.getItemAtPosition(position).toString()
+                when (compS) {
+                    "ロン：鳴きなし" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 10)
+                    }
+                    "ロン：鳴きあり" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 0)
+                    }
+                    "ツモ：鳴きなし" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 2)
+                    }
+                    "ツモ：鳴きあり" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 2)
+                    }
+                    "ツモ：リンシャン" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 0)
+                    }
+                    "ピンフ：ツモ" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 20)
+                    }
+                    "ピンフ：ロン" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 30)
+                    }
+                    "七対子：ツモ" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 25)
+                    }
+                    "七対子：ロン" -> {
+                        syoukei1.text = getString(R.string.markSyoukei, 25)
+                    }
+                }
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
+
         //計算ボタン
         resultButton.setOnClickListener {
             //初期化
@@ -68,47 +106,38 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
             when (compS) {
                 "ロン：鳴きなし" -> {
                     resultInt += 20 + 10
-                    syoukei1.text = getString(R.string.markSyoukei, 10)
                     calculation()
                 }
                 "ロン：鳴きあり" -> {
                     resultInt += 20
-                    syoukei1.text = getString(R.string.markSyoukei, 0)
                     calculation()
                 }
                 "ツモ：鳴きなし" -> {
                     resultInt += 20 + 2
-                    syoukei1.text = getString(R.string.markSyoukei, 2)
                     calculation()
                 }
                 "ツモ：鳴きあり" -> {
                     resultInt += 20 + 2
-                    syoukei1.text = getString(R.string.markSyoukei, 2)
                     calculation()
                 }
                 "ツモ：リンシャン" -> {
                     resultInt += 20 + 0
-                    syoukei1.text = getString(R.string.markSyoukei, 0)
                     calculation()
                 }
                 "ピンフ：ツモ" -> {
                     resultInt += 20 + 0
-                    syoukei1.text = getString(R.string.markSyoukei, 20)
                     sumCheck = false
                 }
                 "ピンフ：ロン" -> {
                     resultInt += 20 + 10
-                    syoukei1.text = getString(R.string.markSyoukei, 30)
                     sumCheck = false
                 }
                 "七対子：ツモ" -> {
                     resultInt += 20 + 5
-                    syoukei1.text = getString(R.string.markSyoukei, 25)
                     sumCheck = false
                 }
                 "七対子：ロン" -> {
                     resultInt += 20 + 5
-                    syoukei1.text = getString(R.string.markSyoukei, 25)
                     sumCheck = false
                 }
             }
@@ -226,31 +255,37 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
                             headView.descriptionTitleText.text = getString(R.string.head1Title)
                             headView.descriptionTextView.text = getString(R.string.head1)
                             headView.descriptionImage.setImageResource(R.drawable.head_1)
+                            syoukei2.text = getString(R.string.markSyoukei, 0)
                         }
                         1 -> {
                             headView.descriptionTitleText.text = getString(R.string.head2Title)
                             headView.descriptionTextView.text = getString(R.string.head2)
                             headView.descriptionImage.setImageResource(R.drawable.head_2)
+                            syoukei2.text = getString(R.string.markSyoukei, 2)
                         }
                         2 -> {
                             headView.descriptionTitleText.text = getString(R.string.head3Title)
                             headView.descriptionTextView.text = getString(R.string.head3)
                             headView.descriptionImage.setImageResource(R.drawable.head_3)
+                            syoukei2.text = getString(R.string.markSyoukei, 2)
                         }
                         3 -> {
                             headView.descriptionTitleText.text = getString(R.string.head4Title)
                             headView.descriptionTextView.text = getString(R.string.head4)
                             headView.descriptionImage.setImageResource(R.drawable.head_4)
+                            syoukei2.text = getString(R.string.markSyoukei, 2)
                         }
                         4 -> {
                             headView.descriptionTitleText.text = getString(R.string.head5Title)
                             headView.descriptionTextView.text = getString(R.string.head5)
                             headView.descriptionImage.setImageResource(R.drawable.head_5)
+                            syoukei2.text = getString(R.string.markSyoukei, 0)
                         }
                         5 -> {
                             headView.descriptionTitleText.text = getString(R.string.head6Title)
                             headView.descriptionTextView.text = getString(R.string.head6)
                             headView.descriptionImage.setImageResource(R.drawable.head_6)
+                            syoukei2.text = getString(R.string.markSyoukei, 4)
                         }
                         else -> error("ポジションエラー$position")
                     }
@@ -277,26 +312,31 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
                             waitView.descriptionTitleText.text = getString(R.string.waitDest1Title)
                             waitView.descriptionTextView.text = getString(R.string.waitDest1)
                             waitView.descriptionImage.setImageResource(R.drawable.wait_dest1)
+                            syoukei3.text = getString(R.string.markSyoukei, 2)
                         }
                         1 -> {
                             waitView.descriptionTitleText.text = getString(R.string.waitDest2Title)
                             waitView.descriptionTextView.text = getString(R.string.waitDest2)
                             waitView.descriptionImage.setImageResource(R.drawable.wait_dest2)
+                            syoukei3.text = getString(R.string.markSyoukei, 2)
                         }
                         2 -> {
                             waitView.descriptionTitleText.text = getString(R.string.waitDest3Title)
                             waitView.descriptionTextView.text = getString(R.string.waitDest3)
                             waitView.descriptionImage.setImageResource(R.drawable.wait_dest3)
+                            syoukei3.text = getString(R.string.markSyoukei, 2)
                         }
                         3 -> {
                             waitView.descriptionTitleText.text = getString(R.string.waitDest4Title)
                             waitView.descriptionTextView.text = getString(R.string.waitDest4)
                             waitView.descriptionImage.setImageResource(R.drawable.wait_dest4)
+                            syoukei3.text = getString(R.string.markSyoukei, 0)
                         }
                         4 -> {
                             waitView.descriptionTitleText.text = getString(R.string.waitDest5Title)
                             waitView.descriptionTextView.text = getString(R.string.waitDest5)
                             waitView.descriptionImage.setImageResource(R.drawable.wait_dest5)
+                            syoukei3.text = getString(R.string.markSyoukei, 0)
                         }
                         else -> error("ポジションエラー$position")
                     }
@@ -353,27 +393,21 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         when (headS) {
             "数牌" -> {
                 resultInt += 0
-                syoukei2.text = getString(R.string.markSyoukei, 0)
             }
             "三元牌" -> {
                 resultInt += 2
-                syoukei2.text = getString(R.string.markSyoukei, 2)
             }
             "場風牌" -> {
                 resultInt += 2
-                syoukei2.text = getString(R.string.markSyoukei, 2)
             }
             "自風牌" -> {
                 resultInt += 2
-                syoukei2.text = getString(R.string.markSyoukei, 2)
             }
             "客風牌" -> {
                 resultInt += 0
-                syoukei2.text = getString(R.string.markSyoukei, 0)
             }
             "場風・自風牌" -> {
                 resultInt += 4
-                syoukei2.text = getString(R.string.markSyoukei, 4)
             }
         }
     }
@@ -383,23 +417,18 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         when (waitS) {
             "単騎待ち（ﾀﾝｷ）" -> {
                 resultInt += 2
-                syoukei3.text = getString(R.string.markSyoukei, 2)
             }
             "辺張待ち（ﾍﾟﾝﾁｬﾝ）" -> {
                 resultInt += 2
-                syoukei3.text = getString(R.string.markSyoukei, 2)
             }
             "嵌張待ち（ｶﾝﾁｬﾝ）" -> {
                 resultInt += 2
-                syoukei3.text = getString(R.string.markSyoukei, 2)
             }
             "両面待ち（ﾘｬﾝﾒﾝ）" -> {
                 resultInt += 0
-                syoukei3.text = getString(R.string.markSyoukei, 0)
             }
             "双碰待ち（ｼｬﾝﾎﾟﾝ）" -> {
                 resultInt += 0
-                syoukei3.text = getString(R.string.markSyoukei, 0)
             }
         }
     }
