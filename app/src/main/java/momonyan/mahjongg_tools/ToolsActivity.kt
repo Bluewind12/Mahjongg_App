@@ -21,22 +21,6 @@ import net.nend.android.NendAdView
 
 
 class ToolsActivity : AppCompatActivity(), NendAdListener {
-    private lateinit var pointButtonP: Button
-    private lateinit var pointButtonC: Button
-    private lateinit var markButton: Button
-    private lateinit var markToolButton: Button
-    private lateinit var diceButton: Button
-
-    private lateinit var basicPointTextView: TextView
-    private lateinit var parentTextView: TextView
-    private lateinit var childTextView: TextView
-
-    private lateinit var rightImageView: ImageView
-    private lateinit var leftImageView: ImageView
-
-    private lateinit var translateSpinner: Spinner
-    private lateinit var markSpinner: Spinner
-
     private lateinit var audioAttributes: AudioAttributes
     private lateinit var soundPool: SoundPool
 
@@ -64,7 +48,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         init()
 
 
-        translateSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             //何も選択されなかった時の動作
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
 
@@ -85,17 +69,17 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
             }
         }
         //画面遷移系
-        pointButtonP.setOnClickListener {
+        pointTableP.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "oya_point")
             startActivity(intent)
         }
-        pointButtonC.setOnClickListener {
+        pointTableC.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "ko_point")
             startActivity(intent)
         }
-        markButton.setOnClickListener {
+        markTable.setOnClickListener {
             val intent = Intent(this, TableOutputActivity::class.java)
             intent.putExtra("image", "fu")
             startActivity(intent)
@@ -114,8 +98,8 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
         //サイコロ初期化
         countDice = CountFunctionDice(1000, 100)
-        countDice.leftImage = leftImageView
-        countDice.rightImage = rightImageView
+        countDice.leftImage = leftImage
+        countDice.rightImage = rightImage
         countDice.textView = oyaDiceTextView
 
         //サイコロ機能
@@ -162,7 +146,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
     //スピナーからの読み取り（翻）
     private fun getRole(): Int {
-        val roleString = translateSpinner.selectedItem.toString()
+        val roleString = hanSpinner.selectedItem.toString()
         return when (roleString) {
             "1翻" -> 1
             "2翻" -> 2
@@ -265,45 +249,26 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     //出力
     private fun setPoint(base: Int, parent: Int, child: Int) {
         if (base == 0 || parent == 0 || child == 0) {
-            basicPointTextView.text = "点数なし"
-            parentTextView.text = "点数なし"
-            childTextView.text = "点数なし"
+            basicText.text = "点数なし"
+            parentText.text = "点数なし"
+            childText.text = "点数なし"
         } else {
             when (base) {
-                80 -> basicPointTextView.text = getString(R.string.pointAlias, "満貫", base * 100)
-                120 -> basicPointTextView.text = getString(R.string.pointAlias, "跳満", base * 100)
-                160 -> basicPointTextView.text = getString(R.string.pointAlias, "倍満", base * 100)
-                240 -> basicPointTextView.text = getString(R.string.pointAlias, "三倍満", base * 100)
-                320 -> basicPointTextView.text = getString(R.string.pointAlias, "数え役満", base * 100)
-                77 -> basicPointTextView.text = getString(R.string.pointAlias, "切り上げ満貫", base * 100)
-                else -> basicPointTextView.text = (base * 100).toString()
+                80 -> basicText.text = getString(R.string.pointAlias, "満貫", base * 100)
+                120 -> basicText.text = getString(R.string.pointAlias, "跳満", base * 100)
+                160 -> basicText.text = getString(R.string.pointAlias, "倍満", base * 100)
+                240 -> basicText.text = getString(R.string.pointAlias, "三倍満", base * 100)
+                320 -> basicText.text = getString(R.string.pointAlias, "数え役満", base * 100)
+                else -> basicText.text = (base * 100).toString()
             }
-            if (base != 77) {
-                parentTextView.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
-                childTextView.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
-            } else {
-                // 切り上げ満貫時
-                parentTextView.text = getString(R.string.parentPoint2, (base + parent) * 100, 12000, parent * 100, 4000)
-                childTextView.text = getString(R.string.childPoint2, base * 100, 8000, parent * 100, 4000, child * 100, 2000)
-            }
+                parentText.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
+                childText.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
+
         }
     }
 
     //初期化用
     private fun init() {
-        pointButtonP = findViewById(R.id.pointTableP)
-        pointButtonC = findViewById(R.id.pointTableC)
-        markButton = findViewById(R.id.markTable)
-        markToolButton = findViewById(R.id.markToolButton)
-        basicPointTextView = findViewById(R.id.basicText)
-        parentTextView = findViewById(R.id.pearentText)
-        childTextView = findViewById(R.id.childText)
-        translateSpinner = findViewById(R.id.hanSpinner)
-        markSpinner = findViewById(R.id.markSpinner)
-        diceButton = findViewById(R.id.diceButton)
-        rightImageView = findViewById(R.id.rightImage)
-        leftImageView = findViewById(R.id.leftImage)
-
         audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
         soundPool = SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(2).build()
         sound = soundPool.load(this, R.raw.dise, 1)
