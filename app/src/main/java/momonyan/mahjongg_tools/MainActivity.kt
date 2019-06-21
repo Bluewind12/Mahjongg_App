@@ -115,6 +115,8 @@ class MainActivity : AppCompatActivity() {
                             else -> error(2)
                         }
                         editor.commit()
+                        finish()
+                        startActivity(resetIntent)
                     }
                     RIGHT_FLICK -> {
                         Log.d("Theme", "右")
@@ -125,10 +127,10 @@ class MainActivity : AppCompatActivity() {
                             else -> error(2)
                         }
                         editor.commit()
+                        finish()
+                        startActivity(resetIntent)
                     }
                 }
-                finish()
-                startActivity(resetIntent)
             }
         }
         setTheme(R.style.defaultTheme)
