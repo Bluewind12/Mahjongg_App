@@ -88,10 +88,10 @@ abstract class FlickCheck(frickView: View, adjustX: Float, adjustY: Float) {
     abstract fun getFlick(swipe: Int)
 
     companion object {
-        val LEFT_FLICK = 0
-        val RIGHT_FLICK = 1
-        val UP_FLICK = 2
-        val DOWN_FLICK = 3
+        const val LEFT_FLICK = 0
+        const val RIGHT_FLICK = 1
+        const val UP_FLICK = 2
+        const val DOWN_FLICK = 3
     }
 
 }

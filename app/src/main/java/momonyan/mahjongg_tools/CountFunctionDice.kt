@@ -12,13 +12,12 @@ class CountFunctionDice(millisInFuture: Long, countDownInterval: Long) : CountDo
     var rightDice = 0
     var leftDice = 0
     override fun onFinish() {
-        val direction: String
-        when ((rightDice + leftDice) % 4) {
-            1 -> direction = "自"
-            2 -> direction = "右"
-            3 -> direction = "対"
-            0 -> direction = "左"
-            else -> direction = ""
+        val direction: String = when ((rightDice + leftDice) % 4) {
+            1 -> "自"
+            2 -> "右"
+            3 -> "対"
+            0 -> "左"
+            else -> ""
         }
         val sumDice = rightDice + leftDice
         textView.text = "$sumDice：$direction"
