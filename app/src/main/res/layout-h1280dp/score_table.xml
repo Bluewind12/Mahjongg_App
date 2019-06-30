@@ -1,22 +1,527 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/tableImages"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="fitXY"
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/pointTableGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/point_ko" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/pointVoidTextView"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/pointTitleTextView"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/yakuTable_1han"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/pointTitleTextView2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/yakuTable_2han"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/pointTitleTextView3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/yakuTable_3han"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/pointTitleTextView4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/yakuTable_4han"
+            app:layout_column="4"
+            app:layout_columnWeight="2"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/pointTextView20FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu20_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_20_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="1"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_20_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="1"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_20_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="1"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_20_4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="4"
+            app:layout_columnWeight="2"
+            app:layout_row="1"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView25FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu25_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="2"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_25_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="2"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_25_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="2"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_25_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="2"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_25_4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="4"
+            app:layout_columnWeight="2"
+            app:layout_row="2"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView30FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu30_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="3"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_30_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="3"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_30_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="3"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_30_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="3"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_30_4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="4"
+            app:layout_columnWeight="2"
+            app:layout_row="3"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView40FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu40_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="4"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_40_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="4"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_40_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="4"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_40_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="4"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_40_4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mangan_string"
+            app:layout_column="4"
+            app:layout_columnWeight="2"
+            app:layout_row="4"
+            app:layout_rowSpan="8"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView50FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu50_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="5"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_50_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="5"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_50_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="5"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_50_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="5"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView60FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu60_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="6"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_60_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="6"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_60_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="6"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_60_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="6"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView70FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu70_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="7"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_70_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="7"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_70_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="7"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_70_3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mangan_string"
+            app:layout_column="3"
+            app:layout_columnWeight="2"
+            app:layout_row="7"
+            app:layout_rowSpan="5"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView80FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu80_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="8"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_80_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="8"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_80_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="8"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView90FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu90_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="9"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_90_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="9"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_90_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="9"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView100FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu100_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="10"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_100_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="10"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_100_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="10"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView110FuTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/fu110_title"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="11"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_110_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="1"
+            app:layout_columnWeight="2"
+            app:layout_row="11"
+            app:layout_rowWeight="2" />
+
+        <TextView
+            android:id="@+id/pointTextView_110_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_columnWeight="2"
+            app:layout_row="11"
+            app:layout_rowWeight="2" />
+
+
+    </android.support.v7.widget.GridLayout>
 </android.support.constraint.ConstraintLayout>
