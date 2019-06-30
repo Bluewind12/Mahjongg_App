@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="child_1000">1000\n300\-500</string>
+    <string name="child_1300">1300\n400\-700</string>
+    <string name="child_1600">1600\n400\-800</string>
+    <string name="child_2000">2000\n500\-1000</string>
+    <string name="child_2300">2300\n600\-1200</string>
+    <string name="child_2600">2600\n700\-1300</string>
+    <string name="child_2900">2900\n800\-1500</string>
+    <string name="child_3200">3200\n800\-1600</string>
+    <string name="child_3600">3600\n900\-1800</string>
+    <string name="child_3900">3900\n1000\-2000</string>
+    <string name="child_4500">4500\n1200\-2300</string>
+    <string name="child_5200">5200\n1300\-2600</string>
+    <string name="child_5800">5800\n1500\-2900</string>
+    <string name="child_6400">6400\n1600\-3200</string>
+    <string name="child_7100">7100\n1800\-3600</string>
+    <string name="child_7700">7700\n2000\-3900</string>
+    <string name="child_4080">400\-800</string>
+    <string name="child_7013">700\-1300</string>
+    <string name="child_1326">1300\-2600</string>
+
+    <string name="parent_1500">1500\n500オール</string>
+    <string name="parent_2000">2000\n700オール</string>
+    <string name="parent_2400">2400\n800オール</string>
+    <string name="parent_2900">2900\n1000オール</string>
+    <string name="parent_3400">3400\n1200オール</string>
+    <string name="parent_3900">3900\n1300オール</string>
+    <string name="parent_4400">4400\n1500オール</string>
+    <string name="parent_4800">4800\n1600オール</string>
+    <string name="parent_5300">5300\n1800オール</string>
+    <string name="parent_5800">5800\n2000オール</string>
+    <string name="parent_6800">6800\n2300オール</string>
+    <string name="parent_7700">7700\n2600オール</string>
+    <string name="parent_8700">8700\n2900オール</string>
+    <string name="parent_9600">9600\n3200オール</string>
+    <string name="parent_10600">10600\n3600オール</string>
+    <string name="parent_11600">11600\n3900オール</string>
+    <string name="parent_700_all">700オール</string>
+    <string name="parent_1300_all">1300オール</string>
+    <string name="parent_2600_all">2600オール</string>
+    <string name="parent_2400_pin">2400</string>
+
+</resources>
