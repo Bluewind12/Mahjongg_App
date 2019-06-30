@@ -41,4 +41,18 @@
     <string name="parent_2600_all">2600オール</string>
     <string name="parent_2400_pin">2400</string>
 
+    <string name="fu20_title">20符</string>
+    <string name="fu25_title">25符</string>
+    <string name="fu30_title">30符</string>
+    <string name="fu40_title">40符</string>
+    <string name="fu50_title">50符</string>
+    <string name="fu60_title">60符</string>
+    <string name="fu70_title">70符</string>
+    <string name="fu80_title">80符</string>
+    <string name="fu90_title">90符</string>
+    <string name="fu100_title">100符</string>
+    <string name="fu110_title">110符</string>
+
+    <string name="pinf_title">ピンフツモ\n→</string>
+    <string name="ti_toi_title">七対子\n→</string>
 </resources>
