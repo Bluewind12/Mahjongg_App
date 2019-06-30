@@ -191,5 +191,11 @@
     <string name="yakuTable_6han">6飜</string>
     <string name="yakuTable_yakuman">役満</string>
     <string name="tumo_20">和了：20符</string>
+    <string name="mangan_string">満貫</string>
+    <string name="hane_dis">跳満\n6,7翻</string>
+    <string name="bai_dis">倍満\n8~10翻</string>
+    <string name="sanbai_dis">倍満\n11翻以上</string>
+    <string name="yaku_dis">役満\n(13飜以上)</string>
+
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--子-->
     <string name="child_1000">1000\n300\-500</string>
     <string name="child_1300">1300\n400\-700</string>
     <string name="child_1600">1600\n400\-800</string>
@@ -19,7 +20,15 @@
     <string name="child_4080">400\-800</string>
     <string name="child_7013">700\-1300</string>
     <string name="child_1326">1300\-2600</string>
+    <string name="child_1600_pin">1300\-2600</string>
+    <!--強強シリーズ-->
+    <string name="child_man">満貫\n8000\n2000\-4000</string>
+    <string name="child_hane">12000\n3000\-6000</string>
+    <string name="child_bai">16000\n4000\-8000</string>
+    <string name="child_sanbai">24000\n6000\-12000</string>
+    <string name="child_yaku">32000\n8000\-16000</string>
 
+    <!--親-->
     <string name="parent_1500">1500\n500オール</string>
     <string name="parent_2000">2000\n700オール</string>
     <string name="parent_2400">2400\n800オール</string>
@@ -40,6 +49,12 @@
     <string name="parent_1300_all">1300オール</string>
     <string name="parent_2600_all">2600オール</string>
     <string name="parent_2400_pin">2400</string>
+    <!--強強シリーズ-->
+    <string name="parent_man">満貫\n12000\n4000オール</string>
+    <string name="parent_hane">18000\n6000オール</string>
+    <string name="parent_bai">24000\n8000オール</string>
+    <string name="parent_sanbai">36000\n12000オール</string>
+    <string name="parent_yaku">48000\n16000オール</string>
 
     <string name="fu20_title">20符</string>
     <string name="fu25_title">25符</string>

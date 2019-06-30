@@ -43,8 +43,7 @@
         <activity
             android:name=".TableOutputActivity"
             android:label="親-点数表"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:screenOrientation="portrait" />
 
     </application>
 
