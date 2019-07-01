@@ -51,12 +51,9 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
 
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            //何も選択されなかった時の動作
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
-
             //選択時
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                // 初回起動時の動作
                 if (!hanSpinner.isFocusable) {
                     hanSpinner.isFocusable = true
                     return
@@ -66,9 +63,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
             }
         }
         markSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            //何も選択されなかった時の動作
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
-
             //選択時
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 if (!markSpinner.isFocusable) {
