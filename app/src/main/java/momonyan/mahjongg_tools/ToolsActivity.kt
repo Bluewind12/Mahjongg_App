@@ -13,7 +13,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.point_tools.*
 import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
 import net.nend.android.NendAdListener
@@ -70,27 +72,29 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         }
         //画面遷移系
         pointTableP.setOnClickListener {
-            val intent = Intent(this, TableOutputActivity::class.java)
+            val intent = Intent(this, PointTableOutputActivity::class.java)
             intent.putExtra("image", "oya_point")
             startActivity(intent)
         }
         pointTableC.setOnClickListener {
-            val intent = Intent(this, TableOutputActivity::class.java)
+            val intent = Intent(this, PointTableOutputActivity::class.java)
             intent.putExtra("image", "ko_point")
             startActivity(intent)
         }
+
+        markTable.visibility = View.GONE
         markTable.setOnClickListener {
-            val intent = Intent(this, TableOutputActivity::class.java)
+            val intent = Intent(this, PointTableOutputActivity::class.java)
             intent.putExtra("image", "fu")
             startActivity(intent)
         }
+
         //符計算ツール画面への遷移
         markToolButton.setOnClickListener {
             val intent = Intent(this, MarkToolActivity::class.java)
             startActivity(intent)
         }
         //役一覧画面への繊維
-
         yakuJumpButton.setOnClickListener {
             val intent = Intent(this, YakuListViewActivity::class.java)
             startActivity(intent)

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.score_table.*
 
-class TableOutputActivity : AppCompatActivity() {
+class PointTableOutputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         //テーマ変更
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
