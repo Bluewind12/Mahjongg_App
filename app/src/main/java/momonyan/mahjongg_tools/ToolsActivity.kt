@@ -56,6 +56,11 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
             //選択時
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                // 初回起動時の動作
+                if (!hanSpinner.isFocusable) {
+                    hanSpinner.isFocusable = true
+                    return
+                }
                 role = getRole()
                 countPoint(role + mark)
             }
@@ -66,10 +71,18 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
             //選択時
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                if (!markSpinner.isFocusable) {
+                    markSpinner.isFocusable = true
+                    return
+                }
                 mark = getMarks()
                 countPoint(role + mark)
             }
         }
+        hanSpinner.isFocusable = false
+        markSpinner.isFocusable = false
+
+
         //画面遷移系
         pointTableP.setOnClickListener {
             val intent = Intent(this, PointTableOutputActivity::class.java)
@@ -150,8 +163,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
     //スピナーからの読み取り（翻）
     private fun getRole(): Int {
-        val roleString = hanSpinner.selectedItem.toString()
-        return when (roleString) {
+        return when (hanSpinner.selectedItem.toString()) {
             "1翻" -> 1
             "2翻" -> 2
             "3翻" -> 3
@@ -171,8 +183,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
     //スピナーからの読み取り（符）
     private fun getMarks(): Int {
-        val markString = markSpinner.selectedItem.toString()
-        return when (markString) {
+        return when (markSpinner.selectedItem.toString()) {
             "平和ツモ" -> 10
             "七対子" -> 20
             "30符" -> 30
@@ -253,7 +264,6 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     //出力
     private fun setPoint(base: Int, parent: Int, child: Int) {
         if (base == 0 || parent == 0 || child == 0) {
-            basicText.text = "点数なし"
             parentText.text = "点数なし"
             childText.text = "点数なし"
         } else {
@@ -265,9 +275,8 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
                 320 -> basicText.text = getString(R.string.pointAlias, "数え役満", base * 100)
                 else -> basicText.text = (base * 100).toString()
             }
-                parentText.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
-                childText.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
-
+            parentText.text = getString(R.string.parentPoint, (base + parent) * 100, parent * 100)
+            childText.text = getString(R.string.childPoint, base * 100, parent * 100, child * 100)
         }
     }
 
