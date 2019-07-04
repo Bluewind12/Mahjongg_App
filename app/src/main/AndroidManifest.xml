@@ -44,6 +44,10 @@
             android:name=".PointTableOutputActivity"
             android:label="親-点数表"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".FuTableViewActivity"
+            android:label="符計算表"
+            android:screenOrientation="portrait" />
 
     </application>
 
