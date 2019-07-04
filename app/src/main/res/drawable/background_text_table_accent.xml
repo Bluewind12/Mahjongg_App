@@ -3,10 +3,9 @@
     android:shape="rectangle">
     <stroke
         android:width="2dp"
-        android:color="?attr/colorPrimary" />
+        android:color="?attr/colorAccent" />
     <padding
         android:bottom="1dp"
-        android:top="1dp"
-        />
+        android:top="1dp" />
 
 </shape>

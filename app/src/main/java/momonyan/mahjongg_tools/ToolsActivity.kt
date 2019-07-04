@@ -90,10 +90,8 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
             startActivity(intent)
         }
 
-        markTable.visibility = View.GONE
         markTable.setOnClickListener {
-            val intent = Intent(this, PointTableOutputActivity::class.java)
-            intent.putExtra("image", "fu")
+            val intent = Intent(this, FuTableViewActivity::class.java)
             startActivity(intent)
         }
 
