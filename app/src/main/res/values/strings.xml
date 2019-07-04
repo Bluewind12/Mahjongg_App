@@ -215,7 +215,20 @@
     <string name="fu8_string">8符</string>
     <string name="fu16_string">16符</string>
     <string name="fu10_string">10符</string>
-    <string name="fu20_string">20符のみ</string>
-    <string name="fu30_string">30符のみ</string>
-    <string name="fu25_string">25符のみ</string>
+    <string name="fu20_string">20符</string>
+    <string name="fu30_string">30符</string>
+    <string name="fu25_string">25符</string>
+    <string name="tanki">単騎</string>
+    <string name="ryanmen">両面</string>
+    <string name="pentyan">辺張</string>
+    <string name="syabo">双碰</string>
+    <string name="agarikata">上がり方</string>
+    <string name="tuuzyou">通常</string>
+    <string name="notyakuhai">役牌以外</string>
+    <string name="yakuhai">役牌</string>
+    <string name="renpu_">連風牌</string>
+    <string name="kantyan">嵌張</string>
+    <string name="syun">順子</string>
+    <string name="ko_tu_setume">刻子(暗なら2倍)</string>
+    <string name="kantu_setume">槓子(暗なら2倍)</string>
 </resources>
