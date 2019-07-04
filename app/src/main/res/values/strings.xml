@@ -197,5 +197,25 @@
     <string name="sanbai_dis">倍満\n11翻以上</string>
     <string name="yaku_dis">役満\n(13飜以上)</string>
 
+    <string name="fu_string">符</string>
+    <string name="tanyao_string">断么牌</string>
+    <string name="yaotyu_string">幺九牌</string>
 
+
+    <string name="tumo">ツモ</string>
+    <string name="rinsyan_tumo">嶺上ツモ</string>
+    <string name="ron">ロン</string>
+    <string name="menzen_ron">面前ロン</string>
+    <string name="pinfu">平和</string>
+    <string name="ti_toi">七対子</string>
+    <string name="ti_toi_kana">チートイツ</string>
+    <string name="fu0_string">0符</string>
+    <string name="fu2_string">2符</string>
+    <string name="fu4_string">4符</string>
+    <string name="fu8_string">8符</string>
+    <string name="fu16_string">16符</string>
+    <string name="fu10_string">10符</string>
+    <string name="fu20_string">20符のみ</string>
+    <string name="fu30_string">30符のみ</string>
+    <string name="fu25_string">25符のみ</string>
 </resources>
