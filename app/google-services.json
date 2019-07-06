@@ -1,52 +1,45 @@
 {
   "project_info": {
-    "project_number": "977896163467",
-    "firebase_url": "https://momonyan-apps.firebaseio.com",
-    "project_id": "momonyan-apps",
-    "storage_bucket": "momonyan-apps.appspot.com"
+    "project_number": "482878912904",
+    "firebase_url": "https://momo-mahjong-app.firebaseio.com",
+    "project_id": "momo-mahjong-app",
+    "storage_bucket": "momo-mahjong-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:977896163467:android:01efa90d100fb08a",
+        "mobilesdk_app_id": "1:482878912904:android:01efa90d100fb08a",
         "android_client_info": {
           "package_name": "momonyan.mahjongg_tools"
         }
       },
       "oauth_client": [
         {
-          "client_id": "977896163467-oo16de6r645hkarivj3n3n75lnvrhcll.apps.googleusercontent.com",
+          "client_id": "482878912904-ekakqnhhprplqc2ja92jjog897l74l54.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "momonyan.mahjongg_tools",
-            "certificate_hash": "9922198f06a8960e21b110ab03c06ed245fd6298"
+            "certificate_hash": "76c37af5142f9c4fede2013d12a2194d4da262ad"
           }
         },
         {
-          "client_id": "977896163467-ovt7njanp7mfp2pdl1lpjfeinh84sv1q.apps.googleusercontent.com",
+          "client_id": "482878912904-r1fj06op5re9a6hac53dlbo9jtkfd9ks.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyByM_s4U7vzh8GgICtWZ2UUy4gdkDxNeUk"
+          "current_key": "AIzaSyA2HigMfYv8m9Suzy7PmrLWe01POVCW3FY"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "977896163467-ovt7njanp7mfp2pdl1lpjfeinh84sv1q.apps.googleusercontent.com",
+              "client_id": "482878912904-r1fj06op5re9a6hac53dlbo9jtkfd9ks.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

@@ -1,14 +1,14 @@
 package momonyan.mahjongg_tools.yakulist
 
-import android.support.constraint.ConstraintLayout
-import android.support.v7.widget.RecyclerView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.yaku_list_card_layout.view.*
 
 
-class YakuDataHolder(mView: View) : RecyclerView.ViewHolder(mView) {
+class YakuDataHolder(mView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(mView) {
     val mTitle: TextView = mView.yakuTitleTextView //役名
     val mRead: TextView = mView.yakuTitleReadTextView //役名
     val mDescription: TextView = mView.yakuDescriptionTextView //説明文

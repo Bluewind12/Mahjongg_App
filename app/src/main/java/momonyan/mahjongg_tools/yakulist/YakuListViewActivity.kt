@@ -3,10 +3,10 @@ package momonyan.mahjongg_tools.yakulist
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.tabs.TabLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.yaku_list_layout.*
@@ -53,11 +53,11 @@ class YakuListViewActivity : AppCompatActivity() {
         // RecyclerViewにAdapterとLayoutManagerの設定
         yakuRecyclerView.adapter = adapter
         yakuRecyclerView.layoutManager = RecyclerLayoutCustomManager(this)
-        yakuRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+        yakuRecyclerView.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val manager = recyclerView.layoutManager as LinearLayoutManager?
+                val manager = recyclerView.layoutManager as androidx.recyclerview.widget.LinearLayoutManager?
                 val firstVisibleItem = manager!!.findFirstVisibleItemPosition()
                 if (tabSelectFrag) {
                     when (firstVisibleItem) {

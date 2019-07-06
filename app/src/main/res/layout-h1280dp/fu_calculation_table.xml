@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fuTableLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -249,9 +249,9 @@
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
-    </android.support.v7.widget.GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
-    <android.support.v7.widget.GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -352,9 +352,9 @@
             app:layout_columnWeight="1"
             app:layout_row="1" />
 
-    </android.support.v7.widget.GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
-    <android.support.v7.widget.GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -496,9 +496,9 @@
             app:layout_column="4"
             app:layout_columnWeight="1"
             app:layout_row="1" />
-    </android.support.v7.widget.GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
-    <android.support.v7.widget.GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -719,7 +719,7 @@
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
-    </android.support.v7.widget.GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
 
     <TextView
         android:id="@+id/textView3"
@@ -741,4 +741,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout4" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,11 @@
 package momonyan.mahjongg_tools.yakulist
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import momonyan.mahjongg_tools.R
 
-class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : RecyclerView.Adapter<YakuDataHolder>() {
+class YakuDataAdapter(private val mValues: ArrayList<YakuDataClass>) : androidx.recyclerview.widget.RecyclerView.Adapter<YakuDataHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YakuDataHolder {
         //レイアウトの設定(inflate)
