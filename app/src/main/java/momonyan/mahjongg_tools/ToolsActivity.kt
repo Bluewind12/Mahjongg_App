@@ -16,6 +16,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.point_tools.*
 import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
 import net.nend.android.NendAdListener
@@ -35,6 +36,9 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     private var role: Int = 1
     private var mark: Int = 10
 
+    //FireBase
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
@@ -49,6 +53,14 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         //初期化
         init()
 
+        //FireBase
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        val params = Bundle()
+        params.putString("Event", "OpenEvent")
+        params.putString("View","Tools")
+        params.putString("full_text", "ToolsActivityOpen")
+        firebaseAnalytics.logEvent("event_log", params)
 
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
@@ -114,6 +126,12 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
         //サイコロ機能
         diceButton.setOnClickListener {
+            val eventParam = Bundle()
+            eventParam.putString("Event", "ClickEvent")
+            eventParam.putString("View","Tools")
+            eventParam.putString("full_text", "DiceButton")
+            firebaseAnalytics.logEvent("event_log", eventParam)
+
             countDice.cancel()
             countDice.start()
             //効果音
@@ -127,6 +145,12 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
 
         //サイコロ機能
         windRollButton.setOnClickListener {
+            val eventParam = Bundle()
+            eventParam.putString("Event", "ClickEvent")
+            eventParam.putString("View","Tools")
+            eventParam.putString("full_text", "WindButton")
+            firebaseAnalytics.logEvent("event_log", eventParam)
+
             countWind.cancel()
             countWind.start()
             //効果音

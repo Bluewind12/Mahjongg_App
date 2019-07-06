@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
 import net.nend.android.NendAdListener
@@ -46,6 +47,15 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
     var resultInt = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //FireBase
+        val firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+        val params = Bundle()
+        params.putString("Event", "OpenEvent")
+        params.putString("View", "MarkTool")
+        params.putString("full_text", "MarkToolOpen")
+        firebaseAnalytics.logEvent("event_log", params)
+
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> setTheme(R.style.DarkThemeAction)

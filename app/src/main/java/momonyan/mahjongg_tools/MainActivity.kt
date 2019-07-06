@@ -5,10 +5,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
 import net.nend.android.NendAdInterstitial
 
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
     private var parent = 0
     private var times = 0
 
+    //FireBase
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //テーマ変更
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
@@ -46,8 +50,21 @@ class MainActivity : AppCompatActivity() {
             else -> error(2)
         }
 
+
         super.onCreate(savedInstanceState)
+        //Nend
         NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
+        //FireBase
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+
+        //FireBase
+        val openParams = Bundle()
+        openParams.putString("Event", "OpenEvent")
+        openParams.putString("View", "Main")
+        openParams.putString("full_text", "Main")
+        firebaseAnalytics.logEvent("event_log", openParams)
+
         setContentView(R.layout.activity_main)
         //初期状態セット
         initialSetting()
@@ -57,12 +74,24 @@ class MainActivity : AppCompatActivity() {
         setFirstPlayer(firstPlayer)
         setState(parent)
         setFieldWind(fieldNum)
+
+
         //単推し
         for (i in 0 until playerButtons.size) {
             playerButtons[i].setOnClickListener {
+                val params = Bundle()
+                params.putString("Event", "ClickEvent")
+                params.putString("View", "Main")
+                params.putString("full_text", "ClickPlayerButton")
+                firebaseAnalytics.logEvent("event_log", params)
                 changeState(i, false)
             }
             playerButtons[i].setOnLongClickListener {
+                val params = Bundle()
+                params.putString("Event", "ClickEvent")
+                params.putString("View", "Main")
+                params.putString("full_text", "LongClickPlayerButton")
+                firebaseAnalytics.logEvent("event_log", params)
                 changeState(i, true)
                 true
             }
@@ -70,6 +99,11 @@ class MainActivity : AppCompatActivity() {
 
         //中央(場風)タッチ時
         fieldButton.setOnClickListener {
+            val params = Bundle()
+            params.putString("Event", "ClickEvent")
+            params.putString("View", "Main")
+            params.putString("full_text", "ClickMasterButton")
+            firebaseAnalytics.logEvent("event_log", params)
             fieldNum++
             if (fieldNum == 4) {
                 fieldNum = 0
@@ -80,6 +114,11 @@ class MainActivity : AppCompatActivity() {
         }
         //長押し
         fieldButton.setOnLongClickListener {
+            val params = Bundle()
+            params.putString("Event", "ClickEvent")
+            params.putString("View", "Main")
+            params.putString("full_text", "LongClickPMasterButton")
+            firebaseAnalytics.logEvent("event_log", params)
             fieldNum--
             if (fieldNum == -1) {
                 fieldNum = 3
@@ -107,23 +146,50 @@ class MainActivity : AppCompatActivity() {
             override fun getFlick(swipe: Int) {
                 when (swipe) {
                     LEFT_FLICK -> {
+                        val params = Bundle()
+                        params.putString("Event", "ThemeChange")
+                        params.putString("View", "Main")
+                        params.putString("full_text", "ThemeChange")
+
                         Log.d("Theme", "左")
                         when (dataStore.getString("Theme", "Dark")) {
-                            "Dark" -> editor.putString("Theme", "Light")
-                            "Light" -> editor.putString("Theme", "Mat")
-                            "Mat" -> editor.putString("Theme", "Dark")
+                            "Dark" -> {
+                                editor.putString("Theme", "Light")
+                                params.putInt("Theme", 0)
+                            }
+                            "Light" -> {
+                                editor.putString("Theme", "Mat")
+                                params.putInt("Theme", 1)
+                            }
+                            "Mat" -> {
+                                editor.putString("Theme", "Dark")
+                                params.putInt("Theme", 2)
+                            }
                             else -> error(2)
                         }
+                        firebaseAnalytics.logEvent("event_log", params)
                         editor.commit()
                         finish()
                         startActivity(resetIntent)
                     }
                     RIGHT_FLICK -> {
-                        Log.d("Theme", "右")
+                        val params = Bundle()
+                        params.putString("Event", "ThemeChange")
+                        params.putString("View", "Main")
+                        params.putString("full_text", "ThemeChange")
                         when (dataStore.getString("Theme", "Dark")) {
-                            "Dark" -> editor.putString("Theme", "Mat")
-                            "Light" -> editor.putString("Theme", "Dark")
-                            "Mat" -> editor.putString("Theme", "Light")
+                            "Dark" -> {
+                                editor.putString("Theme", "Mat")
+                                params.putInt("Theme", 1)
+                            }
+                            "Light" -> {
+                                editor.putString("Theme", "Dark")
+                                params.putInt("Theme", 2)
+                            }
+                            "Mat" -> {
+                                editor.putString("Theme", "Light")
+                                params.putInt("Theme", 0)
+                            }
                             else -> error(2)
                         }
                         editor.commit()

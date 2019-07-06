@@ -3,6 +3,7 @@ package momonyan.mahjongg_tools
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.score_table.*
 
 class PointTableOutputActivity : AppCompatActivity() {
@@ -23,6 +24,14 @@ class PointTableOutputActivity : AppCompatActivity() {
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.score_table)
+        //FireBase
+        val firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+        val params = Bundle()
+        params.putString("Event", "OpenEvent")
+        params.putString("View", "PointTable")
+        params.putString("full_text", intent.getStringExtra("image"))
+        firebaseAnalytics.logEvent("event_log", params)
+
         when (intent.getStringExtra("image")) {
             "oya_point" -> {
                 setParentPointText()
