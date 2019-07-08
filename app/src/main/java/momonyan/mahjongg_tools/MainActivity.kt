@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
 import net.nend.android.NendAdInterstitial
@@ -56,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
         //FireBase
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
 
 
         //FireBase

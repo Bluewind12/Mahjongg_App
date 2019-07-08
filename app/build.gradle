@@ -46,5 +46,8 @@ dependencies {
     implementation 'jp.co.runners:rateorfeedback:0.0.3'
 
     implementation 'com.google.firebase:firebase-core:17.0.0'
+
+
+    implementation 'com.google.android.gms:play-services-ads:18.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
