@@ -24,14 +24,6 @@ class PointTableOutputActivity : AppCompatActivity() {
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.score_table)
-        //FireBase
-        val firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        val params = Bundle()
-        params.putString("Event", "OpenEvent")
-        params.putString("View", "PointTable")
-        params.putString("full_text", intent.getStringExtra("image"))
-        firebaseAnalytics.logEvent("event_log", params)
-
         when (intent.getStringExtra("image")) {
             "oya_point" -> {
                 setParentPointText()

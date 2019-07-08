@@ -79,19 +79,9 @@ class MainActivity : AppCompatActivity() {
         //単推し
         for (i in 0 until playerButtons.size) {
             playerButtons[i].setOnClickListener {
-                val params = Bundle()
-                params.putString("Event", "ClickEvent")
-                params.putString("View", "Main")
-                params.putString("full_text", "ClickPlayerButton")
-                firebaseAnalytics.logEvent("event_log", params)
                 changeState(i, false)
             }
             playerButtons[i].setOnLongClickListener {
-                val params = Bundle()
-                params.putString("Event", "ClickEvent")
-                params.putString("View", "Main")
-                params.putString("full_text", "LongClickPlayerButton")
-                firebaseAnalytics.logEvent("event_log", params)
                 changeState(i, true)
                 true
             }
@@ -99,11 +89,6 @@ class MainActivity : AppCompatActivity() {
 
         //中央(場風)タッチ時
         fieldButton.setOnClickListener {
-            val params = Bundle()
-            params.putString("Event", "ClickEvent")
-            params.putString("View", "Main")
-            params.putString("full_text", "ClickMasterButton")
-            firebaseAnalytics.logEvent("event_log", params)
             fieldNum++
             if (fieldNum == 4) {
                 fieldNum = 0
@@ -114,11 +99,6 @@ class MainActivity : AppCompatActivity() {
         }
         //長押し
         fieldButton.setOnLongClickListener {
-            val params = Bundle()
-            params.putString("Event", "ClickEvent")
-            params.putString("View", "Main")
-            params.putString("full_text", "LongClickPMasterButton")
-            firebaseAnalytics.logEvent("event_log", params)
             fieldNum--
             if (fieldNum == -1) {
                 fieldNum = 3
