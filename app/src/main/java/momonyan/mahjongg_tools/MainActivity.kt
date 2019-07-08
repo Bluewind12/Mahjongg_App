@@ -9,10 +9,13 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
 import net.nend.android.NendAdInterstitial
+import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
     //FireBase
     private lateinit var firebaseAnalytics: FirebaseAnalytics
 
+    //Ad
+    private lateinit var mInterstitialAd: InterstitialAd
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //テーマ変更
         dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
@@ -54,11 +60,17 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         //Nend
-        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
+//        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
+
+        //AD
+        MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-6499097800180510/7290769334"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
         //FireBase
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
-        MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
 
 
         //FireBase
@@ -255,7 +267,12 @@ class MainActivity : AppCompatActivity() {
         editor.putInt("times", times)
         editor.putInt("parent", parent)
         editor.apply()
-        NendAdInterstitial.showAd(this)
+
+        //TODO AD
+        //NendAdInterstitial.showAd(this)
+        if (mInterstitialAd.isLoaded && Random.nextInt(100) <= 25) {
+            mInterstitialAd.show()
+        }
     }
 
     //プレイヤー状態のセット
@@ -295,7 +312,12 @@ class MainActivity : AppCompatActivity() {
             else -> error("error")
         }
         setState(parent)
-        NendAdInterstitial.showAd(this)
+
+        //TODO AD
+        //NendAdInterstitial.showAd(this)
+        if (mInterstitialAd.isLoaded && Random.nextInt(100) <= 25) {
+            mInterstitialAd.show()
+        }
     }
 
     private fun setBoostWind() {

@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import com.google.firebase.analytics.FirebaseAnalytics
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
 import net.nend.android.NendAdListener
@@ -59,6 +59,10 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mark_tool)
         init()
+
+
+        val adRequest = AdRequest.Builder().build()
+        markAd.loadAd(adRequest)
 
         completionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
@@ -348,7 +352,7 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
             }
         }
 
-        nend2.setListener(this)
+//        nend2.setListener(this)
     }
 
     private fun init() {

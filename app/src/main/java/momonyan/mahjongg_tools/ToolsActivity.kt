@@ -8,7 +8,6 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -16,7 +15,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.analytics.FirebaseAnalytics
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
 import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
 import net.nend.android.NendAdListener
@@ -36,6 +36,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
     private var role: Int = 1
     private var mark: Int = 10
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
@@ -49,6 +50,10 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         setContentView(R.layout.point_tools)
         //初期化
         init()
+
+        //Ad
+        val adRequest = AdRequest.Builder().build()
+        toolAd.loadAd(adRequest)
 
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
@@ -142,7 +147,7 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         setTextDescription(yakuTextView, "役の一覧表への移動ボタンです")
         setTextDescription(windRandTextView, "風がランダムで表示されます。\n東南西北が表示されます。")
 
-        nend.setListener(this)
+        //nend.setListener(this)
     }
 
     private fun setTextDescription(text: TextView, des: String) {
