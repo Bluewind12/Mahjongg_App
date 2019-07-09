@@ -426,19 +426,6 @@
 			app:layout_constraintBottom_toBottomOf="@+id/calculateButton"
 			app:layout_constraintStart_toEndOf="@+id/calculateButton" />
 
-		<ImageView
-			android:id="@+id/imageView3"
-			android:layout_width="wrap_content"
-			android:layout_height="0dp"
-			android:layout_marginStart="8dp"
-			android:adjustViewBounds="true"
-			app:layout_constraintBottom_toBottomOf="@+id/markAd"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="@+id/markAd"
-			app:srcCompat="@drawable/gensou_logo"
-			android:contentDescription="@string/logo_image" />
-
 		<!--<net.nend.android.NendAdView-->
 		<!--android:id="@+id/nend2"-->
 		<!--android:layout_width="320dp"-->
@@ -452,20 +439,33 @@
 		<!--nendsdk:NendApiKey="@string/nend_ad100"-->
 		<!--nendsdk:NendSpotId="@integer/nend_ad100" />-->
 
+
+		<ImageView
+			android:id="@+id/imageView3"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_marginStart="8dp"
+			android:adjustViewBounds="true"
+			android:contentDescription="@string/logo_image"
+			app:layout_constraintBottom_toBottomOf="@+id/markAd"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/markAd"
+			app:srcCompat="@drawable/gensou_logo" />
+
 		<com.google.android.gms.ads.AdView
 			android:id="@+id/markAd"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
+			android:layout_width="320dp"
+			android:layout_height="100dp"
 			android:layout_alignParentBottom="true"
 			android:layout_centerHorizontal="true"
 			android:layout_marginStart="8dp"
 			android:layout_marginEnd="8dp"
+			ads:adSize="LARGE_BANNER"
+			ads:adUnitId="ca-app-pub-6499097800180510/9725360980"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			ads:adSize="LARGE_BANNER"
-			ads:adUnitId="ca-app-pub-6499097800180510/9725360980" />
-
+			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
 			android:id="@+id/syoukei1"

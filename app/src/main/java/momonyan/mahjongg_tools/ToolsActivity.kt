@@ -16,14 +16,13 @@ import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
 import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
-import net.nend.android.NendAdListener
-import net.nend.android.NendAdView
 
 
-class ToolsActivity : AppCompatActivity(), NendAdListener {
+class ToolsActivity : AppCompatActivity() {
     private lateinit var audioAttributes: AudioAttributes
     private lateinit var soundPool: SoundPool
 
@@ -54,6 +53,36 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         //Ad
         val adRequest = AdRequest.Builder().build()
         toolAd.loadAd(adRequest)
+
+        toolAd.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                Log.d("AdMob", "Loaded!!")
+                logoImageView.visibility = View.INVISIBLE
+
+            }
+
+            override fun onAdFailedToLoad(errorCode: Int) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        }
 
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
@@ -330,23 +359,5 @@ class ToolsActivity : AppCompatActivity(), NendAdListener {
         return false
     }
 
-
-    //NendListener
-    /** 受信エラー通知 */
-    override fun onFailedToReceiveAd(nendAdView: NendAdView) {
-    }
-
-    /** 受信成功通知  */
-    override fun onReceiveAd(nendAdView: NendAdView) {
-        logoImageView.visibility = View.GONE
-    }
-
-    /** クリック通知  */
-    override fun onClick(nendAdView: NendAdView) {
-    }
-
-    /** 復帰通知  */
-    override fun onDismissScreen(arg0: NendAdView) {
-    }
 
 }
