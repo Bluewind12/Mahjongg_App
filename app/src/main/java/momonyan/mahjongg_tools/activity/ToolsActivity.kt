@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
-import momonyan.mahjongg_tools.CountFunctionDice
-import momonyan.mahjongg_tools.CountFunctionWind
+import momonyan.mahjongg_tools.function.CountFunctionDice
+import momonyan.mahjongg_tools.function.CountFunctionWind
 import momonyan.mahjongg_tools.R
 
 

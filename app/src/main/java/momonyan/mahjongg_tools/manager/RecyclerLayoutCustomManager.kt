@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.manager
 
 import android.content.Context
 import android.graphics.PointF

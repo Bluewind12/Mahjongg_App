@@ -1,8 +1,9 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.function
 
 import android.os.CountDownTimer
 import android.widget.ImageView
 import android.widget.TextView
+import momonyan.mahjongg_tools.R
 import java.util.*
 
 class CountFunctionDice(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {

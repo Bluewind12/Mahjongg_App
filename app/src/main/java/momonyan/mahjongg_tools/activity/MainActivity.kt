@@ -14,7 +14,7 @@ import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
-import momonyan.mahjongg_tools.FlickCheck
+import momonyan.mahjongg_tools.function.FlickCheck
 import momonyan.mahjongg_tools.R
 import kotlin.random.Random
 

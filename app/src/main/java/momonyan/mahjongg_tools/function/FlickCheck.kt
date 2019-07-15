@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.function
 
 import android.util.Log
 import android.view.MotionEvent

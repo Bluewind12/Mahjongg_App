@@ -1,10 +1,9 @@
-package momonyan.mahjongg_tools.yakulist
+package momonyan.mahjongg_tools.holder
 
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.yaku_list_card_layout.view.*
 
 
@@ -17,3 +16,8 @@ class YakuDataHolder(mView: View) : androidx.recyclerview.widget.RecyclerView.Vi
     val mImage: ImageView = mView.yakuDescriptionImageView //Image
     val mConstraintLayout: ConstraintLayout = mView.yakuConstraintLayout
 }
+
+class YakuDataClass(
+        var dataString: String,
+        var image: Int
+)
