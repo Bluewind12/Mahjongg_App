@@ -23,7 +23,7 @@
             android:value="ca-app-pub-6499097800180510~1231013049" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,27 +31,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ToolsActivity"
+            android:name=".activity.ToolsActivity"
             android:label="@string/tools"
             android:screenOrientation="portrait"
             android:theme="@style/DarkThemeAction" />
         <activity
-            android:name=".MarkToolActivity"
+            android:name=".activity.MarkToolActivity"
             android:label="符計算"
             android:screenOrientation="portrait"
             android:theme="@style/DarkThemeAction" />
 
         <activity
-            android:name=".yakulist.YakuListViewActivity"
+            android:name=".activity.YakuListViewActivity"
             android:label="役一覧表"
             android:screenOrientation="portrait"
             android:theme="@style/DarkThemeAction" />
         <activity
-            android:name=".PointTableOutputActivity"
+            android:name=".activity.PointTableOutputActivity"
             android:label="親-点数表"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FuTableViewActivity"
+            android:name=".activity.FuTableViewActivity"
             android:label="符計算表"
             android:screenOrientation="portrait" />
 

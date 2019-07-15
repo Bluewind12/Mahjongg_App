@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.activity
 
 import android.app.AlertDialog
 import android.content.Context
@@ -19,7 +19,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
-import momonyan.mahjongg_tools.yakulist.YakuListViewActivity
+import momonyan.mahjongg_tools.CountFunctionDice
+import momonyan.mahjongg_tools.CountFunctionWind
+import momonyan.mahjongg_tools.R
 
 
 class ToolsActivity : AppCompatActivity() {

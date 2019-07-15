@@ -1,10 +1,10 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.activity
 
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.score_table.*
+import momonyan.mahjongg_tools.R
 
 class PointTableOutputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

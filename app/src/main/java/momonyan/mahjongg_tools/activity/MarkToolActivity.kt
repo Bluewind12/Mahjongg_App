@@ -1,10 +1,9 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.activity
 
 import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,6 +13,7 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
+import momonyan.mahjongg_tools.R
 import net.nend.android.NendAdListener
 import net.nend.android.NendAdView
 import kotlin.math.ceil

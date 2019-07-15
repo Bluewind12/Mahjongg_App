@@ -1,4 +1,4 @@
-package momonyan.mahjongg_tools
+package momonyan.mahjongg_tools.activity
 
 import android.content.Context
 import android.content.Intent
@@ -14,7 +14,8 @@ import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
-import net.nend.android.NendAdInterstitial
+import momonyan.mahjongg_tools.FlickCheck
+import momonyan.mahjongg_tools.R
 import kotlin.random.Random
 
 

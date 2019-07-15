@@ -1,18 +1,17 @@
-package momonyan.mahjongg_tools.yakulist
+package momonyan.mahjongg_tools.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.yaku_list_layout.*
-import momonyan.mahjongg_tools.MainActivity
 import momonyan.mahjongg_tools.R
 import momonyan.mahjongg_tools.RecyclerLayoutCustomManager
+import momonyan.mahjongg_tools.yakulist.YakuDataAdapter
+import momonyan.mahjongg_tools.yakulist.YakuDataClass
 
 
 class YakuListViewActivity : AppCompatActivity() {
