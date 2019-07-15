@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.yaku_list_layout.*
 import momonyan.mahjongg_tools.R
 import momonyan.mahjongg_tools.adapter.TabAdapter
@@ -27,8 +28,10 @@ class YakuListViewActivity : AppCompatActivity() {
 
         // Set
         container.adapter = TabAdapter(supportFragmentManager, this)
-        tabLayout.setupWithViewPager(container)
-        //0,11,22,25,26
+        //tabLayout.setupWithViewPager(container)
+        tabLayout.tabMode = TabLayout.MODE_FIXED
+        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

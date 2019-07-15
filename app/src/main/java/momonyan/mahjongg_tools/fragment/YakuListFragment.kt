@@ -25,7 +25,7 @@ class YakuList1HanFragment : Fragment() {
 class YakuList2HanFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.yaku_list_recycler_layout, container, false)
-        val stringData = resources.getStringArray(R.array.yaku_1_names)
+        val stringData = resources.getStringArray(R.array.yaku_2_names)
         val act = activity!!
         setRecyclerList(view.yakuRecyclerView, stringData, act)
         return view
@@ -36,7 +36,7 @@ class YakuList2HanFragment : Fragment() {
 class YakuList3HanFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.yaku_list_recycler_layout, container, false)
-        val stringData = resources.getStringArray(R.array.yaku_1_names)
+        val stringData = resources.getStringArray(R.array.yaku_3_names)
         val act = activity!!
         setRecyclerList(view.yakuRecyclerView, stringData, act)
         return view
@@ -46,7 +46,7 @@ class YakuList3HanFragment : Fragment() {
 class YakuList6HanFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.yaku_list_recycler_layout, container, false)
-        val stringData = resources.getStringArray(R.array.yaku_1_names)
+        val stringData = resources.getStringArray(R.array.yaku_6_names)
         val act = activity!!
         setRecyclerList(view.yakuRecyclerView, stringData, act)
         return view
@@ -56,7 +56,7 @@ class YakuList6HanFragment : Fragment() {
 class YakuListYakuManHanFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.yaku_list_recycler_layout, container, false)
-        val stringData = resources.getStringArray(R.array.yaku_1_names)
+        val stringData = resources.getStringArray(R.array.yaku_yakuman_names)
         val act = activity!!
         setRecyclerList(view.yakuRecyclerView, stringData, act)
         return view

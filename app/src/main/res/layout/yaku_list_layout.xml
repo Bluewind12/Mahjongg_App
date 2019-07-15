@@ -39,31 +39,26 @@
         app:tabBackground="@drawable/tab_selector_background">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem1han"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_1han" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem2han"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_2han" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem3han"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_3han" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem6han"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_6han" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItemYakuman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yakuTable_yakuman" />
