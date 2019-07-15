@@ -14,10 +14,4 @@ class YakuDataHolder(mView: View) : androidx.recyclerview.widget.RecyclerView.Vi
     val mHansu: TextView = mView.yakuHansuTextView //飜数
     val mMachi: TextView = mView.yakuMachiTextView //待ち方
     val mImage: ImageView = mView.yakuDescriptionImageView //Image
-    val mConstraintLayout: ConstraintLayout = mView.yakuConstraintLayout
 }
-
-class YakuDataClass(
-        var dataString: String,
-        var image: Int
-)
