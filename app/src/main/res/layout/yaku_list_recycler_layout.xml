@@ -6,5 +6,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/yakuRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:cacheColorHint="?attr/backgroundTint"
+        android:fadingEdgeLength="10dp"
+        android:requiresFadingEdge="horizontal|vertical" />
 </LinearLayout>
