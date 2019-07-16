@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.yaku_list_layout.*
 import momonyan.mahjongg_tools.R
@@ -24,11 +27,18 @@ class YakuListViewActivity : AppCompatActivity() {
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.yaku_list_layout)
-        // Adapter作成
 
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
+        adView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                yakuLogoImageView.visibility = View.INVISIBLE
+            }
+        }
         // Set
         container.adapter = TabAdapter(supportFragmentManager, this)
-        //tabLayout.setupWithViewPager(container)
+        tabLayout.setupWithViewPager(container)
         tabLayout.tabMode = TabLayout.MODE_FIXED
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 

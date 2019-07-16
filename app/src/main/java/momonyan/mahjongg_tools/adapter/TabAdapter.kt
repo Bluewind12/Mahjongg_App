@@ -30,6 +30,17 @@ class TabAdapter(fm: FragmentManager, private val context: Context) : FragmentPa
             }
         }
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when(position){
+            0 -> "1飜"
+            1 -> "2飜"
+            2 -> "3飜"
+            3 -> "6飜"
+            4 ->"役満"
+            else ->"E"
+        }
+    }
     override fun getCount(): Int {
         return 5
     }

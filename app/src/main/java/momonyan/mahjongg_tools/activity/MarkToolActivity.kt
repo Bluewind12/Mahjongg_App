@@ -19,7 +19,7 @@ import net.nend.android.NendAdView
 import kotlin.math.ceil
 
 
-class MarkToolActivity : AppCompatActivity(), NendAdListener {
+class MarkToolActivity : AppCompatActivity() {
 
     //和了
     private lateinit var completionSpinner: Spinner
@@ -500,20 +500,4 @@ class MarkToolActivity : AppCompatActivity(), NendAdListener {
         return false
     }
 
-    /** 受信エラー通知 */
-    override fun onFailedToReceiveAd(nendAdView: NendAdView) {
-    }
-
-    /** クリック通知  */
-    override fun onClick(nendAdView: NendAdView) {
-    }
-
-    /** 復帰通知  */
-    override fun onDismissScreen(arg0: NendAdView) {
-    }
-
-    /** 受信成功通知  */
-    override fun onReceiveAd(nendAdView: NendAdView) {
-        imageView3.visibility = View.GONE
-    }
 }
