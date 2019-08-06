@@ -14,8 +14,6 @@ import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.description_mentu.view.*
 import kotlinx.android.synthetic.main.mark_tool.*
 import momonyan.mahjongg_tools.R
-import net.nend.android.NendAdListener
-import net.nend.android.NendAdView
 import kotlin.math.ceil
 
 
@@ -492,7 +490,7 @@ class MarkToolActivity : AppCompatActivity() {
             }
             R.id.mark_menu_home -> {
                 val intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
             else -> Error("Menu Select Error")
