@@ -24,6 +24,7 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,25 +35,30 @@
             android:name=".activity.ToolsActivity"
             android:label="@string/tools"
             android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
             android:theme="@style/DarkThemeAction" />
         <activity
             android:name=".activity.MarkToolActivity"
             android:label="符計算"
             android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
             android:theme="@style/DarkThemeAction" />
 
         <activity
             android:name=".activity.YakuListViewActivity"
             android:label="役一覧表"
             android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
             android:theme="@style/DarkThemeAction" />
         <activity
             android:name=".activity.PointTableOutputActivity"
             android:label="親-点数表"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.FuTableViewActivity"
             android:label="符計算表"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait" />
 
     </application>
