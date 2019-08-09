@@ -27,6 +27,7 @@
             app:layout_column="0"
             app:layout_columnSpan="1"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="2"
             app:layout_rowWeight="2" />
@@ -40,6 +41,7 @@
             android:text="@string/fu"
             app:layout_column="0"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -53,6 +55,7 @@
             app:layout_column="1"
             app:layout_columnSpan="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -66,6 +69,7 @@
             app:layout_column="5"
             app:layout_columnSpan="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -78,6 +82,7 @@
             android:text="@string/ti_toi"
             app:layout_column="7"
             app:layout_columnWeight="3"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -90,6 +95,7 @@
             android:text="@string/tumo"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -102,6 +108,7 @@
             android:text="@string/ron"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -114,6 +121,7 @@
             android:text="@string/rinsyan_tumo"
             app:layout_column="3"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -126,6 +134,7 @@
             android:text="@string/menzen_ron"
             app:layout_column="4"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -138,6 +147,7 @@
             android:text="@string/tumo"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -150,6 +160,7 @@
             android:text="@string/ron"
             app:layout_column="6"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -162,6 +173,7 @@
             android:text="@string/ti_toi_kana"
             app:layout_column="7"
             app:layout_columnWeight="3"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -174,6 +186,7 @@
             android:text="@string/fu2_string"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -186,6 +199,7 @@
             android:text="@string/fu0_string"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -198,6 +212,7 @@
             android:text="@string/fu0_string"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -210,6 +225,7 @@
             android:text="@string/fu10_string"
             app:layout_column="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -222,6 +238,7 @@
             android:text="@string/fu20_string"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -234,6 +251,7 @@
             android:text="@string/fu30_string"
             app:layout_column="6"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -246,6 +264,7 @@
             android:text="@string/fu25_string"
             app:layout_column="7"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -273,6 +292,7 @@
             android:text="@string/head"
             app:layout_column="0"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -284,6 +304,7 @@
             android:text="@string/notyakuhai"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -295,6 +316,7 @@
             android:text="@string/yakuhai"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -306,6 +328,7 @@
             android:text="@string/renpu_"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -317,6 +340,7 @@
             android:text="@string/fu"
             app:layout_column="0"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -328,6 +352,7 @@
             android:text="@string/fu0_string"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -339,6 +364,7 @@
             android:text="@string/fu2_string"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -350,6 +376,7 @@
             android:text="@string/fu4_string"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
     </androidx.gridlayout.widget.GridLayout>
@@ -374,6 +401,7 @@
             android:text="@string/machi"
             app:layout_column="0"
             app:layout_columnWeight="1.5"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -385,6 +413,7 @@
             android:text="@string/tanki"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -396,6 +425,7 @@
             android:text="@string/ryanmen"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -407,6 +437,7 @@
             android:text="@string/pentyan"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -418,6 +449,7 @@
             android:text="@string/syabo"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -429,6 +461,7 @@
             android:text="@string/kantyan"
             app:layout_column="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="0" />
 
         <TextView
@@ -440,6 +473,7 @@
             android:text="@string/fu"
             app:layout_column="0"
             app:layout_columnWeight="1.5"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -451,6 +485,7 @@
             android:text="@string/fu2_string"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -462,6 +497,7 @@
             android:text="@string/fu0_string"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -473,6 +509,7 @@
             android:text="@string/fu2_string"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -484,6 +521,7 @@
             android:text="@string/fu0_string"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
 
         <TextView
@@ -495,6 +533,7 @@
             android:text="@string/fu2_string"
             app:layout_column="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1" />
     </androidx.gridlayout.widget.GridLayout>
 
@@ -520,6 +559,7 @@
             app:layout_column="0"
             app:layout_columnSpan="1"
             app:layout_columnWeight="1.5"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="2"
             app:layout_rowWeight="2" />
@@ -533,6 +573,7 @@
             android:text="@string/fu"
             app:layout_column="0"
             app:layout_columnWeight="1.5"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -546,6 +587,7 @@
             app:layout_column="1"
             app:layout_columnSpan="2"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -559,6 +601,7 @@
             app:layout_column="3"
             app:layout_columnSpan="2"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -572,6 +615,7 @@
             app:layout_column="5"
             app:layout_columnSpan="2"
             app:layout_columnWeight="2"
+            app:layout_gravity="fill"
             app:layout_row="0"
             app:layout_rowSpan="1" />
 
@@ -584,6 +628,7 @@
             android:text="@string/tanyao_string"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -596,6 +641,7 @@
             android:text="@string/yaotyu_string"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -608,6 +654,7 @@
             android:text="@string/tanyao_string"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -620,6 +667,7 @@
             android:text="@string/yaotyu_string"
             app:layout_column="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -632,6 +680,7 @@
             android:text="@string/tanyao_string"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -644,6 +693,7 @@
             android:text="@string/yaotyu_string"
             app:layout_column="6"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="1"
             app:layout_rowSpan="1" />
 
@@ -656,6 +706,7 @@
             android:text="@string/fu0_string"
             app:layout_column="1"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -668,6 +719,7 @@
             android:text="@string/fu0_string"
             app:layout_column="2"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -680,6 +732,7 @@
             android:text="@string/fu2_string"
             app:layout_column="3"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -692,6 +745,7 @@
             android:text="@string/fu4_string"
             app:layout_column="4"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -704,6 +758,7 @@
             android:text="@string/fu8_string"
             app:layout_column="5"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 
@@ -716,6 +771,7 @@
             android:text="@string/fu16_string"
             app:layout_column="6"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
             app:layout_row="2"
             app:layout_rowSpan="1" />
 

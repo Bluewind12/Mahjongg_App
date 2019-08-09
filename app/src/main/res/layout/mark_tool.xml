@@ -426,19 +426,6 @@
 			app:layout_constraintBottom_toBottomOf="@+id/calculateButton"
 			app:layout_constraintStart_toEndOf="@+id/calculateButton" />
 
-		<!--<net.nend.android.NendAdView-->
-		<!--android:id="@+id/nend2"-->
-		<!--android:layout_width="320dp"-->
-		<!--android:layout_height="100dp"-->
-		<!--android:layout_marginStart="8dp"-->
-		<!--android:layout_marginEnd="8dp"-->
-		<!--app:layout_constraintBottom_toBottomOf="parent"-->
-		<!--app:layout_constraintEnd_toEndOf="parent"-->
-		<!--app:layout_constraintStart_toStartOf="parent"-->
-		<!--nendsdk:NendAdjustSize="true"-->
-		<!--nendsdk:NendApiKey="@string/nend_ad100"-->
-		<!--nendsdk:NendSpotId="@integer/nend_ad100" />-->
-
 
 		<ImageView
 			android:id="@+id/imageView3"
