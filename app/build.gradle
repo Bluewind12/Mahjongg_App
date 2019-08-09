@@ -39,14 +39,14 @@ dependencies {
     implementation 'androidx.mediarouter:mediarouter:1.0.0'
     implementation 'androidx.media:media:1.0.1'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment:2.1.0-alpha06'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0-beta02'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
     //レビュー誘導
     implementation 'jp.co.runners:rateorfeedback:0.0.3'
 
     implementation 'com.google.firebase:firebase-core:17.0.1'
-    implementation 'com.google.android.gms:play-services-ads:18.1.0'
-    implementation 'com.google.firebase:firebase-ads:18.1.0'
+    implementation 'com.google.android.gms:play-services-ads:18.1.1'
+    implementation 'com.google.firebase:firebase-ads:18.1.1'
 }
 apply plugin: 'com.google.gms.google-services'
