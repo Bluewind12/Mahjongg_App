@@ -26,9 +26,11 @@ class PointTableOutputActivity : AppCompatActivity() {
         setContentView(R.layout.score_table)
         when (intent.getStringExtra("image")) {
             "oya_point" -> {
+                setTitle(R.string.oya_label)
                 setParentPointText()
             }
             "ko_point" -> {
+                setTitle(R.string.ko_label)
                 setChildPointText()
             }
         }

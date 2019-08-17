@@ -231,4 +231,7 @@
     <string name="syun">順子</string>
     <string name="ko_tu_setume">刻子(暗なら2倍)</string>
     <string name="kantu_setume">槓子(暗なら2倍)</string>
+
+    <string name="oya_label">親-点数表</string>
+    <string name="ko_label">子-点数表</string>
 </resources>
