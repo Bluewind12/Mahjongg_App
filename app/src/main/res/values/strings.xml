@@ -32,13 +32,13 @@
     </string-array>
     <!-- List:アガリ方 -->
     <string-array name="list3">
-        <item>ロン：鳴きなし</item>
-        <item>ロン：鳴きあり</item>
-        <item>ツモ：鳴きなし</item>
-        <item>ツモ：鳴きあり</item>
-        <item>ツモ：リンシャン</item>
-        <item>ピンフ：ツモ</item>
-        <item>ピンフ：ロン</item>
+        <item>ロン：鳴×</item>
+        <item>ロン：鳴◯</item>
+        <item>ツモ：鳴×</item>
+        <item>ツモ：鳴◯</item>
+        <item>ツモ：嶺上</item>
+        <item>平和：ツモ</item>
+        <item>平和：ロン</item>
         <item>七対子：ツモ</item>
         <item>七対子：ロン</item>
     </string-array>
@@ -152,10 +152,6 @@
     <string name="waitDest3Title">嵌張待ち（カンチャン）</string>
     <string name="waitDest4Title">両面待ち（リャンメン）</string>
     <string name="waitDest5Title">双碰待ち（シャンポン）</string>
-
-    <!-- 広告用 -->
-    <string name="nend_ad100">a393c632d713da50ccdda141c5f3cee89eba094d</string>
-    <string name="nend_ad50">072ec4b3933ca4229a60320dedd9b662ba3b10fa</string>
 
     <!-- オプションメニュー用 -->
     <string name="privacy">プライバシーポリシー</string>
