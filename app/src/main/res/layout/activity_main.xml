@@ -145,36 +145,20 @@
 		android:id="@+id/honba1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		app:layout_constraintBottom_toBottomOf="parent"
+		android:layout_marginStart="8dp"
+		android:textSize="24sp"
+		app:layout_constraintBottom_toTopOf="@+id/imageButtonF"
 		app:layout_constraintStart_toEndOf="@+id/imageButton1"
-		app:layout_constraintTop_toTopOf="parent"
 		tools:text="本場表示" />
 
 	<TextView
 		android:id="@+id/honba2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		tools:text="本場表示" />
-
-	<TextView
-		android:id="@+id/honba3"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintBottom_toBottomOf="parent"
+		android:layout_marginEnd="8dp"
+		android:textSize="24sp"
 		app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-		app:layout_constraintTop_toTopOf="parent"
-		tools:text="本場表示" />
-
-	<TextView
-		android:id="@+id/honba4"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+		app:layout_constraintTop_toBottomOf="@+id/imageButtonF"
 		tools:text="本場表示" />
 
 	<TextView

@@ -14,6 +14,7 @@ import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
+import kotlinx.android.synthetic.main.activity_main.*
 import momonyan.mahjongg_tools.R
 import momonyan.mahjongg_tools.function.FlickCheck
 import kotlin.random.Random
@@ -22,7 +23,6 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
     private lateinit var playerButtons: Array<ImageButton>
-    private lateinit var timesTexts: Array<TextView>
     private lateinit var boostTexts: Array<TextView>
     private lateinit var pointButtons: Array<ImageButton>
     //イメージボタン
@@ -201,7 +201,6 @@ class MainActivity : AppCompatActivity() {
     //初期設定
     private fun initialSetting() {
         playerButtons = arrayOf(findViewById(R.id.imageButton1), findViewById(R.id.imageButton2), findViewById(R.id.imageButton3), findViewById(R.id.imageButton4))
-        timesTexts = arrayOf(findViewById(R.id.honba1), findViewById(R.id.honba2), findViewById(R.id.honba3), findViewById(R.id.honba4))
         boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
         fieldButton = findViewById(R.id.imageButtonF)
         pointButtons = arrayOf(findViewById(R.id.pointButton), findViewById(R.id.pointButton2), findViewById(R.id.pointButton3), findViewById(R.id.pointButton4))
@@ -220,10 +219,8 @@ class MainActivity : AppCompatActivity() {
         playerButtons[1].rotation = 0f
         playerButtons[2].rotation = -90f
         playerButtons[3].rotation = -180f
-        timesTexts[0].rotation = 90f
-        timesTexts[1].rotation = 0f
-        timesTexts[2].rotation = -90f
-        timesTexts[3].rotation = -180f
+        honba1.rotation = 135f
+        honba2.rotation = -45f
         boostTexts[0].rotation = 90f
         boostTexts[1].rotation = 0f
         boostTexts[2].rotation = -90f
@@ -283,10 +280,8 @@ class MainActivity : AppCompatActivity() {
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
         playerButtons[(setNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
-        timesTexts[setNum % 4].text = getString(R.string.place, times)
-        timesTexts[(setNum + 1) % 4].text = " "
-        timesTexts[(setNum + 2) % 4].text = " "
-        timesTexts[(setNum + 3) % 4].text = " "
+        honba1.text = getString(R.string.place, times)
+        honba2.text = getString(R.string.place, times)
         setBoostWind()
     }
 
