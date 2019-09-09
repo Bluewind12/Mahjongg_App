@@ -35,7 +35,6 @@
             android:name=".activity.ToolsActivity"
             android:label="@string/tools"
             android:screenOrientation="portrait"
-            android:launchMode="singleInstance"
             android:theme="@style/DarkThemeAction" />
         <activity
             android:name=".activity.MarkToolActivity"

@@ -19,9 +19,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
+import momonyan.mahjongg_tools.R
 import momonyan.mahjongg_tools.function.CountFunctionDice
 import momonyan.mahjongg_tools.function.CountFunctionWind
-import momonyan.mahjongg_tools.R
 
 
 class ToolsActivity : AppCompatActivity() {
@@ -270,6 +270,7 @@ class ToolsActivity : AppCompatActivity() {
     //出力
     private fun setPoint(base: Int, parent: Int, child: Int) {
         if (base == 0 || parent == 0 || child == 0) {
+            basicText.text = "点数なし"
             parentText.text = "点数なし"
             childText.text = "点数なし"
         } else {
