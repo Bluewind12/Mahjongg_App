@@ -87,9 +87,15 @@ class MainActivity : AppCompatActivity() {
         //回転セット
         rotateSetting()
 
-        setFirstPlayer(firstPlayer)
-        setState(parent)
-        setFieldWind(fieldNum)
+        if (dataStore.getString("GameMode", "4") == "4") {
+            //４人プレイ時
+            setFirstPlayer(firstPlayer)
+            setState(parent)
+            setFieldWind(fieldNum)
+        }else{
+            //3人プレイ時
+
+        }
 
 
         //単推し
