@@ -63,6 +63,8 @@ class ToolsActivity : AppCompatActivity() {
             }
         }
 
+        //スピナーセット
+        hanSpinner.onItemSelectedListener = null
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
             //選択時
@@ -75,6 +77,8 @@ class ToolsActivity : AppCompatActivity() {
                 countPoint(role + mark)
             }
         }
+
+        markSpinner.onItemSelectedListener = null
         markSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
             //選択時
