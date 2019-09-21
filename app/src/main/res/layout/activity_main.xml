@@ -88,16 +88,17 @@
 		app:layout_constraintTop_toTopOf="parent"
 		tools:src="@mipmap/ic_launcher"
 		tools:srcCompat="@mipmap/ic_launcher" />
-	
+
 	<ImageButton
-		android:id="@+id/pointButton"
+		android:id="@+id/honbaButton"
 		android:layout_width="50sp"
 		android:layout_height="50sp"
 		android:layout_marginStart="8dp"
 		android:layout_marginBottom="8dp"
-		android:background="?attr/colorButtonNormal"
+		android:background="@drawable/function_button"
 		android:contentDescription="@string/toolsIcon"
-		android:src="@android:drawable/ic_dialog_dialer"
+		android:scaleType="fitXY"
+		android:src="@drawable/icon_hon"
 		android:textSize="24sp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
@@ -114,16 +115,18 @@
 		android:textSize="24sp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent" />
-	
+
 	<ImageButton
-		android:id="@+id/pointButton3"
+		android:id="@+id/chichaButton"
 		android:layout_width="50sp"
 		android:layout_height="50sp"
 		android:layout_marginTop="8dp"
 		android:layout_marginEnd="8dp"
-		android:background="?attr/colorButtonNormal"
+		android:background="@drawable/function_button"
 		android:contentDescription="@string/toolsIcon"
-		android:src="@android:drawable/ic_dialog_dialer"
+		android:cropToPadding="false"
+		android:scaleType="fitXY"
+		android:src="@drawable/icon_ti_cha"
 		android:textSize="24sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
