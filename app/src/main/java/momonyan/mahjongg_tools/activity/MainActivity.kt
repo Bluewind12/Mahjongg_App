@@ -209,7 +209,7 @@ class MainActivity : AppCompatActivity() {
         playerButtons = arrayOf(findViewById(R.id.imageButton1), findViewById(R.id.imageButton2), findViewById(R.id.imageButton3), findViewById(R.id.imageButton4))
         boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
         fieldButton = findViewById(R.id.imageButtonF)
-        pointButtons = arrayOf(findViewById(R.id.honbaButton), findViewById(R.id.pointButton2), findViewById(R.id.chichaButton), findViewById(R.id.pointButton4))
+        pointButtons = arrayOf(findViewById(R.id.honbaButton), findViewById(R.id.pointButton1), findViewById(R.id.chichaButton), findViewById(R.id.pointButton2))
         editor = dataStore.edit()
         editor.apply()
 

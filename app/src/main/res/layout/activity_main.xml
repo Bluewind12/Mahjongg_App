@@ -102,19 +102,6 @@
 		android:textSize="24sp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintStart_toStartOf="parent" />
-	
-	<ImageButton
-		android:id="@+id/pointButton2"
-		android:layout_width="50sp"
-		android:layout_height="50sp"
-		android:layout_marginEnd="8dp"
-		android:layout_marginBottom="8dp"
-		android:background="?attr/colorButtonNormal"
-		android:contentDescription="@string/toolsIcon"
-		android:src="@android:drawable/ic_dialog_dialer"
-		android:textSize="24sp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent" />
 
 	<ImageButton
 		android:id="@+id/chichaButton"
@@ -130,9 +117,22 @@
 		android:textSize="24sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
-	
+
 	<ImageButton
-		android:id="@+id/pointButton4"
+		android:id="@+id/pointButton1"
+		android:layout_width="50sp"
+		android:layout_height="50sp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:background="?attr/colorButtonNormal"
+		android:contentDescription="@string/toolsIcon"
+		android:src="@android:drawable/ic_dialog_dialer"
+		android:textSize="24sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<ImageButton
+		android:id="@+id/pointButton2"
 		android:layout_width="50sp"
 		android:layout_height="50sp"
 		android:layout_marginStart="8dp"
