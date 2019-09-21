@@ -201,6 +201,23 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        //本場ボタンタップ時の動作
+        honbaButton.setOnClickListener {
+            //単押(増加)
+            times++
+            editor.putInt("times", times)
+            editor.apply()
+        }
+        honbaButton.setOnLongClickListener {
+            if (times > 0) {
+                times--
+            }
+            editor.putInt("times", times)
+            editor.apply()
+            true
+        }
+
         setTheme(R.style.defaultTheme)
     }
 
@@ -209,7 +226,7 @@ class MainActivity : AppCompatActivity() {
         playerButtons = arrayOf(findViewById(R.id.imageButton1), findViewById(R.id.imageButton2), findViewById(R.id.imageButton3), findViewById(R.id.imageButton4))
         boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
         fieldButton = findViewById(R.id.imageButtonF)
-        pointButtons = arrayOf(findViewById(R.id.honbaButton), findViewById(R.id.pointButton1), findViewById(R.id.chichaButton), findViewById(R.id.pointButton2))
+        pointButtons = arrayOf(findViewById(R.id.pointButton1), findViewById(R.id.pointButton2))
         editor = dataStore.edit()
         editor.apply()
 
@@ -242,8 +259,6 @@ class MainActivity : AppCompatActivity() {
      * @param longFlag true:長押し false:単押
      */
     private fun changeState(touchButtonNum: Int, longFlag: Boolean) {
-
-
         if (!longFlag) {
             //単押(増加)
             if (parent == touchButtonNum) {
@@ -274,8 +289,6 @@ class MainActivity : AppCompatActivity() {
         editor.putInt("parent", parent)
         editor.apply()
 
-        //TODO AD
-        //NendAdInterstitial.showAd(this)
         if (mInterstitialAd.isLoaded && Random.nextInt(100) <= 25) {
             mInterstitialAd.show()
         }
