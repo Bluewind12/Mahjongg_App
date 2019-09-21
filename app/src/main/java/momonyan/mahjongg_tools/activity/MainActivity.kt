@@ -206,6 +206,8 @@ class MainActivity : AppCompatActivity() {
         honbaButton.setOnClickListener {
             //単押(増加)
             times++
+            honba1.text = getString(R.string.place, times)
+            honba2.text = getString(R.string.place, times)
             editor.putInt("times", times)
             editor.apply()
         }
@@ -213,6 +215,8 @@ class MainActivity : AppCompatActivity() {
             if (times > 0) {
                 times--
             }
+            honba1.text = getString(R.string.place, times)
+            honba2.text = getString(R.string.place, times)
             editor.putInt("times", times)
             editor.apply()
             true
