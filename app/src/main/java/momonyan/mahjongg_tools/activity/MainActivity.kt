@@ -222,6 +222,15 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+
+
+        chichaButton.setOnLongClickListener {
+            playerButtons.forEach {
+                it.setBackgroundColor(Color.argb(0, 0, 0, 0))
+            }
+            true
+        }
+
         setTheme(R.style.defaultTheme)
     }
 
@@ -322,6 +331,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun reSetFirstPlayer() {
+
+    }
 
     //場のセット
     private fun setFieldWind(windNum: Int) {
