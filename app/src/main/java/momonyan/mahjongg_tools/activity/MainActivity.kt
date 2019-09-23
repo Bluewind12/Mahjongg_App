@@ -250,13 +250,14 @@ class MainActivity : AppCompatActivity() {
                     playerButtons[(i + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
                     playerButtons[(i + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
 
-
-                    playerButtons[i].setOnClickListener {
-                        changeState(i, false)
-                    }
-                    playerButtons[i].setOnLongClickListener {
-                        changeState(i, true)
-                        true
+                    for(j in 0 until 4){
+                        playerButtons[i].setOnClickListener {
+                            changeState(i, false)
+                        }
+                        playerButtons[i].setOnLongClickListener {
+                            changeState(i, true)
+                            true
+                        }
                     }
                 }
             }
