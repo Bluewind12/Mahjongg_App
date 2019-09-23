@@ -230,6 +230,39 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        chichaButton.setOnClickListener {
+            playerButtons.forEach {
+                if (dataStore.getString("Theme", "Dark") == "Light") {
+                    it.background = resources.getDrawable(R.drawable.first_player_background_light)
+                } else {
+                    it.background = resources.getDrawable(R.drawable.first_player_background)
+                }
+            }
+            for(i in 0 until 4){
+
+                playerButtons[i].setOnClickListener {
+                    if (dataStore.getString("Theme", "Dark") == "Light") {
+                        playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
+                    } else {
+                        playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background)
+                    }
+                    playerButtons[(i + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                    playerButtons[(i + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                    playerButtons[(i + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+
+
+                    playerButtons[i].setOnClickListener {
+                        changeState(i, false)
+                    }
+                    playerButtons[i].setOnLongClickListener {
+                        changeState(i, true)
+                        true
+                    }
+                }
+            }
+
+        }
+
 
         setTheme(R.style.defaultTheme)
     }
