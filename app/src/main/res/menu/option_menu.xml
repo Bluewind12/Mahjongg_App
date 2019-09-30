@@ -16,4 +16,7 @@
 	<item
 		android:id="@+id/menu_review"
 		android:title="@string/reviewString" />
+	<item
+		android:id="@+id/menu_readme"
+		android:title="使い方" />
 </menu>

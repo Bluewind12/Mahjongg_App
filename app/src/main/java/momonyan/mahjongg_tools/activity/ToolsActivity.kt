@@ -334,6 +334,9 @@ class ToolsActivity : AppCompatActivity() {
                         .setIcon(R.drawable.review_image).show()
                 return true
             }
+            R.id.menu_readme ->{
+
+            }
             R.id.menu_home -> {
                 finish()
                 return true
