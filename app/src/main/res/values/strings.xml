@@ -230,4 +230,9 @@
 
     <string name="oya_label">親-点数表</string>
     <string name="ko_label">子-点数表</string>
+
+    <string name="readme1"></string>
+    <string name="readme2"></string>
+    <string name="readme3"></string>
+    <string name="readme4"></string>
 </resources>
