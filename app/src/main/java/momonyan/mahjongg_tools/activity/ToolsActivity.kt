@@ -335,7 +335,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu_readme ->{
-
+                startActivity(Intent(this, ReadMeActivity::class.java))
             }
             R.id.menu_home -> {
                 finish()
