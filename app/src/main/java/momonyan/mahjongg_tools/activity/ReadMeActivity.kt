@@ -1,17 +1,38 @@
 package momonyan.mahjongg_tools.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.readme_layout.*
 import momonyan.mahjongg_tools.R
 
 class ReadMeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        var imageData :Int
+        when (dataStore.getString("Theme", "Dark")) {
+            "Dark" -> {
+                setTheme(R.style.DarkTheme)
+                imageData = R.drawable.icon_hon
+            }
+            "Light" -> {
+                setTheme(R.style.LightTheme)
+                imageData = R.drawable.icon_ti_cha
+            }
+            "Mat" -> {
+                setTheme(R.style.MatTheme)
+                imageData = R.drawable.hougaku1_higashi
+            }
+            else -> error(2)
+        }
         setContentView(R.layout.readme_layout)
+        readmeImageView.setImageDrawable(getDrawable(imageData))
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.mark_option_menu, menu)
