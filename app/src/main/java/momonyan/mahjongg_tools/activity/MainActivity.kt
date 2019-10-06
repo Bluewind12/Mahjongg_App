@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var firstPlayer = 0
     private var parent = 0
     private var times = 0
+    private var chichaFrag = false
 
     //FireBase
     private lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -89,7 +90,13 @@ class MainActivity : AppCompatActivity() {
 
         if (dataStore.getString("GameMode", "4") == "4") {
             //４人プレイ時
-            setFirstPlayer(firstPlayer)
+            if (firstPlayer != 5) {
+                setFirstPlayer(firstPlayer)
+            } else {
+                playerButtons.forEach {
+                    it.setBackgroundColor(Color.argb(0, 0, 0, 0))
+                }
+            }
             setState(parent)
             setFieldWind(fieldNum)
         }else{
@@ -231,40 +238,56 @@ class MainActivity : AppCompatActivity() {
             true
         }
         chichaButton.setOnClickListener {
-            playerButtons.forEach {
-                if (dataStore.getString("Theme", "Dark") == "Light") {
-                    it.background = resources.getDrawable(R.drawable.first_player_background_light)
-                } else {
-                    it.background = resources.getDrawable(R.drawable.first_player_background)
-                }
-            }
-            for(i in 0 until 4){
-
-                playerButtons[i].setOnClickListener {
+            if (!chichaFrag) {
+                chichaFrag = true
+                playerButtons.forEach {
                     if (dataStore.getString("Theme", "Dark") == "Light") {
-                        playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
+                        it.background = resources.getDrawable(R.drawable.first_player_background_light)
                     } else {
-                        playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background)
+                        it.background = resources.getDrawable(R.drawable.first_player_background)
                     }
-                    playerButtons[(i + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
-                    playerButtons[(i + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
-                    playerButtons[(i + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                }
+                for (i in 0 until 4) {
+                    playerButtons[i].setOnClickListener {
+                        if (dataStore.getString("Theme", "Dark") == "Light") {
+                            playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
+                        } else {
+                            playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background)
+                        }
+                        playerButtons[(i + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                        playerButtons[(i + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                        playerButtons[(i + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
+                        dataStore.edit().putInt("firstPlayer", i).apply()
+                        firstPlayer = i
 
-                    for(j in 0 until 4){
-                        playerButtons[j].setOnClickListener {
-                            changeState(j, false)
+                        for (j in 0 until 4) {
+                            playerButtons[j].setOnClickListener {
+                                changeState(j, false)
+                            }
+                            playerButtons[j].setOnLongClickListener {
+                                changeState(j, true)
+                                true
+                            }
                         }
-                        playerButtons[j].setOnLongClickListener {
-                            changeState(j, true)
-                            true
-                        }
+                    }
+                }
+            } else {
+                chichaFrag = false
+                playerButtons.forEach {
+                    it.setBackgroundColor(Color.argb(0, 0, 0, 0))
+                }
+                for (j in 0 until 4) {
+                    playerButtons[j].setOnClickListener {
+                        changeState(j, false)
+                    }
+                    playerButtons[j].setOnLongClickListener {
+                        changeState(j, true)
+                        true
                     }
                 }
             }
 
         }
-
-
         setTheme(R.style.defaultTheme)
     }
 
@@ -308,7 +331,13 @@ class MainActivity : AppCompatActivity() {
     private fun changeState(touchButtonNum: Int, longFlag: Boolean) {
         if (!longFlag) {
             //単押(増加)
-            if (parent == touchButtonNum) {
+            if ((parent + 1) % 4 == touchButtonNum && firstPlayer == touchButtonNum) {
+                parent = touchButtonNum
+                times = 0
+                fieldNum = (fieldNum + 1) % 4
+                setFieldWind(fieldNum)
+                setState(touchButtonNum)
+            } else if (parent == touchButtonNum) {
                 times++
                 setState(touchButtonNum)
             } else {
@@ -323,6 +352,7 @@ class MainActivity : AppCompatActivity() {
                     times--
                 } else {
                     setFirstPlayer(touchButtonNum)
+                    firstPlayer = touchButtonNum
                     editor.putInt("firstPlayer", touchButtonNum)
                 }
                 setState(touchButtonNum)
@@ -362,10 +392,6 @@ class MainActivity : AppCompatActivity() {
         playerButtons[(setNum + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
         playerButtons[(setNum + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
         playerButtons[(setNum + 3) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
-
-    }
-
-    private fun reSetFirstPlayer() {
 
     }
 
