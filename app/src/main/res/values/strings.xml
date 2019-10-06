@@ -231,10 +231,15 @@
     <string name="oya_label">親-点数表</string>
     <string name="ko_label">子-点数表</string>
 
-    <string name="readme1">1：風ボタン\n\tボタンを押すと切り替わります。\n\t連チャンすると本場数が自動でプラスされます。\n\t東のプレイヤーを長押しをすることで本場数をマイナスできます。\n\t本場数が0の時に東のプレイヤーを長押しすることで起家が設定できます。</string>
-    <string name="readme2">2：本場ボタン\n\t本場数をプラスします。\n\t長押しでマイナスします。</string>
-    <string name="readme3">3：起家ボタン\n\tこのボタンを押した後プレイヤーの風ボタンを押すことで起家が設定できます。</string>
-    <string name="readme4">4：メニューボタン\n\t様々なツールの画面へ移動します。</string>
-    <string name="readme5">フリック機能\n\tフリックすることでテーマを変更できます（全3種類）</string>
+    <string name="readmeTitle1">1：風ボタン</string>
+    <string name="readmeTitle2">2：本場ボタン</string>
+    <string name="readmeTitle3">3：起家ボタン</string>
+    <string name="readmeTitle4">4：メニューボタン</string>
+    <string name="readmeTitle5">フリック機能</string>
+    <string name="readme1">ボタンを押すと切り替わります。\n\t連チャンすると本場数が自動でプラスされます。\n\t東のプレイヤーを長押しをすることで本場数をマイナスできます。\n\t本場数が0の時に東のプレイヤーを長押しすることで起家が設定できます。</string>
+    <string name="readme2">本場数をプラスします。\n\t長押しでマイナスします。</string>
+    <string name="readme3">このボタンを押した後プレイヤーの風ボタンを押すことで起家が設定できます。</string>
+    <string name="readme4">様々なツールの画面へ移動します。</string>
+    <string name="readme5">フリックすることでテーマを変更できます（全3種類）</string>
 
 </resources>

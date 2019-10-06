@@ -17,15 +17,15 @@ class ReadMeActivity : AppCompatActivity() {
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> {
                 setTheme(R.style.DarkTheme)
-                imageData = R.drawable.icon_hon
+                imageData = R.drawable.readme_b
             }
             "Light" -> {
                 setTheme(R.style.LightTheme)
-                imageData = R.drawable.icon_ti_cha
+                imageData = R.drawable.readme_w
             }
             "Mat" -> {
                 setTheme(R.style.MatTheme)
-                imageData = R.drawable.hougaku1_higashi
+                imageData = R.drawable.readme_mat
             }
             else -> error(2)
         }
