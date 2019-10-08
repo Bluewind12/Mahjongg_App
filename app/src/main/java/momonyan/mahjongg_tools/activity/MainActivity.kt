@@ -58,8 +58,6 @@ class MainActivity : AppCompatActivity() {
             }
             else -> error(2)
         }
-
-
         super.onCreate(savedInstanceState)
         //Nend
 //        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
@@ -83,6 +81,20 @@ class MainActivity : AppCompatActivity() {
         firebaseAnalytics.logEvent("event_log", openParams)
 
         setContentView(R.layout.activity_main)
+
+        when (dataStore.getString("Theme", "Dark")) {
+            "Light" -> {
+                chichaButton.background = getDrawable(R.drawable.function_button_w)
+                honbaButton.background = getDrawable(R.drawable.function_button_w)
+            }
+            "Dark", "Mat" -> {
+                chichaButton.background = getDrawable(R.drawable.function_button)
+                honbaButton.background = getDrawable(R.drawable.function_button)
+            }
+            else -> error(2)
+        }
+
+
         //初期状態セット
         initialSetting()
         //回転セット
