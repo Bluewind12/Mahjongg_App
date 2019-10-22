@@ -312,7 +312,7 @@ class ToolsActivity : AppCompatActivity() {
                             val uri = Uri.parse(getString(R.string.fantasy_url))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
                         }.setNegativeButton("いいえ", null)
-                        .setIcon(R.drawable.fantasy).show()
+                        .show()
                 return true
             }
             R.id.menu1 -> {
@@ -321,7 +321,7 @@ class ToolsActivity : AppCompatActivity() {
                             val uri = Uri.parse(getString(R.string.privacy_URL))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
                         }.setNegativeButton("いいえ", null)
-                        .setIcon(R.drawable.kizi).show()
+                        .show()
                 return true
             }
             R.id.menu_review -> {
@@ -330,7 +330,7 @@ class ToolsActivity : AppCompatActivity() {
                             val uri = Uri.parse(getString(R.string.reviewUrl))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
                         }.setNegativeButton("いいえ", null)
-                        .setIcon(R.drawable.review_image).show()
+                        .show()
                 return true
             }
             R.id.menu_readme ->{
