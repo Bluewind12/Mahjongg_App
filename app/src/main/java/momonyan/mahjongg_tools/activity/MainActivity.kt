@@ -300,7 +300,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-        setTheme(R.style.defaultTheme)
     }
 
     //初期設定

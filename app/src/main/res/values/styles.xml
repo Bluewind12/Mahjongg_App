@@ -30,6 +30,7 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
 		<item name="colorButtonNormal">@drawable/dark_setting_button</item>
+
 	</style>
 	
 	<style name="LightThemeAction" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -48,9 +49,6 @@
 		<item name="colorButtonNormal">@drawable/mat_setting_button</item>
 	</style>
 
-	<style name="defaultTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-		<item name="android:textColor">#5566FF</item>
-		<item name="android:background">#FFFFF7</item>
-		<item name="android:textColorPrimary">#333333</item>
+	<style name="AwesomeDialogTheme" parent="android:Theme.Holo.Dialog">
 	</style>
 </resources>

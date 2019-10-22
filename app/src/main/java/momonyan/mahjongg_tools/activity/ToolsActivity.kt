@@ -9,6 +9,7 @@ import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -159,7 +160,6 @@ class ToolsActivity : AppCompatActivity() {
         setTextDescription(yakuTextView, "役の一覧表への移動ボタンです")
         setTextDescription(windRandTextView, "風がランダムで表示されます。\n東南西北が表示されます。")
 
-        //nend.setListener(this)
     }
 
     private fun setTextDescription(text: TextView, des: String) {
@@ -305,10 +305,9 @@ class ToolsActivity : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        setTheme(R.style.defaultTheme)
         when (item.itemId) {
             R.id.menu0 -> {
-                AlertDialog.Builder(this)
+                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
                         .setTitle("Webページを開きます").setMessage("[幻想乃桜工房のHP]\nを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.fantasy_url))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -317,7 +316,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu1 -> {
-                AlertDialog.Builder(this)
+                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
                         .setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.privacy_URL))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -326,7 +325,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu_review -> {
-                AlertDialog.Builder(this)
+                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
                         .setTitle("レビューページへ").setMessage("[レビュー]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.reviewUrl))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -341,6 +340,7 @@ class ToolsActivity : AppCompatActivity() {
                 finish()
                 return true
             }
+
             else -> Error("Menu Select Error")
         }
         return false
