@@ -160,6 +160,7 @@ class MainActivity : AppCompatActivity() {
 
         //フリック
         val resetIntent = Intent(this, MainActivity::class.java)
+        resetIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         val flickView = window.decorView // Activity画面
         val adjustX = 150.0f
         val adjustY = 150.0f
