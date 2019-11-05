@@ -77,13 +77,13 @@ class MarkToolActivity : AppCompatActivity() {
                     "ロン：鳴×" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 10)
                     }
-                    "ロン：鳴○" -> {
+                    "ロン：鳴◯" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 0)
                     }
                     "ツモ：鳴×" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 2)
                     }
-                    "ツモ：鳴○" -> {
+                    "ツモ：鳴◯" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 2)
                     }
                     "ツモ：嶺上" -> {
@@ -120,7 +120,7 @@ class MarkToolActivity : AppCompatActivity() {
                     resultInt += 20 + 10
                     calculation()
                 }
-                "ロン：鳴○" -> {
+                "ロン：鳴◯" -> {
                     resultInt += 20
                     calculation()
                 }
@@ -128,7 +128,7 @@ class MarkToolActivity : AppCompatActivity() {
                     resultInt += 20 + 2
                     calculation()
                 }
-                "ツモ：鳴○" -> {
+                "ツモ：鳴◯" -> {
                     resultInt += 20 + 2
                     calculation()
                 }
