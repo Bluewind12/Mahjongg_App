@@ -74,25 +74,25 @@ class MarkToolActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 val compS = parent.getItemAtPosition(position).toString()
                 when (compS) {
-                    "ロン：鳴きなし" -> {
+                    "ロン：鳴×" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 10)
                     }
-                    "ロン：鳴きあり" -> {
+                    "ロン：鳴○" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 0)
                     }
-                    "ツモ：鳴きなし" -> {
+                    "ツモ：鳴×" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 2)
                     }
-                    "ツモ：鳴きあり" -> {
+                    "ツモ：鳴○" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 2)
                     }
-                    "ツモ：リンシャン" -> {
+                    "ツモ：嶺上" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 0)
                     }
-                    "ピンフ：ツモ" -> {
+                    "平和：ツモ" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 20)
                     }
-                    "ピンフ：ロン" -> {
+                    "平和：ロン" -> {
                         syoukei1.text = getString(R.string.markSyoukei, 30)
                     }
                     "七対子：ツモ" -> {
@@ -116,31 +116,31 @@ class MarkToolActivity : AppCompatActivity() {
 
             val compS = completionSpinner.selectedItem.toString()
             when (compS) {
-                "ロン：鳴きなし" -> {
+                "ロン：鳴×" -> {
                     resultInt += 20 + 10
                     calculation()
                 }
-                "ロン：鳴きあり" -> {
+                "ロン：鳴○" -> {
                     resultInt += 20
                     calculation()
                 }
-                "ツモ：鳴きなし" -> {
+                "ツモ：鳴×" -> {
                     resultInt += 20 + 2
                     calculation()
                 }
-                "ツモ：鳴きあり" -> {
+                "ツモ：鳴○" -> {
                     resultInt += 20 + 2
                     calculation()
                 }
-                "ツモ：リンシャン" -> {
+                "ツモ：嶺上" -> {
                     resultInt += 20 + 0
                     calculation()
                 }
-                "ピンフ：ツモ" -> {
+                "平和：ツモ" -> {
                     resultInt += 20 + 0
                     sumCheck = false
                 }
-                "ピンフ：ロン" -> {
+                "平和：ロン" -> {
                     resultInt += 20 + 10
                     sumCheck = false
                 }
