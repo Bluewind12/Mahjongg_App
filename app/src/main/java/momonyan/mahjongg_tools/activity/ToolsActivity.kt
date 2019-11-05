@@ -8,7 +8,6 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.Menu
 import android.view.MenuItem
@@ -187,7 +186,7 @@ class ToolsActivity : AppCompatActivity() {
             "11翻" -> 8
             "12翻" -> 8
             "13翻以上" -> 9
-            else -> error("翻エラー")
+            else ->1
         }
     }
 
@@ -205,7 +204,7 @@ class ToolsActivity : AppCompatActivity() {
             "90符" -> 90
             "100符" -> 100
             "110符" -> 110
-            else -> error("符エラー")
+            else -> 10
         }
     }
 
@@ -266,7 +265,10 @@ class ToolsActivity : AppCompatActivity() {
                 94 -> setPoint(80, 40, 20)
                 104 -> setPoint(80, 40, 20)
                 114 -> setPoint(80, 40, 20)
-                else -> Log.e("CountError", "計算エラー？")
+                else -> {
+                    setPoint(0, 0, 0)
+                    Toast.makeText(this, "エラーです", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }
@@ -341,7 +343,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
 
-            else -> Error("Menu Select Error")
+            else -> {}
         }
         return false
     }
