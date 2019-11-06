@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
@@ -84,12 +85,12 @@ class MainActivity : AppCompatActivity() {
 
         when (dataStore.getString("Theme", "Dark")) {
             "Light" -> {
-                chichaButton.background = getDrawable(R.drawable.function_button_w)
-                honbaButton.background = getDrawable(R.drawable.function_button_w)
+                chichaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button_w, null)
+                honbaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button_w, null)
             }
             "Dark", "Mat" -> {
-                chichaButton.background = getDrawable(R.drawable.function_button)
-                honbaButton.background = getDrawable(R.drawable.function_button)
+                chichaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button, null)
+                honbaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button, null)
             }
             else -> error(2)
         }
@@ -255,17 +256,17 @@ class MainActivity : AppCompatActivity() {
                 chichaFrag = true
                 playerButtons.forEach {
                     if (dataStore.getString("Theme", "Dark") == "Light") {
-                        it.background = resources.getDrawable(R.drawable.first_player_background_light)
+                        it.background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background_light, null)
                     } else {
-                        it.background = resources.getDrawable(R.drawable.first_player_background)
+                        it.background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background, null)
                     }
                 }
                 for (i in 0 until 4) {
                     playerButtons[i].setOnClickListener {
                         if (dataStore.getString("Theme", "Dark") == "Light") {
-                            playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
+                            playerButtons[i % 4].background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background_light, null)
                         } else {
-                            playerButtons[i % 4].background = resources.getDrawable(R.drawable.first_player_background)
+                            playerButtons[i % 4].background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background, null)
                         }
                         playerButtons[(i + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
                         playerButtons[(i + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
@@ -397,9 +398,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setFirstPlayer(setNum: Int) {
         if (dataStore.getString("Theme", "Dark") == "Light") {
-            playerButtons[setNum % 4].background = resources.getDrawable(R.drawable.first_player_background_light)
+            playerButtons[setNum % 4].background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background_light, null)
         } else {
-            playerButtons[setNum % 4].background = resources.getDrawable(R.drawable.first_player_background)
+            playerButtons[setNum % 4].background = ResourcesCompat.getDrawable(resources, R.drawable.first_player_background, null)
         }
         playerButtons[(setNum + 1) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
         playerButtons[(setNum + 2) % 4].setBackgroundColor(Color.argb(0, 0, 0, 0))
@@ -418,8 +419,6 @@ class MainActivity : AppCompatActivity() {
         }
         setState(parent)
 
-        //TODO AD
-        //NendAdInterstitial.showAd(this)
         if (mInterstitialAd.isLoaded && Random.nextInt(100) <= 25) {
             mInterstitialAd.show()
         }
