@@ -117,7 +117,7 @@ class MarkToolActivity : AppCompatActivity() {
             }
             "Dark", "Mat" -> {
                 ResourcesCompat.getDrawable(resources, R.drawable.dark_setting_button, null)
-            }k
+            }
             else -> error(2)
         }
         resultButton.setOnClickListener {
