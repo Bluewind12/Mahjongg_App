@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.description_mentu.view.*
@@ -109,6 +110,16 @@ class MarkToolActivity : AppCompatActivity() {
         }
 
         //計算ボタン
+
+        resultButton.background = when (dataStore.getString("Theme", "Dark")) {
+            "Light" -> {
+                ResourcesCompat.getDrawable(resources, R.drawable.light_setting_button, null)
+            }
+            "Dark", "Mat" -> {
+                ResourcesCompat.getDrawable(resources, R.drawable.dark_setting_button, null)
+            }k
+            else -> error(2)
+        }
         resultButton.setOnClickListener {
             //初期化
             resultInt = 0

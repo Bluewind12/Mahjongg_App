@@ -3,6 +3,7 @@ package momonyan.mahjongg_tools.activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Paint
 import android.media.AudioAttributes
 import android.media.SoundPool
@@ -13,9 +14,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.point_tools.*
@@ -37,9 +40,11 @@ class ToolsActivity : AppCompatActivity() {
     private var role: Int = 1
     private var mark: Int = 10
 
+    private lateinit var dataStore: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
+        dataStore = getSharedPreferences("MainData", Context.MODE_PRIVATE)
         when (dataStore.getString("Theme", "Dark")) {
             "Dark" -> setTheme(R.style.DarkThemeAction)
             "Light" -> setTheme(R.style.LightThemeAction)
@@ -123,6 +128,14 @@ class ToolsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        setButtonBackGround(pointTableP)
+        setButtonBackGround(pointTableC)
+        setButtonBackGround(markTable)
+        setButtonBackGround(markToolButton)
+        setButtonBackGround(yakuJumpButton)
+        setButtonBackGround(diceButton)
+        setButtonBackGround(windRollButton)
+
         //サイコロ初期化
         countDice = CountFunctionDice(1000, 100)
         countDice.leftImage = leftImage
@@ -159,6 +172,7 @@ class ToolsActivity : AppCompatActivity() {
         setTextDescription(yakuTextView, "役の一覧表への移動ボタンです")
         setTextDescription(windRandTextView, "風がランダムで表示されます。\n東南西北が表示されます。")
 
+
     }
 
     private fun setTextDescription(text: TextView, des: String) {
@@ -167,6 +181,19 @@ class ToolsActivity : AppCompatActivity() {
             Toast.makeText(this, des, Toast.LENGTH_LONG).show()
         }
         text.paintFlags = text.paintFlags or Paint.UNDERLINE_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+    }
+
+    private fun setButtonBackGround(button: Button) {
+        when (dataStore.getString("Theme", "Dark")) {
+            "Light" -> {
+                button.background = ResourcesCompat.getDrawable(resources, R.drawable.light_setting_button, null)
+            }
+            "Dark", "Mat" -> {
+                button.background = ResourcesCompat.getDrawable(resources, R.drawable.dark_setting_button, null)
+            }
+            else -> {
+            }
+        }
     }
 
 

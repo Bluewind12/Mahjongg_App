@@ -87,14 +87,17 @@ class MainActivity : AppCompatActivity() {
             "Light" -> {
                 chichaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button_w, null)
                 honbaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button_w, null)
+                pointButton1.background = ResourcesCompat.getDrawable(resources, R.drawable.light_setting_button, null)
+                pointButton2.background = ResourcesCompat.getDrawable(resources, R.drawable.light_setting_button, null)
             }
             "Dark", "Mat" -> {
                 chichaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button, null)
                 honbaButton.background = ResourcesCompat.getDrawable(resources, R.drawable.function_button, null)
+                pointButton1.background = ResourcesCompat.getDrawable(resources, R.drawable.dark_setting_button, null)
+                pointButton2.background = ResourcesCompat.getDrawable(resources, R.drawable.dark_setting_button, null)
             }
             else -> error(2)
         }
-
 
         //初期状態セット
         initialSetting()

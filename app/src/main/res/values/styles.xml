@@ -5,14 +5,12 @@
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
-		<item name="colorButtonNormal">@drawable/dark_setting_button</item>
 	</style>
 	
 	<style name="LightTheme" parent="Theme.AppCompat.Light.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimaryLight</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
 		<item name="colorAccent">@color/colorAccentLight</item>
-		<item name="colorButtonNormal">@drawable/light_setting_button</item>
 	</style>
 	
 	<style name="MatTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -21,7 +19,6 @@
 		<item name="colorAccent">@color/colorAccentMat</item>
 		<item name="android:textColor">@color/noFill</item>
 		<item name="android:windowBackground">@color/matBackGround</item>
-		<item name="colorButtonNormal">@drawable/mat_setting_button</item>
 	</style>
 	
 	<!-- アクションバーあり -->
@@ -29,8 +26,6 @@
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
-		<item name="colorButtonNormal">@drawable/dark_setting_button</item>
-
 	</style>
 	
 	<style name="LightThemeAction" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -38,7 +33,6 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
 		<item name="colorAccent">@color/colorAccentLight</item>
 		<item name="android:windowBackground">@color/noFill</item>
-		<item name="colorButtonNormal">@drawable/light_setting_button</item>
 	</style>
 	
 	<style name="MatThemeAction" parent="Theme.AppCompat">
@@ -46,7 +40,6 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDarkMat</item>
 		<item name="colorAccent">@color/colorAccentMat</item>
 		<item name="android:windowBackground">@color/matBackGround</item>
-		<item name="colorButtonNormal">@drawable/mat_setting_button</item>
 	</style>
 
 	<style name="AwesomeDialogTheme" parent="android:Theme.Holo.Dialog">
