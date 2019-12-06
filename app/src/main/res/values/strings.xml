@@ -174,6 +174,9 @@
     <string name="yaku_table_string">役一覧表</string>
     <string name="reviewString">レビューをする</string>
     <string name="reviewUrl">market://details?id=momonyan.mahjongg_tools</string>
+    <string name="otherAppUrl1">market://details?id=momonyan.mahjongrecorder</string>
+    <string name="otherAppUrl2">market://details?id=momonyan.mahjongmemo</string>
+    <string name="otherAppUrls">https://play.google.com/store/apps/developer?id=%E5%B9%BB%E6%83%B3%E4%B9%83%E6%A1%9C%E5%B7%A5%E6%88%BF</string>
     <string name="reviewMail">gensounosakurakikimimi@gmail.com</string>
 
 
@@ -247,5 +250,6 @@
     <string name="otherApp1">麻雀結果記録表へ</string>
     <string name="otherApp2">麻雀点数やりとりメモへ</string>
     <string name="otherAppStore">幻想乃桜工房の他アプリ</string>
+
 
 </resources>

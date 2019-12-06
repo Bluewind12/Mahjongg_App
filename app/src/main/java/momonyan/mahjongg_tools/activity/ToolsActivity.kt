@@ -369,6 +369,44 @@ class ToolsActivity : AppCompatActivity() {
                 finish()
                 return true
             }
+            R.id.otherApp1 -> {
+                val packageName = "momonyan.mahjongrecorder"
+                val className = "momonyan.mahjongrecorder.MainActivity"
+                intent.setClassName(packageName, className)
+                try {
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
+                            .setTitle("ストアページへ").setMessage("[麻雀結果記録表]\nのストアページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                                val uri = Uri.parse(getString(R.string.otherAppUrl1))
+                                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                            }.setNegativeButton("いいえ", null)
+                            .show()
+                }
+            }
+            R.id.otherApp2 -> {
+                val packageName = "momonyan.mahjongmemo"
+                val className = "momonyan.mahjongmemo.MainActivity"
+                intent.setClassName(packageName, className)
+                try {
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
+                            .setTitle("ストアページへ").setMessage("[麻雀点数やりとりメモ]\nのストアぺージを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                                val uri = Uri.parse(getString(R.string.otherAppUrl2))
+                                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                            }.setNegativeButton("いいえ", null)
+                            .show()
+                }
+            }
+            R.id.otherApps -> {
+                AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
+                        .setTitle("ストアページへ").setMessage("[幻想乃桜工房]\nのストアページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                            val uri = Uri.parse(getString(R.string.otherAppUrls))
+                            startActivity(Intent(Intent.ACTION_VIEW, uri))
+                        }.setNegativeButton("いいえ", null)
+                        .show()
+            }
 
             else -> {}
         }
