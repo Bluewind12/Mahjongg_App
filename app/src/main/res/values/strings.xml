@@ -241,5 +241,11 @@
     <string name="readme3">このボタンを押した後プレイヤーの風ボタンを押すことで起家が設定できます。</string>
     <string name="readme4">様々なツールの画面へ移動します。</string>
     <string name="readme5">フリックすることでテーマを変更できます（全3種類）</string>
+    <string name="readMe">このアプリの使い方</string>
+    <string name="webPageMove">Webページ系</string>
+    <string name="otherAppMove">他アプリ系</string>
+    <string name="otherApp1">麻雀結果記録表へ</string>
+    <string name="otherApp2">麻雀点数やりとりメモへ</string>
+    <string name="otherAppStore">幻想乃桜工房の他アプリ</string>
 
 </resources>

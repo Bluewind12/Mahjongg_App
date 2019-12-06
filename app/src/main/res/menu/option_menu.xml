@@ -6,17 +6,37 @@
 		android:icon="@drawable/home_icon"
 		android:title="@string/homeBack"
 		app:showAsAction="ifRoom" />
-
-	<item
-		android:id="@+id/menu0"
-		android:title="@string/fantasyHp" />
-	<item
-		android:id="@+id/menu1"
-		android:title="@string/privacy" />
-	<item
-		android:id="@+id/menu_review"
-		android:title="@string/reviewString" />
 	<item
 		android:id="@+id/menu_readme"
-		android:title="使い方" />
+		android:title="@string/readMe" />
+
+	<item android:title="@string/webPageMove">
+		<menu>
+			<item
+				android:id="@+id/menu1"
+				android:title="@string/privacy" />
+			<item
+				android:id="@+id/menu0"
+				android:title="@string/fantasyHp" />
+			<item
+				android:id="@+id/menu_review"
+				android:title="@string/reviewString" />
+		</menu>
+	</item>
+
+	<item android:title="@string/otherAppMove">
+		<menu>
+			<item
+				android:id="@+id/otherApp1"
+				android:title="@string/otherApp1" />
+			<item
+				android:id="@+id/otherApp2"
+				android:title="@string/otherApp2" />
+			<item
+				android:id="@+id/otherApps"
+				android:title="@string/otherAppStore" />
+		</menu>
+	</item>
+
 </menu>
+
