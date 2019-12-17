@@ -71,9 +71,8 @@ class ToolsActivity : AppCompatActivity() {
         //スピナーセット
         hanSpinner.onItemSelectedListener = null
         hanSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(adapterView: AdapterView<*>) {}
-            //選択時
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            //　アイテムが選択された時
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (!hanSpinner.isFocusable) {
                     hanSpinner.isFocusable = true
                     return
@@ -81,13 +80,14 @@ class ToolsActivity : AppCompatActivity() {
                 role = getRole()
                 countPoint(role + mark)
             }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
 
         markSpinner.onItemSelectedListener = null
         markSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(adapterView: AdapterView<*>) {}
-            //選択時
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            //　アイテムが選択された時
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (!markSpinner.isFocusable) {
                     markSpinner.isFocusable = true
                     return
@@ -95,6 +95,8 @@ class ToolsActivity : AppCompatActivity() {
                 mark = getMarks()
                 countPoint(role + mark)
             }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
         hanSpinner.isFocusable = false
         markSpinner.isFocusable = false
@@ -213,7 +215,7 @@ class ToolsActivity : AppCompatActivity() {
             "11翻" -> 8
             "12翻" -> 8
             "13翻以上" -> 9
-            else ->1
+            else -> 1
         }
     }
 
@@ -336,7 +338,7 @@ class ToolsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu0 -> {
-                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
+                AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
                         .setTitle("Webページを開きます").setMessage("[幻想乃桜工房のHP]\nを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.fantasy_url))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -345,7 +347,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu1 -> {
-                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
+                AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
                         .setTitle("Webページを開きます").setMessage("[プライバシーポリシー]\n[利用素材]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.privacy_URL))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -354,7 +356,7 @@ class ToolsActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu_review -> {
-                AlertDialog.Builder(ContextThemeWrapper(this,R.style.AwesomeDialogTheme))
+                AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
                         .setTitle("レビューページへ").setMessage("[レビュー]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.reviewUrl))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -362,7 +364,7 @@ class ToolsActivity : AppCompatActivity() {
                         .show()
                 return true
             }
-            R.id.menu_readme ->{
+            R.id.menu_readme -> {
                 startActivity(Intent(this, ReadMeActivity::class.java))
             }
             R.id.menu_home -> {
@@ -408,7 +410,8 @@ class ToolsActivity : AppCompatActivity() {
                         .show()
             }
 
-            else -> {}
+            else -> {
+            }
         }
         return false
     }
