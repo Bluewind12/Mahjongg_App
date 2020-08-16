@@ -35,28 +35,40 @@
             android:name=".activity.ToolsActivity"
             android:label="@string/tools"
             android:screenOrientation="portrait"
-            android:theme="@style/DarkThemeAction" />
+            android:theme="@style/DarkThemeAction"
+            android:launchMode="singleTop"
+            />
         <activity
             android:name=".activity.MarkToolActivity"
             android:label="符計算"
             android:screenOrientation="portrait"
-            android:theme="@style/DarkThemeAction" />
+            android:theme="@style/DarkThemeAction"
+            android:launchMode="singleTop"
+            />
 
         <activity
             android:name=".activity.YakuListViewActivity"
             android:label="役一覧表"
             android:screenOrientation="portrait"
-            android:theme="@style/DarkThemeAction" />
+            android:theme="@style/DarkThemeAction"
+            android:launchMode="singleTop"
+            />
         <activity
             android:name=".activity.PointTableOutputActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            />
         <activity
             android:name=".activity.FuTableViewActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            />
 
         <activity
             android:name=".activity.ReadMeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            />
 
     </application>
 
