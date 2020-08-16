@@ -32,11 +32,12 @@ import momonyan.mahjongg_tools.function.CountFunctionWind
 class ToolsActivity : AppCompatActivity() {
     private lateinit var audioAttributes: AudioAttributes
     private lateinit var soundPool: SoundPool
+    private var sound = 0
+    private var soundCard = 0
 
     //サイコロ
     private lateinit var countDice: CountFunctionDice
     private lateinit var countWind: CountFunctionWind
-    private var sound = 0
 
     //役
     private var role: Int = 1
@@ -182,7 +183,7 @@ class ToolsActivity : AppCompatActivity() {
                 buffer.append(temp[it])
             }
             cardRandOutputTextView.text = buffer
-            soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
+            soundPool.play(soundCard, 0.8f, 0.8f, 0, 0, 1.0f)
         }
 
         //TextViewの長押し時の説明文の表示に関しての部分
@@ -346,6 +347,7 @@ class ToolsActivity : AppCompatActivity() {
         audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
         soundPool = SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(2).build()
         sound = soundPool.load(this, R.raw.dise, 1)
+        soundCard = soundPool.load(this, R.raw.hyoushigi1, 1)
 
         val customFont = Typeface.createFromAsset(assets, "GL-MahjongTile.ttf")
         cardRandOutputTextView.typeface = customFont
