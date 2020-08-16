@@ -171,15 +171,17 @@ class ToolsActivity : AppCompatActivity() {
         //配牌機能
         cardRandomRollButton.setOnClickListener {
 
-            val temp :List<String> = "1234567qwertyuioasdfghjklzxcvbnm,.".split("")
+            val select = List<Int>(32) { it }
 
-            var cardField = temp + temp + temp + temp
-            cardField = cardField.shuffled()
+            val temp: List<String> = "q-w-e-r-t-y-u-i-o-a-s-d-f-g-h-j-k-l-z-x-c-v-b-n-m-,-.-1-2-3-4-5-6-7".split("-")
+
+            var cardField = select + select + select + select
+            cardField = cardField.shuffled().take(14).sorted()
             val buffer = StringBuilder()
             cardField.forEach {
-                buffer.append(it)
+                buffer.append(temp[it])
             }
-            cardRandOutputTextView.text = buffer.substring(0,14)
+            cardRandOutputTextView.text = buffer
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
