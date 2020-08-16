@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Paint
+import android.graphics.Typeface
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
@@ -39,6 +40,9 @@ class ToolsActivity : AppCompatActivity() {
     //役
     private var role: Int = 1
     private var mark: Int = 10
+
+    //配牌
+    private var card: String = "99999999999999"
 
     private lateinit var dataStore: SharedPreferences
 
@@ -327,13 +331,15 @@ class ToolsActivity : AppCompatActivity() {
         audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
         soundPool = SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(2).build()
         sound = soundPool.load(this, R.raw.dise, 1)
+
+        val customFont = Typeface.createFromAsset(assets, "GL-MahjongTile.ttf")
+        cardRandOutputTextView.typeface = customFont
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
         return true
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -415,6 +421,5 @@ class ToolsActivity : AppCompatActivity() {
         }
         return false
     }
-
 
 }
