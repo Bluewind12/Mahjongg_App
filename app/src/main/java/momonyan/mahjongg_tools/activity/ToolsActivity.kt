@@ -10,6 +10,7 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.Menu
 import android.view.MenuItem
@@ -40,9 +41,6 @@ class ToolsActivity : AppCompatActivity() {
     //役
     private var role: Int = 1
     private var mark: Int = 10
-
-    //配牌
-    private var card: String = "99999999999999"
 
     private lateinit var dataStore: SharedPreferences
 
@@ -141,6 +139,7 @@ class ToolsActivity : AppCompatActivity() {
         setButtonBackGround(yakuJumpButton)
         setButtonBackGround(diceButton)
         setButtonBackGround(windRollButton)
+        setButtonBackGround(cardRandomRollButton)
 
         //サイコロ初期化
         countDice = CountFunctionDice(1000, 100)
@@ -169,6 +168,21 @@ class ToolsActivity : AppCompatActivity() {
             soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
+        //配牌機能
+        cardRandomRollButton.setOnClickListener {
+
+            val temp :List<String> = "1234567qwertyuioasdfghjklzxcvbnm,.".split("")
+
+            var cardField = temp + temp + temp + temp
+            cardField = cardField.shuffled()
+            val buffer = StringBuilder()
+            cardField.forEach {
+                buffer.append(it)
+            }
+            cardRandOutputTextView.text = buffer.substring(0,14)
+            soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+
         //TextViewの長押し時の説明文の表示に関しての部分
         setTextDescription(pointCalculationTextView, "飜数と符数を入力して計算を押すと計算されます")
         setTextDescription(pointTextView, "計算結果が表示されます\n親の場合と子の場合の両方が表示されます")
@@ -177,8 +191,7 @@ class ToolsActivity : AppCompatActivity() {
         setTextDescription(diceTextView, "サイコロが振れます\n左・右・対・自の表示もあります")
         setTextDescription(yakuTextView, "役の一覧表への移動ボタンです")
         setTextDescription(windRandTextView, "風がランダムで表示されます。\n東南西北が表示されます。")
-
-
+        setTextDescription(cardRandTextView, "配牌がランダムで表示されます。\n天和を狙え！")
     }
 
     private fun setTextDescription(text: TextView, des: String) {

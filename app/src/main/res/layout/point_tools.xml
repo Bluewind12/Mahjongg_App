@@ -496,6 +496,18 @@
             android:background="?attr/colorPrimary"
             app:layout_constraintTop_toBottomOf="@+id/windRollButton" />
 
+        <TextView
+            android:id="@+id/cardRandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="ランダム配牌"
+            android:textColor="?attr/colorAccent"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view11" />
+
         <Button
             android:id="@+id/cardRandomRollButton"
             android:layout_width="wrap_content"
@@ -507,7 +519,7 @@
             android:text="@string/roll_wind"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view11" />
+            app:layout_constraintTop_toBottomOf="@+id/cardRandTextView" />
 
         <TextView
             android:id="@+id/cardRandOutputTextView"
@@ -516,7 +528,6 @@
             android:layout_marginEnd="8dp"
             android:text="99999999999999"
             android:textSize="24sp"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="@+id/cardRandomRollButton"
             app:layout_constraintBottom_toBottomOf="@+id/cardRandomRollButton"
             app:layout_constraintEnd_toEndOf="parent"
