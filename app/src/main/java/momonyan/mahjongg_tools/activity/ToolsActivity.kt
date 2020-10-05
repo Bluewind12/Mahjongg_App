@@ -380,7 +380,7 @@ class ToolsActivity : AppCompatActivity() {
             }
             R.id.menu_review -> {
                 AlertDialog.Builder(ContextThemeWrapper(this, R.style.AwesomeDialogTheme))
-                        .setTitle("レビューページへ").setMessage("[レビュー]\nのページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
+                        .setTitle("このアプリのページへ").setMessage("[麻雀☆ツール]\nのストアページを開いてもよろしいですか").setPositiveButton("はい") { _, _ ->
                             val uri = Uri.parse(getString(R.string.reviewUrl))
                             startActivity(Intent(Intent.ACTION_VIEW, uri))
                         }.setNegativeButton("いいえ", null)
