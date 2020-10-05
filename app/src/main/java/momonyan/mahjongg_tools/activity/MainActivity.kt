@@ -13,6 +13,9 @@ import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.android.play.core.tasks.Task
 import com.google.firebase.analytics.FirebaseAnalytics
 import jp.co.runners.rateorfeedback.RateOrFeedback
 import kotlinx.android.synthetic.main.activity_main.*
@@ -435,23 +438,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun viewAlertDialog() {
-        RateOrFeedback(this)
-                // レビュー用ストアURL
-                .setPlayStoreUrl(getString(R.string.reviewUrl))
-                // レビュー依頼でレビューする!を選択された場合の操作を上書きします
-                .setRequestReviewDialogOnPositive {
+        val manager = ReviewManagerFactory.create(this)
+        val request = manager.requestReviewFlow()
+        Log.d("test","TESTLOG")
+        request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+            when {
 
+                task.isSuccessful -> {
+                    val reviewInfo = task.result
+                    val flow = manager.launchReviewFlow(this, reviewInfo)
+                    flow.addOnCompleteListener { task1: Task<Void?>? ->
+                        Log.d("test","TESTLOG2")
+                    }
                 }
-                // 改善点・要望の送信先メールアドレス
-                .setFeedbackEmail(getString(R.string.reviewMail))
-                // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
-                // この値をインクリメントすることで再度ダイアログが表示されるようになります。
-                .setReviewRequestId(0)
-                // 前回ダイアログを表示してから次にダイアログを表示してよいタイミングまでの期間です。
-                .setIntervalFromPreviousShowing(60 * 60 * 3)//3時間
-                // アプリをインストールしてから、ここで指定された期間はダイアログを表示しません。
-                .setNotShowTermSecondsFromInstall(60 * 60)//1時間
-                .showIfNeeds()
+                else -> {
+                }
+            }
+        }
     }
 
 }
