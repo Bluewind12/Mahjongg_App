@@ -26,11 +26,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var playerButtons: Array<ImageButton>
     private lateinit var boostTexts: Array<TextView>
     private lateinit var pointButtons: Array<ImageButton>
+
     //イメージボタン
     private lateinit var fieldButton: ImageButton
+
     //データ記録、呼び出し用
     private lateinit var dataStore: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+
     //数値管理
     private var fieldNum = 0
     private var firstPlayer = 0
@@ -60,8 +63,6 @@ class MainActivity : AppCompatActivity() {
             else -> error(2)
         }
         super.onCreate(savedInstanceState)
-        //Nend
-//        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
 
         //AD
         MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
@@ -71,8 +72,6 @@ class MainActivity : AppCompatActivity() {
 
         //FireBase
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-
-
 
         //FireBase
         val openParams = Bundle()
@@ -115,7 +114,7 @@ class MainActivity : AppCompatActivity() {
             }
             setState(parent)
             setFieldWind(fieldNum)
-        }else{
+        } else {
             //3人プレイ時
 
         }
@@ -439,6 +438,10 @@ class MainActivity : AppCompatActivity() {
         RateOrFeedback(this)
                 // レビュー用ストアURL
                 .setPlayStoreUrl(getString(R.string.reviewUrl))
+                // レビュー依頼でレビューする!を選択された場合の操作を上書きします
+                .setRequestReviewDialogOnPositive {
+
+                }
                 // 改善点・要望の送信先メールアドレス
                 .setFeedbackEmail(getString(R.string.reviewMail))
                 // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
