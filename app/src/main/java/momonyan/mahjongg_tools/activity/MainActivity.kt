@@ -13,8 +13,10 @@ import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.android.play.core.tasks.Task
 import com.google.firebase.analytics.FirebaseAnalytics
-import jp.co.runners.rateorfeedback.RateOrFeedback
 import kotlinx.android.synthetic.main.activity_main.*
 import momonyan.mahjongg_tools.R
 import momonyan.mahjongg_tools.function.FlickCheck
@@ -26,11 +28,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var playerButtons: Array<ImageButton>
     private lateinit var boostTexts: Array<TextView>
     private lateinit var pointButtons: Array<ImageButton>
+
     //イメージボタン
     private lateinit var fieldButton: ImageButton
+
     //データ記録、呼び出し用
     private lateinit var dataStore: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+
     //数値管理
     private var fieldNum = 0
     private var firstPlayer = 0
@@ -43,6 +48,9 @@ class MainActivity : AppCompatActivity() {
 
     //Ad
     private lateinit var mInterstitialAd: InterstitialAd
+
+    //review
+    private var isReview = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //テーマ変更
@@ -60,8 +68,6 @@ class MainActivity : AppCompatActivity() {
             else -> error(2)
         }
         super.onCreate(savedInstanceState)
-        //Nend
-//        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
 
         //AD
         MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
@@ -71,8 +77,6 @@ class MainActivity : AppCompatActivity() {
 
         //FireBase
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-
-
 
         //FireBase
         val openParams = Bundle()
@@ -115,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             }
             setState(parent)
             setFieldWind(fieldNum)
-        }else{
+        } else {
             //3人プレイ時
 
         }
@@ -389,7 +393,9 @@ class MainActivity : AppCompatActivity() {
 
     //プレイヤー状態のセット
     private fun setState(setNum: Int) {
-        viewAlertDialog()
+        if(!isReview && Random.nextInt(100) <= 20) {
+            viewAlertDialog()
+        }
         playerButtons[setNum % 4].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
@@ -436,19 +442,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun viewAlertDialog() {
-        RateOrFeedback(this)
-                // レビュー用ストアURL
-                .setPlayStoreUrl(getString(R.string.reviewUrl))
-                // 改善点・要望の送信先メールアドレス
-                .setFeedbackEmail(getString(R.string.reviewMail))
-                // 一度、評価するか改善点を送信するを選択した場合、それ以降はダイアログが表示されません。
-                // この値をインクリメントすることで再度ダイアログが表示されるようになります。
-                .setReviewRequestId(0)
-                // 前回ダイアログを表示してから次にダイアログを表示してよいタイミングまでの期間です。
-                .setIntervalFromPreviousShowing(60 * 60 * 3)//3時間
-                // アプリをインストールしてから、ここで指定された期間はダイアログを表示しません。
-                .setNotShowTermSecondsFromInstall(60 * 60)//1時間
-                .showIfNeeds()
+        val manager = ReviewManagerFactory.create(this)
+        val request = manager.requestReviewFlow()
+        request.addOnCompleteListener { task: Task<ReviewInfo?> ->
+            when {
+                task.isSuccessful -> {
+                    val reviewInfo = task.result
+                    val flow = manager.launchReviewFlow(this, reviewInfo)
+                }
+            }
+        }
+        isReview = true
     }
 
 }
