@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 //        NendAdInterstitial.loadAd(applicationContext, "e3cf2a1284d0b2c5ba2cac11e5d0da50de7ce781", 922653)
 
         //AD
-        MobileAds.initialize(this, "ca-app-pub-6499097800180510~1231013049")
+        MobileAds.initialize(this) {}
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = "ca-app-pub-6499097800180510/7290769334"
         mInterstitialAd.loadAd(AdRequest.Builder().build())

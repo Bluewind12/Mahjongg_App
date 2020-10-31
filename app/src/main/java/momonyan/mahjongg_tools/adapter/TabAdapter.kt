@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import momonyan.mahjongg_tools.fragment.*
 
+@Suppress("DEPRECATION")
 class TabAdapter(fm: FragmentManager, private val context: Context) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
