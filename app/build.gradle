@@ -9,11 +9,11 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "momonyan.mahjongg_tools"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 55
         versionName "2.5.12"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -39,31 +39,31 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'net.nend.android:nend-sdk:5.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
-    implementation 'androidx.mediarouter:mediarouter:1.2.0'
-    implementation 'androidx.media:media:1.2.0'
+    implementation 'androidx.mediarouter:mediarouter:1.2.2'
+    implementation 'androidx.media:media:1.2.1'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //レビュー誘導
     implementation 'jp.co.runners:rateorfeedback:0.0.3'
     //firebase
-    implementation 'com.google.firebase:firebase-core:18.0.0'
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
-    implementation 'com.google.firebase:firebase-ads:19.5.0'
+    implementation 'com.google.firebase:firebase-core:18.0.2'
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
+    implementation 'com.google.firebase:firebase-ads:19.7.0'
 
-    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
-    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 
-    implementation 'com.google.android.play:core:1.8.3'
+    implementation 'com.google.android.play:core:1.9.1'
 }
 apply plugin: 'com.google.gms.google-services'
