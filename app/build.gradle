@@ -14,8 +14,8 @@ android {
         applicationId "momonyan.mahjongg_tools"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 54
-        versionName "2.5.11"
+        versionCode 55
+        versionName "2.5.12"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
