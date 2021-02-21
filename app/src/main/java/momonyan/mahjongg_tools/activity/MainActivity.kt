@@ -26,6 +26,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
     //配列を用いたもの
     private lateinit var playerButtons: Array<ImageButton>
+    private lateinit var playerNumbers: Array<TextView>
     private lateinit var boostTexts: Array<TextView>
     private lateinit var pointButtons: Array<ImageButton>
 
@@ -313,10 +314,11 @@ class MainActivity : AppCompatActivity() {
 
     //初期設定
     private fun initialSetting() {
-        playerButtons = arrayOf(findViewById(R.id.imageButton1), findViewById(R.id.imageButton2), findViewById(R.id.imageButton3), findViewById(R.id.imageButton4))
-        boostTexts = arrayOf(findViewById(R.id.boost1), findViewById(R.id.boost2), findViewById(R.id.boost3), findViewById(R.id.boost4))
-        fieldButton = findViewById(R.id.imageButtonF)
-        pointButtons = arrayOf(findViewById(R.id.pointButton1), findViewById(R.id.pointButton2))
+        playerButtons = arrayOf(imageButton1, imageButton2, imageButton3, imageButton4)
+        playerNumbers = arrayOf(numberTextView1, numberTextView2, numberTextView3, numberTextView4)
+        boostTexts = arrayOf(boost1, boost2, boost3, boost4)
+        fieldButton = imageButtonF
+        pointButtons = arrayOf(pointButton1, pointButton2)
         editor = dataStore.edit()
         editor.apply()
 
@@ -393,13 +395,19 @@ class MainActivity : AppCompatActivity() {
 
     //プレイヤー状態のセット
     private fun setState(setNum: Int) {
-        if(!isReview && Random.nextInt(100) <= 20) {
+        if (!isReview && Random.nextInt(100) <= 20) {
             viewAlertDialog()
         }
         playerButtons[setNum % 4].setImageResource(R.drawable.hougaku1_higashi)
         playerButtons[(setNum + 1) % 4].setImageResource(R.drawable.hougaku3_minami)
         playerButtons[(setNum + 2) % 4].setImageResource(R.drawable.hougaku2_nishi)
         playerButtons[(setNum + 3) % 4].setImageResource(R.drawable.hougaku4_kita)
+
+        playerNumbers[setNum % 4].text = "5,9"
+        playerNumbers[(setNum + 1) % 4].text = "2,6,10"
+        playerNumbers[(setNum + 2) % 4].text = "3,7,11"
+        playerNumbers[(setNum + 3) % 4].text = "4,8,12"
+
         honba1.text = getString(R.string.place, times)
         honba2.text = getString(R.string.place, times)
         setBoostWind()
